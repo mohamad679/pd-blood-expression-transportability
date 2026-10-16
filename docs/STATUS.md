@@ -13,10 +13,16 @@
 | PPMI external scoring | Not started | A second public lock of code/environment, splits, final models/preprocessing, and the finalized private population must precede all PPMI scores. |
 | Manuscript | Not started | It is premature to claim external validation, quantify shortcut contribution, or infer clinical utility. |
 
+## GEO input-hash preflight (2026-10-16)
+
+The four prepared GEO inputs were found in the prior local working directory and their SHA-256 values exactly match `data/manifests/input_audit.json`. The checked-in split-manifest SHA-256 also matches the value in that input audit. The input files are exposed to this checkout through ignored local symlinks under `prepared/`; no expression or sample-level data were added to Git.
+
+The pipeline `plan` command has not completed in this checkout: the default Python environment lacks the pinned `glum` dependency, and `uv` could not reach the package registry during the attempted locked-environment setup. No fit was run. The repository also does not contain the required local receipt proving that the exact pipeline-code and split hashes are covered by the public registration. Do not start additional real-data fits until the locked environment is available and that receipt is verified.
+
 ## First real-data pilot (not a study result)
 
 The single completed fold was `GSE57475/outer/0`, with 113 training and 29 held-out records. Five-model test AUROCs were M1 0.3658, M2 0.5105, M3 0.3658, M4 0.3947, and M5 0.4895. The fold took 427.34 seconds wall time and completed 269 fit attempts with no warning or KKT failure; the maximum KKT residual was 3.8924e-8, below the fixed 1e-6 threshold. M3 reused M1 in this fold. These values are retained as an execution pilot, not as final performance estimates, a separate test, or confirmatory evidence.
 
 ## Immediate next step
 
-Run the remaining prespecified GEO analyses using the frozen code, input hashes, split manifest, and public registration receipt. Before launching the full batch, verify that the local prepared inputs match `data/manifests/input_audit.json` and estimate compute time from the first full planned scope. Preserve every fit log and aggregate result locally; commit only non-sensitive reproducibility evidence and aggregate outputs.
+Complete a no-fit `plan` run in the pinned environment and verify the generated split manifest against the frozen hash. Then verify the public registration receipt against the exact pipeline-code and split hashes. Only after both checks pass, run the remaining prespecified GEO analyses; estimate compute time from the first full planned scope. Preserve every fit log and aggregate result locally; commit only non-sensitive reproducibility evidence and aggregate outputs.
