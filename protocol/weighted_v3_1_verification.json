@@ -1,0 +1,644 @@
+{
+  "status": "passed",
+  "data": "synthetic_only",
+  "original_checks_reexecuted": 23,
+  "uniform_comparisons": 66,
+  "nonuniform_independent_comparisons": 9,
+  "glum": "3.4.1",
+  "checks": [
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.0,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 0.01,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 1.0,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": true,
+      "lambda": 100.0,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 0.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 0.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 0.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.01,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 1.0,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 1.0,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 1.0,
+      "rho": 1.0,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.5,
+      "constant_weight": 0.1,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.5,
+      "constant_weight": 1.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "uniform_weights_reproduce_original",
+      "baseline_only": false,
+      "lambda": 0.2,
+      "rho": 0.5,
+      "constant_weight": 10.0,
+      "max_coefficient_error": 0.0
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 0.01,
+      "rho": 0.0,
+      "max_coefficient_error": 2.1501096902909467e-08,
+      "objective_error": 0.0,
+      "baseline_gradient_max": 2.2003735309500394e-09,
+      "rescale_error": 2.220446049250313e-16
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 0.2,
+      "rho": 0.0,
+      "max_coefficient_error": 1.373650843905505e-07,
+      "objective_error": 6.661338147750939e-15,
+      "baseline_gradient_max": 6.55885498690445e-10,
+      "rescale_error": 1.1102230246251565e-16
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 1.0,
+      "rho": 0.0,
+      "max_coefficient_error": 6.666613638905972e-08,
+      "objective_error": 4.440892098500626e-16,
+      "baseline_gradient_max": 2.4259230492484907e-09,
+      "rescale_error": 2.220446049250313e-16
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 0.01,
+      "rho": 0.5,
+      "max_coefficient_error": 4.683276440264894e-08,
+      "objective_error": 7.771561172376096e-16,
+      "baseline_gradient_max": 1.6655679873495144e-09,
+      "rescale_error": 1.1102230246251565e-16
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 0.2,
+      "rho": 0.5,
+      "max_coefficient_error": 1.8903035359230103e-08,
+      "objective_error": 1.1102230246251565e-16,
+      "baseline_gradient_max": 1.9640387528135905e-09,
+      "rescale_error": 5.551115123125783e-17
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 1.0,
+      "rho": 0.5,
+      "max_coefficient_error": 1.6123722273997387e-08,
+      "objective_error": 0.0,
+      "baseline_gradient_max": 1.9640387458746966e-09,
+      "rescale_error": 1.1102230246251565e-16
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 0.01,
+      "rho": 1.0,
+      "max_coefficient_error": 4.949219122832478e-08,
+      "objective_error": 7.771561172376096e-16,
+      "baseline_gradient_max": 1.4427269639377682e-09,
+      "rescale_error": 2.220446049250313e-16
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 0.2,
+      "rho": 1.0,
+      "max_coefficient_error": 1.6123722273997387e-08,
+      "objective_error": 0.0,
+      "baseline_gradient_max": 1.9640387528135905e-09,
+      "rescale_error": 5.551115123125783e-17
+    },
+    {
+      "test": "independent_nonuniform_weighted_solver",
+      "lambda": 1.0,
+      "rho": 1.0,
+      "max_coefficient_error": 1.6123722273997387e-08,
+      "objective_error": 1.1102230246251565e-16,
+      "baseline_gradient_max": 1.9640387458746966e-09,
+      "rescale_error": 1.1102230246251565e-16
+    }
+  ],
+  "cohort_only_AUC_unweighted": 0.5724765258215961,
+  "cohort_only_AUC_weighted": 0.5000000000000024,
+  "kish_and_weights": {
+    "pooled": {
+      "n": 381,
+      "kish": 334.04634052673777,
+      "cell_weights": {
+        "PROBE_HC": 1.9438775510204083,
+        "PROBE_PD": 1.0241935483870968,
+        "GENEPARK_TRO_HC": 0.8004201680672269,
+        "GENEPARK_TRO_PD": 0.79375
+      }
+    },
+    "PROBE": {
+      "n": 142,
+      "kish": 128.3661971830986
+    },
+    "GENEPARK_TRO": {
+      "n": 239,
+      "kish": 238.9958158995816
+    }
+  },
+  "warnings": [],
+  "participant_data_read": false,
+  "normalization": "likelihood divided by sum(weights); global weight scaling leaves lambda unchanged"
+}

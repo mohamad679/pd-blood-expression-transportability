@@ -1,0 +1,109 @@
+{
+  "status": "complete",
+  "n_train": 113,
+  "n_test": 29,
+  "elapsed_wall_seconds": 427.3359472679949,
+  "process_CPU_seconds": 1884.4674,
+  "fit_attempts": 269,
+  "failed_attempts": 0,
+  "retries": 0,
+  "warning_messages": 0,
+  "warned_attempts": 0,
+  "max_KKT": 3.8924002795232004e-08,
+  "by_model": {
+    "M1": {
+      "attempts": 6,
+      "seconds": 0.0929,
+      "median_seconds": 0.0126,
+      "max_seconds": 0.0328,
+      "warned_attempts": 0,
+      "max_KKT": 3.8924002795232004e-08
+    },
+    "M2": {
+      "attempts": 106,
+      "seconds": 258.26480000000004,
+      "median_seconds": 1.53935,
+      "max_seconds": 19.2481,
+      "warned_attempts": 0,
+      "max_KKT": 9.792215344139876e-09
+    },
+    "M3": {
+      "attempts": 75,
+      "seconds": 82.15100000000001,
+      "median_seconds": 0.9837,
+      "max_seconds": 3.3814,
+      "warned_attempts": 0,
+      "max_KKT": 3.892400278829311e-08
+    },
+    "M4": {
+      "attempts": 6,
+      "seconds": 0.1241,
+      "median_seconds": 0.0193,
+      "max_seconds": 0.0277,
+      "warned_attempts": 0,
+      "max_KKT": 1.5372660172596753e-08
+    },
+    "M5": {
+      "attempts": 76,
+      "seconds": 82.77449999999999,
+      "median_seconds": 1.10675,
+      "max_seconds": 2.7875,
+      "warned_attempts": 0,
+      "max_KKT": 1.5372660148310624e-08
+    }
+  },
+  "selected": {
+    "M1": {
+      "hyperparameters": null,
+      "inner_macro_AUROC": 0.5845238095238094
+    },
+    "M4": {
+      "hyperparameters": null,
+      "inner_macro_AUROC": 0.6041666666666667
+    },
+    "M2": {
+      "selected": {
+        "baseline": false,
+        "lambda": 1e-05,
+        "rho": 0.0,
+        "score": 0.6002380952380952,
+        "nonzero": true
+      },
+      "persistent_boundary": false,
+      "expansion_rounds": 2
+    },
+    "M3": {
+      "selected": {
+        "baseline": true,
+        "lambda": 0.0,
+        "rho": 0.0,
+        "score": 0.5845238095238094,
+        "nonzero": false,
+        "reuses_baseline": "M1"
+      },
+      "persistent_boundary": false,
+      "expansion_rounds": 0
+    },
+    "M5": {
+      "selected": {
+        "baseline": false,
+        "lambda": 0.01,
+        "rho": 0.5,
+        "score": 0.6126190476190476,
+        "nonzero": true
+      },
+      "persistent_boundary": false,
+      "expansion_rounds": 0
+    }
+  },
+  "same_fold_timing_scenarios": {
+    "core_13_analyses_wall_hours": 1.5431575873566483,
+    "core_plus_four_full_sensitivity_runs_hours": 7.715787936783242,
+    "permutation_full_five_model_1000x10_outer_analyses_wall_days": 49.460179081943856,
+    "permutation_M4_M5_only_1000x10_fit_time_days_excluding_preprocessing": 9.594745370370369
+  },
+  "forecast_limitation": "Scenario arithmetic only: one small PROBE fold does not establish larger-cohort, pooled or sensitivity runtimes. Backend internal threads are recorded; model fits are sequential. Permutation execution scope is still to be fixed before its execution.",
+  "second_pre_PPMI_lock_done": false,
+  "PPMI_scores_computed": false,
+  "single_fold_performance_is_study_result": false
+}

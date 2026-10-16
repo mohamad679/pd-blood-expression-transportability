@@ -1,0 +1,10 @@
+{
+  "local_timestamp_UTC": "2026-10-15T20:25:05.063859+00:00",
+  "public_registration": false,
+  "KKT_limit": 1e-06,
+  "calibration_status": "48_checks_passed_threshold_unchanged",
+  "calibration_report_sha256": "fc3bd150cae81f90a53edb38c1c69462dc82131bd89db7d51c81b829ef45102f",
+  "stress_code_sha256": "4c85ceb4bef5edf0b9209487583957ff59920125affa2c93191d0bf642a220e7",
+  "new_synthetic_data_seed": 20261019,
+  "real_participant_data_used": false
+}

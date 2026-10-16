@@ -1,0 +1,107 @@
+{
+  "scope": "English presentation only; no methodological amendment or new model execution",
+  "translations": [
+    {
+      "source": "KKT_NUMERICAL_AMENDMENT_20261016_FA.md",
+      "translation": "protocol/KKT_NUMERICAL_AMENDMENT_20261016_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "KKT_NUMERICAL_RESULTS_20261016_FA.md",
+      "translation": "protocol/KKT_NUMERICAL_RESULTS_20261016_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "KKT_STEP_ZERO_v3_1_FA.md",
+      "translation": "protocol/KKT_STEP_ZERO_v3_1_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "PREREG_v3_1_FA.md",
+      "translation": "protocol/PREREG_v3_1_FULL_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "PROTOCOL_v3_1_FA.md",
+      "translation": "protocol/PROTOCOL_v3_1_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "SYNTHETIC_V3_1_PLAN_FA.md",
+      "translation": "protocol/SYNTHETIC_V3_1_PLAN_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "history/V3_1_REVIEW_REPORT_FA_initial_warning_hold.md",
+      "translation": "protocol/history/V3_1_REVIEW_REPORT_EN_initial_warning_hold.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "kkt_history_first_pass_20261016/KKT_STEP_ZERO_v3_1_FA.md",
+      "translation": "protocol/kkt_history_first_pass_20261016/KKT_STEP_ZERO_v3_1_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {},
+      "technical_identifier_sets_match": true
+    },
+    {
+      "source": "amendment_v3_1_1_20261016/AMENDMENT_v3_1_1_FA.md",
+      "translation": "amendments/AMENDMENT_v3_1_1_SUMMARY_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {}
+    },
+    {
+      "source": "pipeline/GEO_PILOT_REPORT_20261016_FA.md",
+      "translation": "pipeline/GEO_PILOT_REPORT_20261016_EN.md",
+      "passed": true,
+      "missing": {},
+      "extra": {}
+    }
+  ],
+  "all_numeric_literal_inventories_match": true,
+  "frozen_config_byte_identical": true,
+  "every_config_key_value_seed_threshold_grid_unchanged": true,
+  "model_penalty_marker_identifier_sets_match": true,
+  "numeric_parser_positive_and_negative_checks": {
+    "localized_digits_and_decimal": true,
+    "localized_grouping": true,
+    "changed_threshold_detected": true,
+    "changed_seed_detected": true,
+    "english_sentence_period": true,
+    "changed_occurrence_count_detected": true
+  },
+  "original_code_files_checked": 20,
+  "all_original_code_byte_identical": true,
+  "current_pipeline_code_files_checked": 4,
+  "current_pipeline_code_byte_identical": true,
+  "unchanged_source_files": 56,
+  "Arabic_script_files": [],
+  "files_named_FA": [],
+  "binary_files": [],
+  "human_review": "Complete translations reviewed against source text; numeric inventories do not prove semantic equivalence.",
+  "prior_real_GEO_exposure": "One PROBE outer fold completed before translation; disclosed, not backdated",
+  "PPMI_predictive_or_marker_scores_computed": false,
+  "passed": true
+}

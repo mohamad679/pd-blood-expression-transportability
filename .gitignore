@@ -1,0 +1,29 @@
+# Local/raw study inputs and derived matrices
+/prepared/
+/raw_data/
+/private_data/
+*.CEL
+*.CEL.gz
+*.fastq
+*.fastq.gz
+*.bam
+*.cram
+*.h5ad
+*.h5
+*.npz
+*.npy
+
+# Per-run model artifacts and subject-level outputs
+**/heldout_predictions*
+**/*_model.npz
+**/preprocessing.npz
+**/fits.jsonl
+**/*.inprogress.json
+**/private*
+**/*crosswalk*
+
+# Local environments and editor files
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store

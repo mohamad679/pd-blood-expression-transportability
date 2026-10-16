@@ -1,0 +1,16 @@
+{
+  "input_sha256": {
+    "GSE57475_development.npz": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+    "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039_development.npz": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+    "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+  },
+  "n": 381,
+  "genes": 16364,
+  "sources": {
+    "GSE57475": 142,
+    "GSE99039": 239
+  },
+  "split_manifest_sha256": "2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2",
+  "real_training_performed": false
+}

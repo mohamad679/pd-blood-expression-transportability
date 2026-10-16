@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "checks": 19,
+  "names": [
+    "repeated_donors_never_cross_outer_fold",
+    "all_rows_held_out_once",
+    "repeated_donors_never_cross_inner_fold_2",
+    "repeated_donors_never_cross_inner_fold_3",
+    "repeated_donors_never_cross_inner_fold_4",
+    "heldout_extreme_X_age_and_relabel_do_not_change_training_prep",
+    "gene_scaler_equals_training_only_mean",
+    "marker_scores_are_samplewise_fixed_panel_means",
+    "M4_M5_identical_free_baseline",
+    "candidate_tie_prefers_baseline",
+    "heldout_mutation_does_not_change_tuning_decisions",
+    "heldout_mutation_does_not_change_fitted_coefficients",
+    "inner_validation_mutation_does_not_change_its_training_state",
+    "M5_baseline_branch_bit_identical_to_M4",
+    "bootstrap_multiplicities_equal_independent_sklearn_with_ties",
+    "paired_bootstrap_swapping_models_exactly_reverses_difference",
+    "identical_scores_have_zero_resampling_difference",
+    "bootstrap_rejects_repeated_visits_as_independent_donors",
+    "1000_gene_design_finite_and_train_scaled"
+  ],
+  "participant_data_read": false,
+  "real_training_performed": false,
+  "seconds": 2.2943951159977587,
+  "bootstrap_repetitions": 5000,
+  "bootstrap_coverage_validation": "not_yet_run; algebra_and_resampling_checks_only",
+  "numerical_1000_gene_fit_validation": "existing_v3.1_32_fit_stress_not_repeated_here"
+}

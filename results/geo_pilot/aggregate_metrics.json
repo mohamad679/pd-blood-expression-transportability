@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "scope": "GSE57475/outer/0",
+  "seconds": 427.3359472679949,
+  "process_CPU_seconds": 1884.4674,
+  "metrics": {
+    "M1": {
+      "n": 29,
+      "cases": 19,
+      "prevalence": 0.6551724137931034,
+      "AUROC": 0.3657894736842105,
+      "AUPRC": 0.5710651618742464,
+      "Brier": 0.31029296536917766,
+      "log_loss": 0.825653808878313
+    },
+    "M2": {
+      "n": 29,
+      "cases": 19,
+      "prevalence": 0.6551724137931034,
+      "AUROC": 0.5105263157894736,
+      "AUPRC": 0.6591821815029982,
+      "Brier": 0.3216211296063271,
+      "log_loss": 1.8207918130828813
+    },
+    "M3": {
+      "n": 29,
+      "cases": 19,
+      "prevalence": 0.6551724137931034,
+      "AUROC": 0.3657894736842105,
+      "AUPRC": 0.5710651618742464,
+      "Brier": 0.31029296536917766,
+      "log_loss": 0.825653808878313
+    },
+    "M4": {
+      "n": 29,
+      "cases": 19,
+      "prevalence": 0.6551724137931034,
+      "AUROC": 0.39473684210526316,
+      "AUPRC": 0.6503060681927151,
+      "Brier": 0.30239517321687837,
+      "log_loss": 0.8132017435917495
+    },
+    "M5": {
+      "n": 29,
+      "cases": 19,
+      "prevalence": 0.6551724137931034,
+      "AUROC": 0.4894736842105263,
+      "AUPRC": 0.6533861201532702,
+      "Brier": 0.3105686827481632,
+      "log_loss": 1.0936337685705835
+    }
+  },
+  "interpretation": "timing pilot; one outer fold, not a study performance estimate",
+  "PPMI_scores_computed": false
+}

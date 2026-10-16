@@ -1,0 +1,94 @@
+{
+  "mapping_rule": "GEO 2016 Entrez single integer -> unique GENCODE v29 primary-assembly gene -> protein_coding on canonical chromosomes",
+  "label_independent": true,
+  "platforms": {
+    "GPL6947": {
+      "accession": "GSE57475",
+      "matrix_probes": 48766,
+      "probe_disposition": {
+        "empty_Entrez": 19521,
+        "retained": 27168,
+        "no_GENCODE_primary_assembly_xref": 585,
+        "non_protein_coding": 1342,
+        "multiple_GENCODE_genes": 129,
+        "ambiguous_or_noninteger_Entrez": 21,
+        "not_in_annotation": 0
+      },
+      "unique_retained_genes": 17905,
+      "genes_with_multiple_probes": 6130
+    },
+    "GPL570": {
+      "accession": "GSE99039",
+      "matrix_probes": 54675,
+      "probe_disposition": {
+        "ambiguous_or_noninteger_Entrez": 2214,
+        "retained": 37730,
+        "non_protein_coding": 3226,
+        "multiple_GENCODE_genes": 160,
+        "empty_Entrez": 9557,
+        "no_GENCODE_primary_assembly_xref": 1784,
+        "noncanonical_chromosome": 4,
+        "not_in_annotation": 0
+      },
+      "unique_retained_genes": 17039,
+      "genes_with_multiple_probes": 10018
+    }
+  },
+  "common_genes": 16364,
+  "common_autosomal_genes": 15720,
+  "common_genes_by_chromosome": {
+    "chr2": 1054,
+    "chr19": 1179,
+    "chr9": 651,
+    "chr10": 621,
+    "chr8": 565,
+    "chr4": 641,
+    "chr12": 884,
+    "chr1": 1670,
+    "chr18": 239,
+    "chr14": 497,
+    "chr13": 277,
+    "chr6": 887,
+    "chr7": 740,
+    "chr11": 984,
+    "chr5": 745,
+    "chr17": 970,
+    "chr20": 480,
+    "chr3": 941,
+    "chr22": 363,
+    "chr16": 691,
+    "chr15": 479,
+    "chrX": 629,
+    "chr21": 162,
+    "chrY": 15
+  },
+  "PPMI_actual_counts_gene_coverage_verified": false,
+  "common_genes_with_exon_union_length": 16364,
+  "sources": [
+    {
+      "filename": "GPL570.annot.gz",
+      "bytes": 8471521,
+      "sha256": "d7cd44352127b1e34f3a720ebea86093ef255a38f1612a85a2962b71bde8f394"
+    },
+    {
+      "filename": "GPL6947.annot.gz",
+      "bytes": 6956785,
+      "sha256": "244c4ef6394abd8c87309318f3f27e9e63c45d2d1c3e89303818f1f63a290824"
+    },
+    {
+      "filename": "gencode.v29.metadata.EntrezGene.gz",
+      "bytes": 1035214,
+      "sha256": "57b50d404770c8c15b7fee2df794cf6f07db345b98c757a542344f56c385aae3"
+    },
+    {
+      "filename": "gencode.v29.primary_assembly.annotation.gtf.gz",
+      "bytes": 39397815,
+      "sha256": "c9bc82ee8b434089cc14ef4b8070dbea36654f8872c122f9ec3c253b010a6b3e"
+    }
+  ],
+  "limitations": [
+    "Annotation mappings do not guarantee probe specificity or detectability.",
+    "No alias or symbol-only rescue; uncertain mappings excluded.",
+    "GENCODE reference coverage is not evidence that the actual IR3 count table has every gene."
+  ]
+}

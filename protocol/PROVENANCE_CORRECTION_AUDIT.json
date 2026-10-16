@@ -1,0 +1,32 @@
+{
+  "type": "post-publication provenance correction of English presentation",
+  "parent_english_doi": "10.5281/zenodo.23406064",
+  "source_method_doi": "10.5281/zenodo.23405371",
+  "source_implementation_amendment_doi": "10.5281/zenodo.23405802",
+  "prepared_utc": "2026-10-16T06:44:03.266161+00:00",
+  "prior_real_pilot_start_utc": "2026-10-15T22:07:32Z",
+  "original_translation_numeric_audit_retained": true,
+  "corrected_document_paths": [
+    "PROVENANCE_CORRECTION.md",
+    "README_ENGLISH_REFERENCE.md",
+    "TRANSLATION_DIFFERENCES.md",
+    "amendments/AMENDMENT_v3_1_1_SUMMARY_EN.md",
+    "pipeline/GEO_PILOT_REPORT_20261016_EN.md",
+    "protocol/KKT_NUMERICAL_AMENDMENT_20261016_EN.md",
+    "protocol/KKT_NUMERICAL_RESULTS_20261016_EN.md",
+    "protocol/KKT_STEP_ZERO_v3_1_EN.md",
+    "protocol/PREREG_v3_1_FULL_EN.md",
+    "protocol/PROTOCOL_v3_1_EN.md",
+    "protocol/SYNTHETIC_V3_1_PLAN_EN.md",
+    "protocol/history/V3_1_REVIEW_REPORT_EN_initial_warning_hold.md",
+    "protocol/kkt_history_first_pass_20261016/KKT_STEP_ZERO_v3_1_EN.md"
+  ],
+  "frozen_config_sha256": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+  "frozen_config_byte_identical_to_first_english_edition": true,
+  "all_original_python_R_code_byte_identical_to_first_english_edition": true,
+  "method_parameter_changes": 0,
+  "new_real_data_fits": 0,
+  "ppmi_scores": 0,
+  "permutation_amendment_published": false,
+  "english_only": true
+}

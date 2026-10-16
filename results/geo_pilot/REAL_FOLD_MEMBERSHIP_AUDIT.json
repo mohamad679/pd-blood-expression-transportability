@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "real_fit_logs_verified": 269,
+  "outer_test_absent_from_all_inner_fits": true,
+  "all_training_membership_hashes_match_frozen_splits": true,
+  "heldout_prediction_rows_match_frozen_test": true,
+  "M3_baseline_branch_predictions_bit_identical_to_M1": true,
+  "published_code_reference_and_split_hashes_still_match": true,
+  "public_amendment_verified_before_first_real_fit": true,
+  "selected_genes_final_fit": 1000,
+  "PPMI_scores_computed": false
+}
