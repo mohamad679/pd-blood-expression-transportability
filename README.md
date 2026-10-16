@@ -9,8 +9,7 @@ The full project history and remaining roadmap are in [`docs/PROJECT_HISTORY_AND
 ## Repository layout
 
 - `pipeline/`: GEO loading, preprocessing, donor-level split execution, M1–M5 training, model scoring, paired bootstrap utilities, synthetic checks, and preparation utility.
-- `protocol/`: fixed numerical solver and block-penalty implementation.
-- `protocol/`: English protocol, preregistration translation, amendments, lock configuration, dependency lock, and provenance notes.
+- `protocol/`: fixed numerical solver, block-penalty implementation, English protocol, preregistration translation, amendments, lock configuration, dependency lock, and provenance notes.
 - `data/manifests/`: prespecified GEO split manifest, aggregate input and mapping audits, and shared gene manifest. No expression matrices or individual-level PPMI data are stored here.
 - `results/geo_pilot/`: aggregate metrics, timing, public split-membership audit, hashes, and the English pilot report. Individual held-out predictions, fitted coefficients, preprocessing arrays, and per-fit logs are excluded.
 - `docs/`: project history, status, data boundaries, and next-step roadmap.
