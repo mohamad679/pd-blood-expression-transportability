@@ -17,7 +17,7 @@
 
 The four prepared GEO inputs were found in the prior local working directory and their SHA-256 values exactly match `data/manifests/input_audit.json`. The checked-in split-manifest SHA-256 also matches the value in that input audit. The input files are exposed to this checkout through ignored local symlinks under `prepared/`; no expression or sample-level data were added to Git.
 
-The pipeline `plan` command has not completed in this checkout: the default Python environment lacks the pinned `glum` dependency, and an approved `uv` retry timed out while downloading `tabmat` from PyPI. An offline retry confirmed that `glum`, `tabmat`, and other locked packages are not cached. No fit was run. The repository also does not contain the required local receipt proving that the exact pipeline-code and split hashes are covered by the public registration. Do not start additional real-data fits until the locked environment is available and that receipt is verified.
+The no-fit pipeline `plan` command was run successfully by the user on macOS using an alternate package index after the default PyPI file host timed out. It validated the four local GEO inputs and produced `n=381`, `genes=16,364`, `GSE57475=142`, and `GSE99039=239`. All four input SHA-256 values matched the frozen audit, and the generated split-manifest SHA-256 matched `2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2`. The output reports `real_training_performed=false`; no model fit was run. The repository still does not contain the required local receipt proving that the exact pipeline-code and split hashes are covered by the public registration. Do not start additional real-data fits until that receipt is verified.
 
 ## First real-data pilot (not a study result)
 
@@ -25,4 +25,4 @@ The single completed fold was `GSE57475/outer/0`, with 113 training and 29 held-
 
 ## Immediate next step
 
-Complete a no-fit `plan` run in the pinned environment and verify the generated split manifest against the frozen hash. Then verify the public registration receipt against the exact pipeline-code and split hashes. Only after both checks pass, run the remaining prespecified GEO analyses; estimate compute time from the first full planned scope. Preserve every fit log and aggregate result locally; commit only non-sensitive reproducibility evidence and aggregate outputs.
+Verify the public registration receipt against the exact pipeline-code and split hashes. Only after this check passes, run the remaining prespecified GEO analyses; estimate compute time from the first full planned scope. Preserve every fit log and aggregate result locally; commit only non-sensitive reproducibility evidence and aggregate outputs.
