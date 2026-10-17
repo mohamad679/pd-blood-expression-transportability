@@ -1,28 +1,28 @@
 # Project status
 
-**Snapshot date:** 2026-10-16 (Asia/Tehran)
+**Snapshot date:** 2026-10-18 (Asia/Tehran)
 
 | Workstream | Status | Evidence / limitation |
 |---|---|---|
-| Research question and feasibility | Completed for the current scope | Two GEO development sources and an approved PPMI data-access path were identified. This does not imply that external validation has been executed. |
-| Gene mapping and cross-platform input design | Completed as a preparation audit | 16,364 shared protein-coding genes were retained; 15,720 are autosomal. Mapping coverage does not prove that each gene is measurable in every PPMI count table. |
-| PPMI IR3 archive review | Partial | Remote archive and aggregate audits were reviewed. File-to-release-row matching was reported, but individual biological identity, final eligibility, and the final locked external population remain unresolved. No PPMI scores were computed. |
-| Statistical protocol | Publicly registered and versioned | See the linked Zenodo lineage and English provenance notes in `protocol/`. The English documents are translations, not replacements for the original source record. |
-| Solver and synthetic checks | Completed at this stage | Weighted/block-penalty and KKT checks, stress runs, and 19 pipeline synthetic checks are documented in the protocol and pilot report. Bootstrap CI coverage validation remains outstanding. |
-| GEO pipeline | Implemented; execution incomplete | One prespecified GSE57475 outer fold completed. No complete nested CV or directional transfer result exists yet. |
-| PPMI external scoring | Not started | A second public lock of code/environment, splits, final models/preprocessing, and the finalized private population must precede all PPMI scores. |
-| Manuscript | Not started | It is premature to claim external validation, quantify shortcut contribution, or infer clinical utility. |
+| Feasibility and cohort choice | Completed for the registered scope | Two GEO development cohorts and an approved PPMI access path were identified. Feasibility did not itself constitute external validation. |
+| GEO input and mapping audit | Completed | 381 GEO records, 16,364 shared genes; all four prepared GEO input hashes match the frozen audit. |
+| Protocol and implementation lock | Publicly versioned | Pipeline and split hashes matched Zenodo amendment 3.1.1 before GEO model execution. |
+| GEO nested CV and directional transfer | Completed for all 13 registered scopes | Five outer folds per GEO source, both directional transfers, and pooled final tuning/fitting. Aggregate results and numerical audit: [GEO_CV_RESULTS_20261018_EN.md](GEO_CV_RESULTS_20261018_EN.md). |
+| Numerical fit audit | Passed with a warning-attribution limitation | All 3,146 post-pilot fit records passed KKT ≤ 1e-6; zero retries/exceptions. Six sigmoid-clipping warnings appeared during prediction/tuning but were not attributed to individual candidates by the pipeline; review and any pre-registered resolution are required before PPMI scoring. |
+| Registered GEO controls and diagnostics | Incomplete | Sex/age transfer controls, CBC validation, bounded sensitivities, leakage audit, bootstrap coverage, and permutation scope/execution remain. |
+| PPMI linkage and final population | Incomplete | The provisional 311 PD / 161 control count is not final. The identity/crosswalk and eligibility set must be reconciled and locked. |
+| PPMI external scoring | Not started | No PPMI disease scores have been calculated. A second public lock of code/environment, final models/preprocessing, and population reference must precede any PPMI score. |
+| Manuscript | Not started | GEO results are now available; external validation and remaining diagnostics are not complete. Causal shortcut fractions and clinical utility are not inferred. |
 
-## GEO input-hash preflight (2026-10-16)
+## GEO milestone
 
-The four prepared GEO inputs were found in the prior local working directory and their SHA-256 values exactly match `data/manifests/input_audit.json`. The checked-in split-manifest SHA-256 also matches the value in that input audit. The input files are exposed to this checkout through ignored local symlinks under `prepared/`; no expression or sample-level data were added to Git.
+All planned nested outer folds, directional transfers, and pooled final fitting completed on 17–18 October 2026. Across the five outer folds, mean AUROC was 0.591 for M5 versus 0.562 for M4 in GSE57475 and 0.686 versus 0.663 in GSE99039. In directional transfer, M5 was below M4 by 0.178 AUROC from GSE57475 to GSE99039 and by 0.009 in the reverse direction. These are development results for the registered procedure and two GEO sources; they are not PPMI performance or causal estimates.
 
-The no-fit pipeline `plan` command was run successfully by the user on macOS using an alternate package index after the default PyPI file host timed out. It validated the four local GEO inputs and produced `n=381`, `genes=16,364`, `GSE57475=142`, and `GSE99039=239`. All four input SHA-256 values matched the frozen audit, and the generated split-manifest SHA-256 matched `2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2`. The output reports `real_training_performed=false`; no model fit was run. The repository still does not contain the required local receipt proving that the exact pipeline-code and split hashes are covered by the public registration. Do not start additional real-data fits until that receipt is verified.
+The four input hashes match the frozen audit, and the split-manifest SHA-256 is `2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2`. The public implementation manifest covers code SHA-256 `6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c`. No individual-level predictions or PPMI data are in Git.
 
-## First real-data pilot (not a study result)
+## Next gates
 
-The single completed fold was `GSE57475/outer/0`, with 113 training and 29 held-out records. Five-model test AUROCs were M1 0.3658, M2 0.5105, M3 0.3658, M4 0.3947, and M5 0.4895. The fold took 427.34 seconds wall time and completed 269 fit attempts with no warning or KKT failure; the maximum KKT residual was 3.8924e-8, below the fixed 1e-6 threshold. M3 reused M1 in this fold. These values are retained as an execution pilot, not as final performance estimates, a separate test, or confirmatory evidence.
-
-## Immediate next step
-
-Verify the public registration receipt against the exact pipeline-code and split hashes. Only after this check passes, run the remaining prespecified GEO analyses; estimate compute time from the first full planned scope. Preserve every fit log and aggregate result locally; commit only non-sensitive reproducibility evidence and aggregate outputs.
+1. Review the sigmoid-clipping warning pathway and decide whether a timestamped public amendment is needed before any affected re-run.
+2. Complete the registered GEO controls, sensitivities, leakage checks, bootstrap-coverage validation, and permutation plan.
+3. Finalize PPMI file-to-release linkage and eligibility using the guide and complete sample-name segments; document publication conditions.
+4. Before PPMI scoring, publish the second lock of code/environment, splits, fitted M1–M5 models and preprocessing, and a non-identifying reference/hash for the private population/crosswalk.

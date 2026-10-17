@@ -2,7 +2,7 @@
 
 **Project:** Cross-cohort and cross-platform assessment of shortcut risk in blood transcriptomic Parkinson's disease classifiers  
 **Author:** Mohammad Javad Asgari  
-**Status date:** 2026-10-16  
+**Status date:** 2026-10-18
 **Purpose of this document:** a complete, candid hand-off from the original idea through feasibility work, protocol design, implementation, the first pilot, and the remaining execution.
 
 ## 1. The original idea
@@ -72,22 +72,27 @@ The repository includes the executable M1–M5 GEO engine, paired donor bootstra
 
 ## 6. What has actually been executed on study data
 
-One real-data pilot scope completed: `GSE57475/outer/0`. It used five inner folds, 113 training records, 29 held-out records, and all five models. It took 427.34 seconds wall time, made 269 fit attempts, produced zero KKT failures/retries/warnings, and had maximum KKT residual 3.8924e-8. Test AUROCs were M1 0.3658, M2 0.5105, M3 0.3658, M4 0.3947, and M5 0.4895. M3 reused M1 in this fold. The detailed aggregate report is in `results/geo_pilot/GEO_PILOT_REPORT_20261016_EN.md`.
+All 13 registered GEO scopes have now completed: five outer folds within each source, both directional cohort transfers, and the pooled final GEO fit. The earlier `GSE57475/outer/0` pilot remains part of the five-fold estimate and is not counted a second time. The complete aggregate table, exact hashes, run audit, warning limitation, and remaining gates are in `docs/GEO_CV_RESULTS_20261018_EN.md`.
 
-This is an **operational pilot fold inside the planned CV**, not an independent test and not a final estimate. It was not used to change the locked method. The complete GEO nested CV, both directional transfers, final GEO refit, sensitivity suite, and PPMI analyses have not been run. The pilot's predicted values, fitted coefficients, preprocessing arrays, and per-fit logs are deliberately excluded from the repository; they remain local in the analysis workspace.
+Across the five outer folds, mean M4/M5 AUROC was 0.562/0.591 in GSE57475 and 0.663/0.686 in GSE99039. In transfer, M5−M4 AUROC was −0.178 from GSE57475 to GSE99039 and −0.009 in the reverse direction. These are development and transfer estimates for the registered model procedure, not external PPMI results or causal estimates. The pooled final fit selected a nonzero M5 gene block; the saved model/preprocessing artifacts remain local pending the second lock.
+
+All 3,146 fit records from the 12 post-pilot scopes passed the fixed KKT threshold; there were no failed records, retries, or exceptions. The largest recorded KKT residual was 4.1093e-8. Six sigmoid-clipping warnings were visible during prediction/tuning calls but were not attributed to individual candidate/fold entries in the fit log. That limitation is disclosed and must be reviewed before PPMI scoring. No model, split, or metric was changed after these results. Per-sample prediction files and detailed fit artifacts remain local and are not included in Git.
+
+The project is now past feasibility and has completed its core GEO CV/transfer milestone. However, GEO sex/age controls, CBC validation, bounded sensitivities, leakage checks, bootstrap coverage validation, and the permutation plan remain unfinished. No PPMI score has been computed; final crosswalk/population validation and the second public lock are also outstanding.
 
 ## 7. What remains: execution roadmap
 
 ### Phase A — complete GEO development and internal validation
 
-1. Verify the local prepared inputs against the committed input and split hashes; document exact software and hardware versions.
-2. Run all remaining outer folds for GSE57475 and GSE99039, preserving one fresh output directory per locked scope.
-3. Run both directional cohort-held-out transfers and the prespecified final pooled GEO model fitting.
-4. Execute the registered sex/age transfer gates and bounded sensitivities; retain per-fit convergence diagnostics.
-5. Validate donor-bootstrap CI coverage under the registered design, and finalize the permutation scope/compute plan. Any required method change must be timestamped and publicly amended before affected results are viewed; do not silently reduce permutations or omit label-dependent refitting.
-6. Produce aggregate tables, uncertainty intervals, failure accounting, and a reproducible GEO results report. Audit that no split, transformation, tuning, or code path leaks held-out data.
+1. **Completed:** verify local inputs and public code/split hashes.
+2. **Completed:** run all five outer folds within each GEO source.
+3. **Completed:** run both directional transfers and pooled final fitting.
+4. Review the sigmoid-clipping warning pathway; any change affecting completed results requires a timestamped public amendment and must not be silently applied.
+5. Execute the remaining sex/age controls, bounded sensitivities and registered leakage audit.
+6. Validate donor-bootstrap CI coverage and finalize the permutation scope/compute plan before execution.
+7. Produce any required aggregate diagnostics and freeze a reproducible GEO milestone package. Do not transfer sample-level predictions or PPMI individual data to GitHub or Zenodo.
 
-**Milestone:** after all GEO CV/transfer analyses and required diagnostics are complete and quality-controlled, create a Git release/tag and publish a Zenodo snapshot. No incremental Zenodo upload is planned before this milestone.
+**Milestone:** core GEO CV/transfer is complete. The milestone report is committed to Git; publish the corresponding Zenodo version with aggregate results and explicit outstanding-diagnostics limitations before moving to the PPMI stage.
 
 ### Phase B — finalize external PPMI eligibility without scoring disease
 

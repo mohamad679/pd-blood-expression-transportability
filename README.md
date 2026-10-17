@@ -2,7 +2,7 @@
 
 This repository contains the English-language research record and executable GEO development pipeline for a study of how blood transcriptomic PD classifiers behave when they are evaluated across cohorts and platforms. The study asks how much of apparent within-cohort performance survives strict cohort-held-out testing and external transfer, and whether age, sex, platform, or cell-composition proxies explain part of the signal.
 
-**Current stage:** the protocol and primary M1–M5 engine are implemented; synthetic checks passed; one prespecified outer fold in GSE57475 was run as an operational pilot. The full GEO analyses are not complete. No PPMI model score has been computed. This repository is a working research project, not a completed paper or a claim of validated PD biomarker performance.
+**Current stage:** the protocol and primary M1–M5 engine are implemented; synthetic checks passed; all 13 prespecified GEO nested-CV, directional-transfer, and pooled-fit scopes have completed. Aggregate results are in [`docs/GEO_CV_RESULTS_20261018_EN.md`](docs/GEO_CV_RESULTS_20261018_EN.md) and [`results/geo_development_20261018/aggregate_summary.json`](results/geo_development_20261018/aggregate_summary.json). Registered GEO controls and diagnostics remain incomplete. No PPMI model score has been computed. This repository is a working research project, not a completed paper or a claim of validated PD biomarker performance.
 
 The full project history and remaining roadmap are in [`docs/PROJECT_HISTORY_AND_ROADMAP.md`](docs/PROJECT_HISTORY_AND_ROADMAP.md). Start with [`docs/STATUS.md`](docs/STATUS.md) for the current execution state.
 
@@ -12,6 +12,7 @@ The full project history and remaining roadmap are in [`docs/PROJECT_HISTORY_AND
 - `protocol/`: fixed numerical solver, block-penalty implementation, English protocol, preregistration translation, amendments, lock configuration, dependency lock, and provenance notes.
 - `data/manifests/`: prespecified GEO split manifest, aggregate input and mapping audits, and shared gene manifest. No expression matrices or individual-level PPMI data are stored here.
 - `results/geo_pilot/`: aggregate metrics, timing, public split-membership audit, hashes, and the English pilot report. Individual held-out predictions, fitted coefficients, preprocessing arrays, and per-fit logs are excluded.
+- `results/geo_development_20261018/`: aggregate-only machine-readable GEO CV and transfer summary. Per-sample predictions, fitted coefficients, preprocessing arrays, and per-fit logs are excluded.
 - `docs/`: project history, status, data boundaries, and next-step roadmap.
 
 ## Reproducibility and data boundaries
