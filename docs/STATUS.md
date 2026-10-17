@@ -17,7 +17,7 @@
 
 The four prepared GEO inputs were found in the prior local working directory and their SHA-256 values exactly match `data/manifests/input_audit.json`. The checked-in split-manifest SHA-256 also matches the value in that input audit. The input files are exposed to this checkout through ignored local symlinks under `prepared/`; no expression or sample-level data were added to Git.
 
-The pipeline `plan` command has not completed in this checkout: the default Python environment lacks the pinned `glum` dependency, and `uv` could not reach the package registry during the attempted locked-environment setup. No fit was run. The repository also does not contain the required local receipt proving that the exact pipeline-code and split hashes are covered by the public registration. Do not start additional real-data fits until the locked environment is available and that receipt is verified.
+The pipeline `plan` command has not completed in this checkout: the default Python environment lacks the pinned `glum` dependency, and an approved `uv` retry timed out while downloading `tabmat` from PyPI. An offline retry confirmed that `glum`, `tabmat`, and other locked packages are not cached. No fit was run. The repository also does not contain the required local receipt proving that the exact pipeline-code and split hashes are covered by the public registration. Do not start additional real-data fits until the locked environment is available and that receipt is verified.
 
 ## First real-data pilot (not a study result)
 
