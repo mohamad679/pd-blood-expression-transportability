@@ -161,6 +161,23 @@ Deletion is a separate user action; these scripts never delete infrastructure.
 
 ## Sources
 
+### HTTPS transfer fallback (18 October 2026)
+
+After the user created the VM and logged in, direct SCP of the 37 MiB archive
+stalled at a few KiB/s. An encrypted transport asset is available at the GitHub
+prerelease `geo-server-transfer-20261018`. This is a transport artifact, not a
+scientific release, preregistration, or amendment. It contains the exact original
+archive encrypted with OpenSSL AES-256-CBC, PBKDF2 and 200,000 iterations.
+
+Download `GEO_SERVER_BUNDLE.tar.gz.enc` and the original `.tar.gz.sha256` from
+that release directly on the VM. Transfer only the 65-byte local
+`private_data/server_transfer/GEO_SERVER_BUNDLE.transfer-pass` separately over
+authenticated SSH. Never publish that password file or commit it to Git.
+Decrypt using `openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000` with
+`-pass file:/root/GEO_SERVER_BUNDLE.transfer-pass`, then verify the original
+archive checksum before extraction. A partially uploaded unencrypted archive
+must not be used. All publication and preflight gates above still apply.
+
 - [Hetzner resource types](https://docs.hetzner.com/cloud/servers/faq/)
 - [Hetzner SSH connection](https://docs.hetzner.com/cloud/servers/getting-started/connecting-to-the-server/)
 - [Hetzner billing](https://docs.hetzner.com/cloud/billing/faq/)

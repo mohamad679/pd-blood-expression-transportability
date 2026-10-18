@@ -43,6 +43,14 @@ A byte-for-byte verified backup of the 167 post-pilot run files is retained loca
 
 ## Next gates
 
+Cloud setup update (18 October 2026): the user created the CPX62 VM and confirmed
+interactive SSH login. Direct SCP stalled; the unchanged GEO-only transfer bundle
+was encrypted and uploaded to GitHub prerelease `geo-server-transfer-20261018`
+for server-side HTTPS download. Its password remains in ignored local storage.
+This changes transport only. Server package installation, checksum verification,
+preflight, amendment publication and randomized GEO execution are not yet
+confirmed. No PPMI files are included. See the HTTPS fallback in the cloud runbook.
+
 1. **Completed:** the six-warning review found no effect of explicit clipping on AUROC or parameter selection; no scoring change or core scientific rerun is warranted by this diagnostic.
 2. Sex/age controls are complete; complete the bounded sensitivities, leakage checks, bootstrap-coverage validation, and permutation plan. Age failure does not authorize a rescue control or holdout retuning.
 3. Finalize PPMI file-to-release linkage and eligibility using the guide and complete sample-name segments; document publication conditions.
