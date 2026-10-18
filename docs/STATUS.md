@@ -2,18 +2,22 @@
 
 **Snapshot date:** 2026-10-18 (Asia/Tehran)
 
-**Cloud handoff:** The [GEO-only Hetzner runbook](HETZNER_GEO_RUNBOOK_EN.md)
-and an allowlisted transfer-bundle builder are prepared. Linux uses `/proc`
-RAM/swap counters with missing measurements failing closed. A separate cloud
-configuration proposes an eight-worker/two-thread ceiling; the original Mac
-two-worker configuration is retained. Server setup, eight-worker resource
-stress and observed-label numerical identity remain unverified on Linux.
-The receipt-gated runtime pilot retains registered replicate 0 within B=200.
-No server purchase, server execution, new public amendment or real-GEO
-randomized fit was performed during this handoff preparation.
-Local checks passed: six portability fixtures, 27 synthetic executor checks,
-650 fit attempts (max KKT 2.684e-8), and an isolated 39-file transfer/plan audit.
-See the [handoff report](CLOUD_HANDOFF_20261018_EN.md).
+**Live execution handoff:** Read [NEW_CHAT_HANDOFF_20261018_EN.md](NEW_CHAT_HANDOFF_20261018_EN.md)
+when continuing in a new chat. The registered B=200 GEO permutation run has
+already started on the Hetzner server in detached tmux session `pdgeo-run`,
+with eight workers and two numerical threads each. **Do not start another
+controller.** Last user-supplied telemetry: `15:45:15 FULL RUN`, 314/2000 folds
+(15.7%), 26/200 completed replicates. This is a dated observation, not a fresh
+remote check or completion claim. Local files do not mirror live checkpoints.
+
+Linux setup and all checksum/environment gates passed. The returned preflight
+passed all 33 synthetic checks and all 20 observed model/fold comparisons.
+The bound combined amendment was publicly verified as version
+3.1.4-permutation-cbc, DOI [10.5281/zenodo.23449296](https://doi.org/10.5281/zenodo.23449296).
+Registered pilot replicate 0 completed in 23.77 minutes with 0.52 GiB peak RSS
+and is reused within B=200. The original [cloud preparation report](CLOUD_HANDOFF_20261018_EN.md)
+and [runbook](HETZNER_GEO_RUNBOOK_EN.md) remain historical setup references;
+their initial unverified/not-started statements no longer describe current state.
 
 The complete retrospective account is [COMPLETE_PROJECT_REPORT_20261018_EN.md](COMPLETE_PROJECT_REPORT_20261018_EN.md); subsequent work is summarized in the [continuation report](PROJECT_CONTINUATION_REPORT_20261018_EN.md). Its [reporting correction](REPORTING_CORRECTION_20261018_EN.md) records a terminology error in the released short report: final M5 (`rho=1`) has an L1/lasso gene penalty, not ridge. Code, hyperparameters, fitted models and metrics are unchanged. The full report also records two persistent lambda boundaries from the completed runs; no extra tuning has been performed.
 
@@ -26,7 +30,7 @@ The complete retrospective account is [COMPLETE_PROJECT_REPORT_20261018_EN.md](C
 | Numerical fit and sigmoid audit | Completed for the six reported warning contexts | All 3,146 original post-pilot fit records passed KKT ≤ 1e-6. A separate 490-fit replay reproduced all six warnings, all original candidate means exactly, and all selections; clipping changed no AUROC or selection. The locked engine and original artifacts are unchanged. [Audit](SIGMOID_AUDIT_20261018_EN.md). |
 | GEO sex/age transfer controls | Completed | Sex AUROC 1.000 and 0.993 passed the two development directions; age Spearman -0.058 and 0.259 did not establish development capacity. This limits age-control claims without changing the pipeline. [Report](GEO_TRANSFER_CONTROLS_20261018_EN.md). |
 | Saved GEO fit membership and preprocessing | Passed for all 13 original scopes | All 3,415 fit records' training hashes, regenerated train-only preprocessing fingerprints and Kish weights matched the frozen splits; saved final preprocessing and held-out membership/outcomes matched. No new model fits. Operational donor checks do not prove biological cross-source independence. [Evidence](../results/permutation_preflight_20261018/geo_membership_audit.json). |
-| Remaining registered diagnostics | Incomplete | CBC marker validation, bounded sensitivities, leakage audit, bootstrap coverage, and permutation execution remain. A metadata-only cross-visit audit found 31 baseline controls with same-month CBC rows at SC; numeric n for each marker is pending. See [follow-up audit](PPMI_CBC_ANY_VISIT_AUDIT_20261018_EN.md). |
+| Remaining registered diagnostics | Incomplete | CBC marker validation, bounded sensitivities, remaining leakage checks and bootstrap coverage remain; B=200 permutations are active, with completion pending. A metadata-only cross-visit audit found 31 baseline controls with same-month CBC rows at SC; numeric n for each marker is pending. See [follow-up audit](PPMI_CBC_ANY_VISIT_AUDIT_20261018_EN.md). |
 | PPMI linkage and final population | Incomplete | The provisional 311 PD / 161 control count is not final. The identity/crosswalk and eligibility set must be reconciled and locked. |
 | PPMI external scoring | Not started | No PPMI disease scores have been calculated. A second public lock of code/environment, final models/preprocessing, and population reference must precede any PPMI score. |
 | Manuscript | Not started | GEO results are now available; external validation and remaining diagnostics are not complete. Causal shortcut fractions and clinical utility are not inferred. |
@@ -45,16 +49,14 @@ A byte-for-byte verified backup of the 167 post-pilot run files is retained loca
 
 ### Cloud preflight and amendment publication completed — 18 October 2026
 
-The user subsequently confirmed a live registered pilot process (replicate 0,
-one worker/two threads); at elapsed 03:25 it used 157% CPU and 1.6% RAM. The full
-B=200 run has not yet been confirmed started. A standalone read-only monitor
-now reports pilot/outer-fold/replicate progress every 10 or 30 seconds, without
-changing any frozen scientific file. Local fixtures verified partial progress,
-replicate-0 reuse counting, identity exclusion, incomplete-JSON handling and
-absence of checkpoint writes. Every scientific source hash still matches the
-published cloud certificate. Remaining work still includes the fixed-B run,
-outstanding development diagnostics/sensitivities, final PPMI population and
-model lock, external controls/scoring, and manuscript preparation.
+The registered pilot completed (23.77 minutes, peak RSS 0.52 GiB); the user
+subsequently confirmed the eight-worker full run. Last supplied progress is
+26/200 complete replicates and 314/2000 folds. Inspect fresh server telemetry
+before reporting current progress, estimating remaining time or attempting
+recovery. A read-only monitor reports pilot/outer-fold/replicate progress;
+local fixtures covered partial progress, replicate-0 reuse, identity exclusion,
+incomplete JSON handling and absence of checkpoint writes. All bound scientific
+source hashes still match the published certificate. No PPMI scoring has begun.
 
 The returned Linux certificate passed all 33 synthetic checks (650 fit attempts,
 maximum KKT 2.6839e-8) and all 20 GEO model/fold identity comparisons (zero AUROC
@@ -72,26 +74,25 @@ The exact code/config/input/machine binding and public-verification receipt are
 recorded in `results/zenodo_permutation_cbc_v3_1_4/` and
 `results/cloud_preflight/ZENODO_PUBLICATION_RECEIPT.json`.
 
-The next authorized execution is registered replicate 0 at one worker, retained
-for the fixed B=200 run. At publication verification, no randomized GEO replicate,
-CBC association or PPMI disease score had been executed. Earlier descriptions
-below of this amendment as an unpublished draft are historical and superseded
-by this publication entry. Full execution remains pending confirmed server start.
-
-Cloud setup update (18 October 2026): the user created the CPX62 VM and confirmed
-interactive SSH login. Direct SCP stalled; the unchanged GEO-only transfer bundle
-was encrypted and uploaded to GitHub prerelease `geo-server-transfer-20261018`
-for server-side HTTPS download. Its password remains in ignored local storage.
-This changes transport only. Server package installation, checksum verification,
-preflight, amendment publication and randomized GEO execution are not yet
-confirmed. No PPMI files are included. See the HTTPS fallback in the cloud runbook.
+At publication verification, no randomized GEO replicate, CBC association or
+PPMI disease score had been executed. That historical statement is preserved
+in the release evidence; pilot and full-run execution followed publication.
+The server setup, encrypted GEO-only transfer, exact environment, preflight,
+publication and pilot are now complete. Full execution is active, not pending
+initial launch. No PPMI files were included in the cloud bundle.
 
 1. **Completed:** the six-warning review found no effect of explicit clipping on AUROC or parameter selection; no scoring change or core scientific rerun is warranted by this diagnostic.
 2. Sex/age controls are complete; complete the bounded sensitivities, leakage checks, bootstrap-coverage validation, and permutation plan. Age failure does not authorize a rescue control or holdout retuning.
 3. Finalize PPMI file-to-release linkage and eligibility using the guide and complete sample-name segments; document publication conditions.
 4. Before PPMI scoring, publish the second lock of code/environment, splits, fitted M1–M5 models and preprocessing, and a non-identifying reference/hash for the private population/crosswalk.
 
-## Planning update: permutation and reporting
+## Historical planning notes: permutation and reporting
+
+**Historical record, superseded for execution/publication status by the entries
+above and the new-chat handoff.** References below to an unpublished draft, a
+failed Mac resource gate, or no real permutation describe earlier preparation.
+They do not authorize repeating publication, preflight or the active cloud run.
+CBC selection/interpretation is now governed by the published joint amendment.
 
 - Proposed scope: B=200, M4/M5, ten within-GEO outer folds. The [amendment draft](../protocol/PERMUTATION_AMENDMENT_DRAFT_20261018_EN.md) is **not published or effective**; no registered real-GEO permutation has run. Executor, membership/seed/resume tests and worker/memory benchmarks precede publication and execution. Measured M4/M5 fit time is 18.38 minutes per original pass, implying a 61.27-hour serial baseline for B=200 before overhead/null-runtime changes.
 - **Executor preflight — current resource gate not passed:** a pre-hardening run passed 32 checks and the observed-label ten-fold replay then matched all 20 M4/M5 comparisons (maximum probability difference 1.1102e-16). Review subsequently added a guard against treating terminal numerical failure as an interruption, strengthened receipt binding, and added the corresponding test. The final candidate passes 32 of 33 checks and all 650 fit attempts (maximum KKT 2.6839e-8), including worker/order invariance, seed derivation, inner re-stratification and checkpoint integrity. Its last resource check fails: after the competing observed replay finished, the two-worker/two-thread benchmark still recorded 23,780 additional system compressor-swapout pages (about 92.9 MiB), despite a conservative memory budget of 2.124 GiB on the 8 GiB Mac. No process-level cause is asserted and no threshold is relaxed. Final-binding observed replay/certification is pending; no amendment publication or real permutation has occurred. The one-command Bash preflight is prepared for a host with less memory pressure. All prior attempts are retained. See [report](PERMUTATION_EXECUTOR_PREFLIGHT_20261018_EN.md).
