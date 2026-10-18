@@ -1,4 +1,4 @@
-# Proposed amendment: bounded GEO label-permutation negative control
+# Proposed combined amendment: GEO permutation control and CBC date matching
 
 **DRAFT — not published or effective.** Prepared after the observed GEO results
 and before this permutation stage. Parent protocol: v3.1 and implementation
@@ -8,12 +8,13 @@ Earlier synthetic source-null simulations are separate experiments.
 
 This draft also records a proposed CBC temporal matching rule for the planned
 cell-score validation. It is not effective until this combined amendment is
-tested and publicly versioned. The frozen set of 161 baseline healthy controls
-currently has zero CBC records at the exact RNA-seq participant+visit in either
-the current or archived CBC export. Consequently the baseline-control CBC
-association is non-evaluable under the registered minimum `n >= 30`; no CBC
-correlation has been calculated. The rule below does not authorize broadening
-the population after this availability result.
+tested and publicly versioned. The parent CBC rule allows same-day or nearest
+measurement within ±30 days; it does not require the same visit code. The frozen
+161 baseline controls have zero exact-visit CBC rows, but a metadata-only
+all-visit audit found 31 controls with CBC rows in the same calendar month as
+their BL blood collection, all at SC, in both exports. Numeric per-marker n is
+not established. No CBC correlation has been calculated. Eligibility and marker
+panels are unchanged; the previous draft's same-visit requirement is withdrawn.
 
 **Change and rationale.** Replace 1,000 repetitions across M1–M5 with **200 fixed
 repetitions of M4/M5**, covering only the ten within-source outer folds: five
@@ -70,19 +71,33 @@ any real permutation, including a runtime pilot. Use persistent logs, sleep
 prevention and resumable outputs; neither protects against shutdown or all sleep
 conditions. No scoring-method amendment is needed for the closed sigmoid audit.
 
-**CBC participant/visit and temporal matching rule (proposed).** A CBC row is
-eligible only when normalized participant ID and visit exactly match the RNA-seq
-sample and the CBC `LCOLLDT` month/year equals the whole-blood collection
-`BLDCLLDT` month/year for that same visit. Exclude adjacent months and do not
-choose among records using an inferred nearest day. Two dates known only to fall
-within the same calendar month are at most 30 days apart, but these exports do
-not reveal same-day status or exact day distance. Validate specific cell-score
-proxies against numeric CBC markers only if the prespecified minimum sample
-size is met; otherwise report the association as non-evaluable. Do not calculate
-correlations on the currently available baseline-control set (`n=0` exact-visit
-CBC rows). `BLDCOLL` values remain uninterpreted until verified against the
-applicable official PPMI code list. CBC associations are a marker-proxy check,
-not a general test of autosomal or PD-specific transfer.
+**CBC participant and temporal matching rule (proposed).** Keep the frozen
+baseline healthy-control population. Use an available collection month from the
+exact participant+BL whole-blood collection record. `BLDCOLL` is not an eligibility
+filter or execution gate; observed codes remain uninterpreted. Match the same
+participant's CBC rows from any visit, requiring CBC `LCOLLDT` month/year to
+equal baseline `BLDCLLDT` month/year. Exclude adjacent months. Two collection
+dates within one calendar month are at most 30 days apart, but same-day,
+closest-day and earliest-day ordering are unidentifiable, and some true
+within-30-day pairs across adjacent months will be omitted.
+
+For each participant and fixed laboratory marker, prefer the RNA visit (BL),
+then SC, then other visits. Within the highest available visit-priority tier,
+collapse exact duplicate representations of an identified measurement only if
+values and units agree. Exclude unresolved multiple collection occasions or
+conflicting repeats for that participant-marker; report exclusions and do not
+fall back to a lower tier after a preferred-tier conflict. Do not break ties by
+CSV order, inferred day, or result magnitude. Use the current export as primary;
+the archive provides a concordance check, not additional observations.
+
+The metadata availability upper bound is 31 controls. After publication and
+before association analysis, report marker-specific usable numeric n, units,
+ambiguity exclusions and date precision. Apply the original per-marker
+`n >= 30`, Spearman >= 0.4 and CI lower bound > 0 supportive-evidence criteria;
+otherwise report insufficient/non-evaluable evidence. No marker panel or M4/M5
+model changes follow from these results. CBC validates specific cell-composition
+proxies, not general autosomal or PD-specific transfer, and is not a PD stopping
+gate.
 
 References: [permutation null](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.permutation_test_score.html);
 [randomized p-values](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html).

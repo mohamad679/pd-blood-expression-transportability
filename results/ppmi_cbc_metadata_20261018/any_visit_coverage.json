@@ -1,0 +1,197 @@
+{
+  "purpose": "CBC metadata availability across every visit of the frozen baseline healthy controls",
+  "eligible_baseline_healthy_controls": 161,
+  "controls_with_BL_collection_month": 122,
+  "CBC_columns_retained": [
+    "PATNO",
+    "EVENT_ID",
+    "LCOLLDT"
+  ],
+  "measurement_values_used": false,
+  "expression_or_scores_used": false,
+  "BLDCOLL_codes_uninterpreted_not_used_for_eligibility": {
+    "0": 4,
+    "1": 122
+  },
+  "current": {
+    "eligible_participants_with_any_row_any_visit": 161,
+    "eligible_participants_with_any_row_same_BL_collection_month": 31,
+    "same_month_BL_priority_participants": 0,
+    "same_month_SC_priority_participants_without_BL": 31,
+    "same_month_other_visit_only_participants": 0,
+    "date_precision_row_counts": {
+      "month_year": 28400
+    },
+    "by_EVENT_ID": {
+      "SC": {
+        "CBC_table_rows": 5406,
+        "unique_eligible_participants": 161,
+        "same_BL_collection_month_rows": 980,
+        "same_BL_collection_month_unique_participants": 31
+      },
+      "U01": {
+        "CBC_table_rows": 162,
+        "unique_eligible_participants": 5,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V03": {
+        "CBC_table_rows": 126,
+        "unique_eligible_participants": 4,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V04": {
+        "CBC_table_rows": 4312,
+        "unique_eligible_participants": 139,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V06": {
+        "CBC_table_rows": 4154,
+        "unique_eligible_participants": 134,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V07": {
+        "CBC_table_rows": 31,
+        "unique_eligible_participants": 1,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V08": {
+        "CBC_table_rows": 4156,
+        "unique_eligible_participants": 134,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V10": {
+        "CBC_table_rows": 3938,
+        "unique_eligible_participants": 127,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V12": {
+        "CBC_table_rows": 3757,
+        "unique_eligible_participants": 121,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V13": {
+        "CBC_table_rows": 93,
+        "unique_eligible_participants": 3,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V14": {
+        "CBC_table_rows": 2015,
+        "unique_eligible_participants": 65,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V15": {
+        "CBC_table_rows": 217,
+        "unique_eligible_participants": 7,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V16": {
+        "CBC_table_rows": 1,
+        "unique_eligible_participants": 1,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V17": {
+        "CBC_table_rows": 32,
+        "unique_eligible_participants": 1,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      }
+    }
+  },
+  "archived": {
+    "eligible_participants_with_any_row_any_visit": 161,
+    "eligible_participants_with_any_row_same_BL_collection_month": 31,
+    "same_month_BL_priority_participants": 0,
+    "same_month_SC_priority_participants_without_BL": 31,
+    "same_month_other_visit_only_participants": 0,
+    "date_precision_row_counts": {
+      "month_year": 28367
+    },
+    "by_EVENT_ID": {
+      "SC": {
+        "CBC_table_rows": 5406,
+        "unique_eligible_participants": 161,
+        "same_BL_collection_month_rows": 980,
+        "same_BL_collection_month_unique_participants": 31
+      },
+      "U01": {
+        "CBC_table_rows": 162,
+        "unique_eligible_participants": 5,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V03": {
+        "CBC_table_rows": 126,
+        "unique_eligible_participants": 4,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V04": {
+        "CBC_table_rows": 4312,
+        "unique_eligible_participants": 139,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V06": {
+        "CBC_table_rows": 4154,
+        "unique_eligible_participants": 134,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V07": {
+        "CBC_table_rows": 31,
+        "unique_eligible_participants": 1,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V08": {
+        "CBC_table_rows": 4156,
+        "unique_eligible_participants": 134,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V10": {
+        "CBC_table_rows": 3938,
+        "unique_eligible_participants": 127,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V12": {
+        "CBC_table_rows": 3757,
+        "unique_eligible_participants": 121,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V13": {
+        "CBC_table_rows": 93,
+        "unique_eligible_participants": 3,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V14": {
+        "CBC_table_rows": 2015,
+        "unique_eligible_participants": 65,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      },
+      "V15": {
+        "CBC_table_rows": 217,
+        "unique_eligible_participants": 7,
+        "same_BL_collection_month_rows": 0,
+        "same_BL_collection_month_unique_participants": 0
+      }
+    }
+  },
+  "interpretation": "Availability only. Per-marker numeric n and record ambiguities remain unevaluated; no association or marker selection performed."
+}

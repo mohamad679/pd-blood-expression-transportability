@@ -1,5 +1,7 @@
 # Baseline-control CBC availability audit
 
+> **Interpretation corrected later on 2026-10-18:** the exact-visit counts below remain valid, but the registered protocol does not require identical visit codes. An all-visit, same-month metadata audit subsequently found 31 controls with candidate CBC rows, all at `SC`. The non-evaluability conclusion and instruction against cross-visit matching below are superseded by [the follow-up audit and fixed selection rule](PPMI_CBC_ANY_VISIT_AUDIT_20261018_EN.md). No CBC association was calculated between these audits.
+
 **Date:** 2026-10-18  
 **Purpose:** Check whether the frozen baseline healthy-control set has a usable CBC measurement at its RNA-seq visit before calculating any cell-score/CBC association.  
 **Outcome data and expression:** Not read. No scores, correlations, or PPMI disease predictions were calculated.
