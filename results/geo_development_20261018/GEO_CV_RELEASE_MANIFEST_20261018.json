@@ -1,0 +1,26 @@
+{
+  "release": "GEO development CV and transfer milestone",
+  "release_date": "2026-10-18",
+  "git_commit": "c80d3e84b2ea07e5aef8ca7b63b9c01268d6c728",
+  "git_repository": "mohamad679/pd-blood-expression-transportability",
+  "zenodo_concept_doi": "10.5281/zenodo.23405370",
+  "pipeline_code_sha256": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+  "split_manifest_sha256": "2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2",
+  "files": {
+    "PD_BLOOD_GEO_CV_20261018_c80d3e8.zip": {
+      "sha256": "bcc039668b1c4124b28c7b4ed66d11d2b4d1404d3cb70ac9cfbc907486851fba",
+      "bytes": 364923
+    },
+    "GEO_CV_RESULTS_20261018_EN.md": {
+      "sha256": "be9da1706359692a0ddd9ac2fa9f43195c514f7ee3c4d660030e2efc957bf14b",
+      "bytes": 6069
+    },
+    "aggregate_summary.json": {
+      "sha256": "6a4d3eb5f2024d61be89ff76f40d758cc89ca7115290a0bdfe1f985b3411f919",
+      "bytes": 49041
+    }
+  },
+  "contains_sample_level_predictions": false,
+  "contains_ppmi_individual_data": false,
+  "PPMI_scores_computed": false
+}

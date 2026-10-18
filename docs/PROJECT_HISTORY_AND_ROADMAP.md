@@ -92,7 +92,7 @@ The project is now past feasibility and has completed its core GEO CV/transfer m
 6. Validate donor-bootstrap CI coverage and finalize the permutation scope/compute plan before execution.
 7. Produce any required aggregate diagnostics and freeze a reproducible GEO milestone package. Do not transfer sample-level predictions or PPMI individual data to GitHub or Zenodo.
 
-**Milestone:** core GEO CV/transfer is complete. The milestone report is committed to Git; publish the corresponding Zenodo version with aggregate results and explicit outstanding-diagnostics limitations before moving to the PPMI stage.
+**Milestone:** core GEO CV/transfer is complete. Its source snapshot and aggregate results were published on 18 October 2026 as version **3.1.3-geo-cv**, DOI [10.5281/zenodo.23445851](https://doi.org/10.5281/zenodo.23445851), with explicit outstanding-diagnostics limitations. The final pre-PPMI lock is still required.
 
 ### Phase B — finalize external PPMI eligibility without scoring disease
 

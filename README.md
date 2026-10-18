@@ -28,6 +28,7 @@ The checked-in split manifest and public preregistration must agree before execu
 - Parent preregistration: [Zenodo DOI 10.5281/zenodo.23405371](https://doi.org/10.5281/zenodo.23405371)
 - Implementation amendment 3.1.1: [Zenodo DOI 10.5281/zenodo.23405802](https://doi.org/10.5281/zenodo.23405802)
 - English provenance-corrected reference package: [Zenodo DOI 10.5281/zenodo.23411084](https://doi.org/10.5281/zenodo.23411084)
+- Completed core GEO CV/transfer milestone, version 3.1.3-geo-cv: [Zenodo DOI 10.5281/zenodo.23445851](https://doi.org/10.5281/zenodo.23445851). This is a post-results snapshot; remaining diagnostics and the final pre-PPMI lock are outstanding.
 
 The English protocol files are translations and reading aids. Their provenance notes identify their source and timing; if the translation conflicts with the source preregistration or a published amendment, the published source documents govern. The GitHub repository is the living code and work log. Per the project decision, Zenodo will be updated only at major milestones: after the full GEO CV package is complete, and again before any PPMI scoring under the required final lock.
 

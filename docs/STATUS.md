@@ -16,9 +16,13 @@
 
 ## GEO milestone
 
+The core GEO milestone was published on 18 October 2026 as version **3.1.3-geo-cv**, DOI [10.5281/zenodo.23445851](https://doi.org/10.5281/zenodo.23445851), in the existing concept-DOI lineage. The four uploaded file checksums matched the local files. The publication receipt and release manifest are in `results/geo_development_20261018/`. This is a post-results snapshot and does not satisfy the second pre-PPMI lock.
+
 All planned nested outer folds, directional transfers, and pooled final fitting completed on 17–18 October 2026. Across the five outer folds, mean AUROC was 0.591 for M5 versus 0.562 for M4 in GSE57475 and 0.686 versus 0.663 in GSE99039. In directional transfer, M5 was below M4 by 0.178 AUROC from GSE57475 to GSE99039 and by 0.009 in the reverse direction. These are development results for the registered procedure and two GEO sources; they are not PPMI performance or causal estimates.
 
 The four input hashes match the frozen audit, and the split-manifest SHA-256 is `2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2`. The public implementation manifest covers code SHA-256 `6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c`. No individual-level predictions or PPMI data are in Git.
+
+A byte-for-byte verified backup of the 167 post-pilot run files is retained locally in the ignored `private_data/geo_runs_20261018/` directory, in addition to the temporary execution outputs. These files were not included in the public upload.
 
 ## Next gates
 
