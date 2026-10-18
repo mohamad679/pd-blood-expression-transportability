@@ -159,6 +159,24 @@ Powering off a Hetzner VM does not stop billing: delete it only after retrieving
 and verifying the results, and delete an unneeded billable Primary IPv4 too.
 Deletion is a separate user action; these scripts never delete infrastructure.
 
+## Read-only progress display
+
+`pipeline/monitor_permutations.py` is a standalone standard-library observer,
+outside the frozen scientific code binding. Run it with `python3` and
+`--interval 10` (or 30). It never starts fits, writes checkpoints, changes labels,
+or modifies the executor. It excludes the observed identity replay from the
+replicate count and includes registered replicate 0 only once. It displays
+completed outer folds, committed replicate markers, live replicate locks and
+terminal failure records. These are display counts; the executor remains the
+authority for checkpoint checksum validation and final completeness.
+
+Fold percentages count equally sized work units, not equal runtime. Pilot mode
+shows its ten folds separately. Approximate full-run ETA is displayed only after
+at least two newly completed replicates in the current controller, excluding
+resumed checkpoints. A partial fold is not given a guessed runtime percentage.
+Ctrl-C ends the observer only. Successful completion requires B=200 committed
+replicates and the final complete summary; 200 markers alone are not sufficient.
+
 ## Sources
 
 ### HTTPS transfer fallback (18 October 2026)

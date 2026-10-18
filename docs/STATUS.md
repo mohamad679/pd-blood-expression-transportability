@@ -45,6 +45,17 @@ A byte-for-byte verified backup of the 167 post-pilot run files is retained loca
 
 ### Cloud preflight and amendment publication completed — 18 October 2026
 
+The user subsequently confirmed a live registered pilot process (replicate 0,
+one worker/two threads); at elapsed 03:25 it used 157% CPU and 1.6% RAM. The full
+B=200 run has not yet been confirmed started. A standalone read-only monitor
+now reports pilot/outer-fold/replicate progress every 10 or 30 seconds, without
+changing any frozen scientific file. Local fixtures verified partial progress,
+replicate-0 reuse counting, identity exclusion, incomplete-JSON handling and
+absence of checkpoint writes. Every scientific source hash still matches the
+published cloud certificate. Remaining work still includes the fixed-B run,
+outstanding development diagnostics/sensitivities, final PPMI population and
+model lock, external controls/scoring, and manuscript preparation.
+
 The returned Linux certificate passed all 33 synthetic checks (650 fit attempts,
 maximum KKT 2.6839e-8) and all 20 GEO model/fold identity comparisons (zero AUROC
 error; maximum probability error 7.6494e-14). All eight tested worker processes
