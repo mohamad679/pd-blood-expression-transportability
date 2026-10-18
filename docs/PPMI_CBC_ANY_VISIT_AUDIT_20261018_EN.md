@@ -34,6 +34,8 @@ The full aggregate `EVENT_ID` breakdown is in `results/ppmi_cbc_metadata_2026101
 
 The rule clarifies handling of month-level dates and cross-visit records. It will be published with the permutation amendment before any CBC association. It does not change M4/M5 or the main PPMI population, and CBC is not a stopping gate for PD scoring. CBC supports validation of specific cell-composition proxies, not certification of general autosomal or PD-specific transfer.
 
+**Fixed interpretation before marker completeness:** the 31 candidates leave little margin above the per-marker minimum of 30. Missing values, unit problems or conflicting records may legitimately make a marker non-evaluable; the matching rule will not be reopened to increase n. Any passing association at approximately 30 participants will be described as limited supportive evidence. The same-month rule can omit genuine ±30-day pairs in adjacent months and therefore may retain fewer pairs than a day-resolved rule. We have not measured how many of the other 91 controls with known BL collection month fall within 30 days, or established why each did not match.
+
 ## Verification and next stage
 
 `pipeline/audit_ppmi_cbc_any_visit.py` reproduces this audit. Synthetic tests verify a same-month screening match, adjacent-month exclusion, unique-person counting despite repeated assay rows, missing baseline-date exclusion, and operation without `BLDCOLL` or CBC result columns. Restricted exports remain outside Git. Next: test the permutation executor's membership, seed, resume and numerical behavior, benchmark worker/memory settings, then publish the combined amendment before running any real permutation or CBC association.

@@ -99,5 +99,17 @@ model changes follow from these results. CBC validates specific cell-composition
 proxies, not general autosomal or PD-specific transfer, and is not a PD stopping
 gate.
 
+This subset is at the evaluability boundary: missing results, incompatible units
+or unresolved repeats may reduce individual marker counts below 30. A marker
+with fewer than 30 valid paired observations is **non-evaluable**, and neither
+the matching rule nor the population, visit priority or time window will be
+changed to increase n after marker completeness is inspected. Even a marker
+meeting the descriptive evidence rule at approximately 30 participants will be
+reported as **limited supportive evidence**, not as definitive biological or
+cross-platform validation. The same-month rule may yield fewer eligible pairs
+than a true day-resolved ±30-day rule; month-level dates cannot establish how
+many adjacent-month pairs would actually satisfy that window. The reason for
+the 91 unmatched known-month controls is not inferred from the count alone.
+
 References: [permutation null](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.permutation_test_score.html);
 [randomized p-values](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html).

@@ -1,0 +1,18 @@
+{
+  "version": "permutation-v1",
+  "B": 200,
+  "master_seed": 20261014,
+  "models": ["M4", "M5"],
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "max_genes": 1000,
+  "lambda_grid": [0.0001, 0.001, 0.01, 0.1, 1.0],
+  "rhos": [0.0, 0.5, 1.0],
+  "expansion_rounds": 2,
+  "workers": 2,
+  "threads_per_worker": 2,
+  "tail_tolerance": 1e-12,
+  "seed_rule": "first_four_big_endian_SHA256_bytes_of_20261014:permutation/{rep_id}/{cohort}",
+  "permutation_blocks": "cohort_x_frozen_outer_test_fold",
+  "PPMI_access": false
+}

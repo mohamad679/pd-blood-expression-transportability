@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "scope_count": 13,
+  "fit_attempts": 3415,
+  "scopes": [
+    {
+      "scope": "GSE57475/outer/0",
+      "n_train": 113,
+      "n_test": 29,
+      "fit_attempts": 269,
+      "verified_training_contexts": 6,
+      "max_KKT": 3.8924002795232004e-08
+    },
+    {
+      "scope": "GSE57475/outer/1",
+      "n_train": 113,
+      "n_test": 29,
+      "fit_attempts": 238,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.243117126939087e-08
+    },
+    {
+      "scope": "GSE57475/outer/2",
+      "n_train": 114,
+      "n_test": 28,
+      "fit_attempts": 269,
+      "verified_training_contexts": 6,
+      "max_KKT": 4.10923814021108e-08
+    },
+    {
+      "scope": "GSE57475/outer/3",
+      "n_train": 114,
+      "n_test": 28,
+      "fit_attempts": 269,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.813842859107976e-08
+    },
+    {
+      "scope": "GSE57475/outer/4",
+      "n_train": 114,
+      "n_test": 28,
+      "fit_attempts": 285,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.3695859080463677e-08
+    },
+    {
+      "scope": "GSE57475/transfer",
+      "n_train": 142,
+      "n_test": 239,
+      "fit_attempts": 330,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.866651608104953e-08
+    },
+    {
+      "scope": "GSE99039/outer/0",
+      "n_train": 191,
+      "n_test": 48,
+      "fit_attempts": 270,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.181339766801904e-08
+    },
+    {
+      "scope": "GSE99039/outer/1",
+      "n_train": 191,
+      "n_test": 48,
+      "fit_attempts": 240,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.5997500589791667e-08
+    },
+    {
+      "scope": "GSE99039/outer/2",
+      "n_train": 191,
+      "n_test": 48,
+      "fit_attempts": 255,
+      "verified_training_contexts": 6,
+      "max_KKT": 2.2577973759693726e-08
+    },
+    {
+      "scope": "GSE99039/outer/3",
+      "n_train": 191,
+      "n_test": 48,
+      "fit_attempts": 255,
+      "verified_training_contexts": 6,
+      "max_KKT": 3.388619586666697e-08
+    },
+    {
+      "scope": "GSE99039/outer/4",
+      "n_train": 192,
+      "n_test": 47,
+      "fit_attempts": 255,
+      "verified_training_contexts": 6,
+      "max_KKT": 1.1279182976497992e-08
+    },
+    {
+      "scope": "GSE99039/transfer",
+      "n_train": 239,
+      "n_test": 142,
+      "fit_attempts": 240,
+      "verified_training_contexts": 6,
+      "max_KKT": 1.359129174916679e-08
+    },
+    {
+      "scope": "pooled/final",
+      "n_train": 381,
+      "n_test": 0,
+      "fit_attempts": 240,
+      "verified_training_contexts": 6,
+      "max_KKT": 1.812867464479062e-08
+    }
+  ],
+  "input_sha256": {
+    "GSE57475_development.npz": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+    "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039_development.npz": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+    "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+  },
+  "new_model_fits": 0,
+  "real_label_permutations": 0,
+  "PPMI_accessed": false,
+  "limitations": [
+    "Operational donor separation only; PROBE uses GSM fallback.",
+    "Source prefixes do not establish biological cross-source donor independence.",
+    "This reconciles saved logs/state with locked inputs and split membership; it is not proof against every possible unlogged data-processing error."
+  ]
+}
