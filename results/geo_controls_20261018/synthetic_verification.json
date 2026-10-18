@@ -1,0 +1,25 @@
+{
+  "study_data_loaded": false,
+  "passed": true,
+  "checks": [
+    "test_data_cannot_change_preprocessing",
+    "training_standardization",
+    "donor_disjoint_sex_and_age_folds",
+    "sex_target_not_disease_label",
+    "known_sex_signal_and_KKT",
+    "known_autosomal_age_signal",
+    "mixed_class_tail_tie_detection",
+    "paired_age_bootstrap_difference"
+  ],
+  "synthetic_clipping_example": {
+    "n": 4,
+    "clipped_low": 2,
+    "clipped_high": 2,
+    "mixed_class_tail_pairs": 2,
+    "AUROC": {
+      "clipped": 0.5,
+      "expit": 0.75,
+      "linear": 0.75
+    }
+  }
+}
