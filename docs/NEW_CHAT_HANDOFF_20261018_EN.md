@@ -1,38 +1,37 @@
 # New-chat continuation brief — 18 October 2026
 
-This is a durable handoff from the long project conversation. Read it as context
+This is a durable handoff from the long project conversation, updated after
+the cloud run completed on 19 October 2026. Read it as context
 for continuing the existing research, not as authorization to repeat completed
 analyses. Later verified evidence supersedes this dated snapshot. Refer to the
 published protocol/amendments for exact scientific rules rather than substituting
 this summary for them.
 
-## 1. Immediate priority: an existing cloud run
+## 1. Current state: cloud run complete, infrastructure removed
 
-**The fixed B=200 GEO permutation run has already started on the server, with
-eight workers and two numerical threads per worker. Do not launch it again.**
-The last user-supplied terminal observation was:
+**The fixed B=200 exploratory GEO permutation control has completed.** Its
+`SUMMARY.json` reports `status: complete`, `B: 200`, eight workers and
+`PPMI_accessed: false`. All fixed replicate IDs 0–199 have completion markers
+in the returned archive. The six aggregate results and their limits are in
+[GEO_PERMUTATION_RESULTS_20261019_EN.md](GEO_PERMUTATION_RESULTS_20261019_EN.md).
+The final summary is not the confirmatory external PPMI test.
+
+The 159 MiB returned archive is available in ignored local storage at
+`private_data/server_return/pdgeo-results-20261019.tar.gz` and also in
+`~/Downloads/`. It passed archive inspection; SHA-256 matches the original
+server file:
 
 ```text
-15:45:15 FULL RUN [##--------------] 15.7% folds 314/2000 | reps 26/200 | ...
+50d9b536f5f0f46a176605859134e23f143bd3994840d885074dc79ca5a7fead
 ```
 
-This was not a fresh remote check by the assistant. It records 26 completed
-replicates (13%) and 314 completed folds including partial replicates (15.7%).
-Neither percentage guarantees the same fraction of wall time. The log clock's
-timezone was not independently confirmed. Get a fresh read-only observation.
-
-The registered pilot, replicate 0, took **23.77 minutes** and **0.52 GiB peak
-RSS**, and is reused within B=200. The initial serial-pilot extrapolation for
-199 remaining replicates at eight workers was 9.85 hours, not a guarantee.
-Observed progress from 14:32:30 (1 completed replicate) to 15:45:15 (26)
-suggested about 8.5 hours remaining at unchanged throughput. That estimate is
-historical and must not be presented as a current ETA.
-
-The user is very concerned about server cost and delays. Do not restart setup,
-upload the bulk bundle again, repeat preflight/pilot, create another VM, or
-spend time reconstructing decisions already recorded here. Never remove a lock
-or failure file to force progress. There is no automatic server deletion,
-budget stop, unattended assistant monitoring or completion notification set up.
+The user deleted the Hetzner VM after verification. Console screenshots showed
+no servers and no Primary IPs. **There is no live cloud controller to inspect,
+resume or restart.** Historical operational instructions in later sections
+explain how this stage was done; do not treat them as current steps. The next
+scientific work is bounded remaining diagnostics, PPMI identity/eligibility,
+final GEO models/auxiliary control and the second public pre-PPMI lock. No PPMI
+score has been computed.
 
 ## 2. Workspace, access and communication
 
@@ -44,19 +43,24 @@ budget stop, unattended assistant monitoring or completion notification set up.
   `9ee6dc0` (encrypted transfer fallback), `727738e` (cloud preparation).
 - New chats in the same local project can access attached files, subject to
   permissions; they do not automatically inherit this conversation transcript.
-  Local files are not a live mirror of server checkpoints.
+  The complete final server checkpoint archive is now held locally in ignored
+  private storage.
 - Speak Persian to the user. Keep operational answers short, prompt and concrete.
   Give one next step, specify **Mac Terminal** or **server after SSH**, and wait
   for the user's result before the next dependent step. Avoid long command menus.
 - Repository documentation and reports are English. Commit/push meaningful
   completed changes, respecting immutable scientific bindings and data boundaries.
 - The user now works on a Mac. Use Bash/zsh, not PowerShell. Do not send them
-  back to Windows merely to continue the active GEO cloud job.
+  back to Windows merely to review the completed GEO cloud job.
 - Follow applicable `AGENTS.md`. Prefer codebase-memory-mcp for code discovery;
   if indexed functions are unavailable, use the documented fallback. Never
   assume a new chat has remote credentials or an authenticated SSH session.
 
-## 3. Server operations — inspect before doing anything
+## 3. Historical server operations — VM deleted after result return
+
+The server details and commands below record the completed stage. The VM and
+its Primary IP no longer exist; do not attempt SSH or recreate infrastructure
+for an ordinary results review.
 
 Hetzner VM `pdgeo-permutation`, IPv4 `188.245.16.195`, root directory
 `/root/pdgeo`. CPX62 in Nuremberg: 16 shared AMD vCPUs (EPYC-Genoa), 32 GB RAM,
@@ -112,18 +116,14 @@ can restore terminal settings if needed. Do not send Ctrl-C to an attached
 foreground computation. The monitor counts completion markers but is not a
 replacement for the executor's full artifact/hash validation.
 
-The user may turn off the Mac or close SSH: the detached tmux job runs on the
-VM. No need to leave the laptop awake. Server existence continues to cost money
-after completion and while powered off. The original screenshot quoted about
-EUR 0.254/hour for the VM plus IPv4; the monthly figure was a cap, not a required
-full-month purchase. Treat provider billing/live quote as authoritative and do
-not promise a final total or double-count VAT. The user wanted a few euros,
-roughly EUR 5, but no automatic hard cap exists.
+During execution the user could turn off the Mac because tmux continued on
+the VM. The original screenshot quoted about EUR 0.254/hour for the VM plus
+IPv4; the monthly figure was a cap, not a required full-month purchase. The
+VM and Primary IP were deleted after the result returned. The actual final
+invoice has not been inspected.
 
-After successful completion, retrieve and verify durable output/checkpoint
-backups **before** removing infrastructure. Deleting the VM and any unneeded
-billable Primary IPv4 is a separate explicit user decision; powering off alone
-does not stop charges. Do not delete a running job or unretrieved results.
+The private output/checkpoint archive was verified before the user deleted the
+VM. The subsequent Primary IP inventory was empty.
 
 ### Current output locations
 
@@ -138,10 +138,9 @@ does not stop charges. Do not delete a running job or unretrieved results.
 - `/root/pdgeo/results/cloud_preflight/preflight_passed.json` and
   `ZENODO_PUBLICATION_RECEIPT.json`.
 
-Download small summary/log files first, then preserve the complete checkpoint
-tree. These private GEO artifacts are not automatically present on the Mac and
-must not be published as part of an aggregate report. Inspect the actual output
-schema before designing a return archive or postprocessing command.
+The summary, logs and complete checkpoint tree were returned in the verified
+private archive named in Section 1. Do not publish private GEO fit artifacts.
+Inspect the actual output schema before postprocessing.
 
 ### Resolved infrastructure problems — do not repeat them
 
@@ -383,14 +382,13 @@ CBC does not certify all autosomal/PD transfer, total lymphocytes are not T/B
 specific, RBC is not reticulocytes, and globin processing remains a limitation.
 CBC and age are non-stopping diagnostics; neither changes fixed M4/M5 panels.
 
-## 9. Remaining work after the active run
+## 9. Remaining work after the completed run
 
-1. Check fresh server progress without mutation. On completion, inspect full
-   B=200 summary, numerical validity, warnings and checkpoint consistency;
-   retrieve/verify complete durable backups. Do not promise success from CPU
-   activity or a progress bar. Update English status/results and commit/push
-   aggregate evidence only. Arrange infrastructure removal with the user after
-   successful retrieval, avoiding unnecessary paid idle time.
+1. Review the returned full B=200 summary, numerical validity, warnings and
+   checkpoint evidence using the private local archive. Aggregate results are
+   documented; deeper analysis can continue without a VM. The complete
+   archive has already been transferred and verified, and the user deleted
+   the VM and Primary IP.
 2. Complete remaining bounded diagnostics/sensitivities from the governing
    protocol. The original 13-scope membership/preprocessing audit is already
    complete: do not repeat it without a new reason. Remaining work includes
@@ -462,8 +460,9 @@ directory and still require return/backup.
 
 ## First reply expected from the next assistant
 
-After reading these files, briefly confirm in Persian: the main B=200 run was
-already active with eight workers, the last observation was 26/200 and must be
-refreshed, and PPMI scoring/second lock are still pending. Then take or request
-one read-only status observation. Do not recite the entire history, start a new
-controller, request secrets, or claim live server access that is not available.
+After reading this handoff and the aggregate result report, briefly confirm in
+Persian that the B=200 run completed, the private archive is verified locally,
+and the Hetzner VM/Primary IP were removed. PPMI scoring and its second public
+lock are still pending. Continue with one concrete next research step based on
+the published protocol; do not attempt server SSH, request secrets or recite
+the whole history.
