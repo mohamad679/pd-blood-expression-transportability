@@ -16,6 +16,13 @@ from glum._link import LogitLink
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import geo_pipeline as geo
 
+REPORTED_CONTEXTS = {
+    'GSE99039/outer/0': ['M5'],
+    'GSE99039/outer/2': ['M3'],
+    'GSE99039/transfer': ['M5'],
+    'pooled/final': ['M2', 'M3', 'M5'],
+}
+
 
 def probability_diagnostic(y, linear, clipped, source):
     y, linear, clipped = map(np.asarray, (y, linear, clipped))
@@ -44,6 +51,8 @@ def main():
     parser.add_argument('--pilot', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--aggregate', type=Path, required=True)
+    parser.add_argument('--reported-contexts-only', action='store_true',
+                        help='Replay every candidate of the six reported warning contexts')
     args = parser.parse_args()
     out = args.output.resolve()
     if geo.ROOT / 'private_data' not in out.parents:
@@ -58,10 +67,17 @@ def main():
     max_score_error, max_KKT = 0., 0.
     for scope in manifest['splits']:
         name = scope['scope']
+        if args.reported_contexts_only and name not in REPORTED_CONTEXTS:
+            continue
         original = args.pilot if name == 'GSE57475/outer/0' else args.runs / name.replace('/', '_')
         decisions = json.loads((original / 'decisions.json').read_text())
         historical = [json.loads(line) for line in (original / 'fits.jsonl').read_text().splitlines()]
         records = [r for r in historical if r['stage'] == 'inner' and r['passed']]
+        if args.reported_contexts_only:
+            wanted = set(REPORTED_CONTEXTS[name])
+            wanted |= {'M1' if m == 'M3' else 'M4' for m in list(wanted) if m != 'M2'}
+            records = [r for r in records if r['model'] in wanted]
+            decisions = {m: d for m, d in decisions.items() if m in wanted}
         if len(records) != len({(r['fold'], r['model'], r['lambda'], r['rho']) for r in records}):
             raise ValueError('Repeated successful fit keys require explicit review')
         dest = out / name.replace('/', '_')
@@ -141,7 +157,9 @@ def main():
         split_manifest_sha256=geo.digest(geo.ROOT / 'data/manifests/splits.json'),
         glum_inverse_source=inspect.getsource(LogitLink.inverse),
         glum_link_file_sha256=geo.digest(inspect.getfile(LogitLink)),
-        inner_fits_replayed=fit_count, scope_count=len(manifest['splits']),
+        audit_scope='reported_warning_contexts' if args.reported_contexts_only else 'all_scopes',
+        inner_fits_replayed=fit_count,
+        scope_count=len(REPORTED_CONTEXTS) if args.reported_contexts_only else len(manifest['splits']),
         max_replay_KKT=max_KKT, max_original_candidate_score_error=max_score_error,
         all_original_choices_reproduced=all(c['original_choice_reproduced'] for c in comparisons),
         expit_choice_changes=sum(c['expit_choice_changed'] for c in comparisons),
