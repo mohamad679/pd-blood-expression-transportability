@@ -15,6 +15,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import time
+from unittest.mock import patch
 
 import numpy as np
 from scipy.stats import rankdata
@@ -245,6 +246,17 @@ def main():
     restarted = pe.execute(data, manifest, smoke, run/'interrupted', binding, [0], 1)
     check('interruption_preserves_old_attempt_and_recomputes_same_rep',
           (partial/'preserved.txt').exists() and numeric_summary(restarted) == numeric_summary(serial[:1]))
+    rejected = False
+    with patch.object(pe, 'train_pair', side_effect=RuntimeError('Injected terminal numerical failure')):
+        try:
+            pe.run_repetition(data, manifest, smoke, run/'terminal_failure', binding, 0)
+        except RuntimeError:
+            pass
+    try:
+        pe.run_repetition(data, manifest, smoke, run/'terminal_failure', binding, 0)
+    except ValueError:
+        rejected = True
+    check('terminal_failure_not_retried_as_an_interruption', rejected)
     failed_gate = False
     try:
         pe.verify_receipt({}, dict(code_sha256={}, config_sha256='none'), args.output)

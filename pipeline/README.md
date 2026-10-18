@@ -68,3 +68,24 @@ it is not a new disease analysis or permission to replace tuning scores. See
 The completed 490-fit diagnostic reproduced all six reported warnings and all
 original candidate means and selections. Explicit clipping changed no AUROC.
 Results and limitations are in `docs/SIGMOID_AUDIT_20261018_EN.md`.
+
+## Permutation executor preflight (not yet publicly effective)
+
+The proposed executor is `permutation_executor.py`, with fixed settings in
+`../protocol/permutation_config_v1.json`. It cannot run real randomized fits
+without a verified public amendment receipt and a matching passed certificate.
+The current release candidate passes numerical/seed/resume checks but fails its
+system-resource gate on the current host. Do not describe it as production-ready.
+
+On the Mac, with the existing prepared GEO inputs and cached locked packages:
+
+```bash
+bash pipeline/run_permutation_preflight.sh
+```
+
+This script runs synthetic/resource tests, then (only on success) replays the ten
+observed-label GEO folds and writes an aggregate certificate. It never starts
+real label permutations or accesses PPMI. It stops at the first failed gate and
+refuses to overwrite evidence after a public receipt exists. Raw attempt files
+remain private. See `../docs/PERMUTATION_EXECUTOR_PREFLIGHT_20261018_EN.md` for the
+preserved results and current resource limitation.

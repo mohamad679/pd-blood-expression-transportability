@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-18T09:02:01Z",
+  "draft_url": "https://zenodo.org/uploads/23449296",
+  "reserved_DOI": "10.5281/zenodo.23449296",
+  "concept_DOI": "10.5281/zenodo.23405370",
+  "version": "3.1.4-permutation-cbc",
+  "status": "unpublished_draft_only",
+  "publicly_verified": false,
+  "files_uploaded": 0,
+  "public_registration_has_occurred": false,
+  "publication_deferred_because": "final resource preflight not passed",
+  "real_GEO_label_permutations_started": false,
+  "PPMI_scores_computed": false
+}

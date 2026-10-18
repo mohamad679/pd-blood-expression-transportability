@@ -1,0 +1,429 @@
+{
+  "status": "failed",
+  "participant_data_read": false,
+  "real_randomized_fits_performed": false,
+  "PPMI_accessed": false,
+  "code_sha256": {
+    "pipeline/permutation_executor.py": "20d27f0b661c7e7347dd0301146af12166e68f676992e5da34862d455b60b046",
+    "pipeline/geo_pipeline.py": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+    "pipeline/verify_permutation_executor.py": "32622ebc31372dd28615b03e1680c0d9d491f44b49a0d867c8af33bbb0cafc11",
+    "pipeline/finalize_permutation_preflight.py": "4664b65a45ecb26c4133425cbe9ab2450912634174bc6ce4551999fd6d99d562",
+    "protocol/numerical_kkt_v3_1.py": "00523bd36e4cf1b906bb1b6ed8657a967718bed52503fab694705980c1e6d525",
+    "protocol/block_logistic_v3_1.py": "469981ac72d345c37e1d0f3bd6cc0420bfd04e3c33e18e7e63ac537403315ec2",
+    "protocol/config_v3_1.json": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+    "protocol/v3_marker_manifest.json": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+    "requirements_glum_v3.lock.txt": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00"
+  },
+  "config_sha256": "031b044b59e7d31e479a90d36119431c1fc8182d2813ca6378d9fdfd02160453",
+  "verifier_sha256": "32622ebc31372dd28615b03e1680c0d9d491f44b49a0d867c8af33bbb0cafc11",
+  "package_versions": {
+    "cloudpickle": "3.1.2",
+    "formulaic": "1.2.2",
+    "glum": "3.4.1",
+    "interface_meta": "2.0.1",
+    "joblib": "1.6.0",
+    "narwhals": "2.27.1",
+    "numexpr": "2.14.2",
+    "numpy": "2.4.6",
+    "packaging": "26.3",
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.0",
+    "python-dateutil": "2.9.0.post0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "six": "1.17.0",
+    "tabmat": "4.2.1",
+    "threadpoolctl": "3.7.0",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "wrapt": "2.5.1"
+  },
+  "checks": [
+    "ten_disjoint_outer_tests_cover_all_samples",
+    "permutation_changes_at_least_one_label",
+    "each_outer_block_preserves_class_totals",
+    "seed_and_labels_independent_of_layout_scheduling",
+    "donor_sorting_makes_label_map_row_order_invariant",
+    "different_rep_ids_derive_different_maps",
+    "identity_map_keeps_original_labels",
+    "inner_folds_rebuilt_from_current_labels",
+    "shuffled_inner_validation_memberships_differ_from_observed_strata",
+    "identity_inner_memberships_equal_frozen_observed_manifest",
+    "repeated_rows_of_donor_receive_identical_labels",
+    "M4_M5_candidates_and_decisions_equal_frozen_engine",
+    "M4_M5_coefficients_equal_frozen_engine",
+    "preprocessing_equal_frozen_engine",
+    "M4_M5_predictions_equal_frozen_engine",
+    "valid_completed_checkpoint_reused",
+    "changed_provenance_rejected",
+    "tampered_artifact_rejected",
+    "partial_attempt_without_COMPLETE_not_reused",
+    "concurrent_controller_rejected",
+    "worker_thread_and_order_changes_preserve_label_maps_and_fold_AUROCs",
+    "resume_reuses_two_complete_reps",
+    "resume_statistics_equal_uninterrupted_statistics",
+    "interruption_preserves_old_attempt_and_recomputes_same_rep",
+    "terminal_failure_not_retried_as_an_interruption",
+    "real_permutation_gate_rejects_unpublished_or_incomplete_preflight",
+    "all_synthetic_numerical_attempts_pass_KKT",
+    "1000_gene_stress_all_KKT_pass",
+    "1000_gene_worker_equivalence_max_probability_error_1e_minus_6",
+    "benchmark_uses_requested_worker_count",
+    "benchmark_backend_threads_bounded_at_two",
+    "measured_memory_plus_guard_under_75_percent_physical_RAM"
+  ],
+  "synthetic_fit_attempts": 650,
+  "max_KKT": 2.6839175860937647e-08,
+  "synthetic_null_smoke_statistics": [
+    {
+      "A": {
+        "M4": 0.476,
+        "M5": 0.534,
+        "delta": 0.05800000000000005
+      },
+      "B": {
+        "M4": 0.46799999999999997,
+        "M5": 0.46799999999999997,
+        "delta": 0.0
+      }
+    },
+    {
+      "A": {
+        "M4": 0.54,
+        "M5": 0.524,
+        "delta": -0.016000000000000014
+      },
+      "B": {
+        "M4": 0.418,
+        "M5": 0.458,
+        "delta": 0.040000000000000036
+      }
+    }
+  ],
+  "smoke_is_not_a_statistical_null_calibration": true,
+  "resource_benchmark": {
+    "serial": {
+      "workers": 1,
+      "threads_per_worker": 2,
+      "wall_seconds": 18.063573922991054,
+      "observed_worker_processes": 1,
+      "summed_worker_peak_RSS_bytes": 581640192,
+      "memory_measurement": "sum of per-process high-water marks; conservative, not simultaneous RSS",
+      "rows": [
+        {
+          "job": 0,
+          "pid": 91551,
+          "seconds": 3.996847912989324,
+          "peak_RSS_bytes": 568860672,
+          "KKT": 6.473988120765661e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 1,
+          "pid": 91551,
+          "seconds": 3.535541561024729,
+          "peak_RSS_bytes": 581640192,
+          "KKT": 1.2944354789434787e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 2,
+          "pid": 91551,
+          "seconds": 3.3872677859908435,
+          "peak_RSS_bytes": 581640192,
+          "KKT": 2.5720883810396306e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 3,
+          "pid": 91551,
+          "seconds": 3.3515894979937,
+          "peak_RSS_bytes": 581640192,
+          "KKT": 1.5769454904217273e-10,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        }
+      ]
+    },
+    "parallel": {
+      "workers": 2,
+      "threads_per_worker": 2,
+      "wall_seconds": 11.073487704998115,
+      "observed_worker_processes": 2,
+      "summed_worker_peak_RSS_bytes": 1133617152,
+      "memory_measurement": "sum of per-process high-water marks; conservative, not simultaneous RSS",
+      "rows": [
+        {
+          "job": 0,
+          "pid": 91584,
+          "seconds": 4.088122729997849,
+          "peak_RSS_bytes": 487129088,
+          "KKT": 6.473988120765661e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 1,
+          "pid": 91583,
+          "seconds": 4.096276055002818,
+          "peak_RSS_bytes": 492212224,
+          "KKT": 1.2944354789434787e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 2,
+          "pid": 91584,
+          "seconds": 3.5832093469798565,
+          "peak_RSS_bytes": 563953664,
+          "KKT": 2.5720883810396306e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 3,
+          "pid": 91583,
+          "seconds": 3.5653365830075927,
+          "peak_RSS_bytes": 569663488,
+          "KKT": 1.5769454904217273e-10,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/sklearn/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/tabmat/.dylibs/libomp.dylib",
+              "version": null
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libomp",
+              "filepath": "/Users/mohsenshamsijazeb/.cache/uv/archive-v0/g-ebX50XlOyunrsD/lib/python3.11/site-packages/glum/.dylibs/libomp.dylib",
+              "version": null
+            }
+          ]
+        }
+      ]
+    },
+    "max_abs_probability_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "physical_RAM_bytes": 8589934592,
+    "conservative_memory_budget_bytes": 2370355200,
+    "system_swap_counter_deltas": {
+      "Swapouts": 91386,
+      "Pageouts": 1692
+    },
+    "system_swap_counters_before": {
+      "Pageouts": 767316,
+      "Swapouts": 50150282
+    },
+    "system_swap_counters_after": {
+      "Pageouts": 769008,
+      "Swapouts": 50241668
+    },
+    "full_permutation_runtime_not_estimated_from_this_fit_microbenchmark": true
+  },
+  "failed_check": "no_system_compressor_swapout_increase_during_benchmark",
+  "seconds": 45.055166681006085
+}

@@ -67,6 +67,7 @@ def atomic_json(path, value):
 def code_hashes():
     return {name: sha_file(ROOT / name) for name in (
         'pipeline/permutation_executor.py', 'pipeline/geo_pipeline.py',
+        'pipeline/verify_permutation_executor.py', 'pipeline/finalize_permutation_preflight.py',
         'protocol/numerical_kkt_v3_1.py', 'protocol/block_logistic_v3_1.py',
         'protocol/config_v3_1.json', 'protocol/v3_marker_manifest.json',
         'requirements_glum_v3.lock.txt')}
@@ -275,6 +276,8 @@ def _run_repetition_unlocked(data, manifest, settings, root, binding, rep_id, id
     cached = validate_completion(directory, binding)
     if cached is not None:
         return dict(cached['result'], resumed=True)
+    if list(directory.glob('attempt_*/FAILURE.json')):
+        raise ValueError('A dependent replicate was declared invalid; do not retry it as an interruption')
     attempt = directory / ('attempt_' + uuid.uuid4().hex)
     attempt.mkdir(parents=True)
     atomic_json(attempt / 'STARTED.json', dict(binding=binding, seeds=seeds))
@@ -389,6 +392,7 @@ def verify_receipt(receipt, binding, preflight):
             or receipt.get('binding_sha256') != object_hash(binding)
             or receipt.get('preflight_report_sha256') != sha_file(preflight)
             or report.get('status') != 'passed'
+            or report.get('binding_sha256') != object_hash(binding)
             or report.get('code_sha256') != binding['code_sha256']
             or report.get('config_sha256') != binding['config_sha256']):
         raise ValueError('Verified public amendment matching code/config/inputs/preflight is required')
