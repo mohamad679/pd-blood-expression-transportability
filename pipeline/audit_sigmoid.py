@@ -76,7 +76,7 @@ def main():
             for old in [r for r in records if r['fold'] == f]:
                 if prep.fingerprint() != old['preprocessing_sha256']:
                     raise ValueError('Replay preprocessing differs from frozen fit')
-                context = dict(scope=name, stage='inner', fold=f, model=old['model'])
+                context = dict(scope=name, stage='inner', fold=f)
                 model, checked = geo.checked_fit(prep, a, old['model'], old['lambda'],
                     old['rho'], context, dest / 'fits.jsonl')
                 max_KKT = max(max_KKT, checked[-1]['diagnostics']['KKT_max'])
@@ -86,7 +86,7 @@ def main():
                     pred = model.predict(X)
                 linear = model.linear_predictor(X)
                 diagnostic = probability_diagnostic(b.y, linear, pred, b.source)
-                event = dict(**context, **{'lambda': old['lambda']}, rho=old['rho'],
+                event = dict(**context, model=old['model'], **{'lambda': old['lambda']}, rho=old['rho'],
                     warnings=[str(w.message) for w in caught], **diagnostic)
                 with (dest / 'prediction_audit.jsonl').open('a') as stream:
                     stream.write(json.dumps(event) + '\n')
