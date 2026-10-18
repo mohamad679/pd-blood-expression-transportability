@@ -6,6 +6,8 @@ This repository contains the English-language research record and executable GEO
 
 The detailed end-to-end report, exact results, evidence and remaining roadmap are in [`docs/COMPLETE_PROJECT_REPORT_20261018_EN.md`](docs/COMPLETE_PROJECT_REPORT_20261018_EN.md). The shorter living history is in [`docs/PROJECT_HISTORY_AND_ROADMAP.md`](docs/PROJECT_HISTORY_AND_ROADMAP.md). Start with [`docs/STATUS.md`](docs/STATUS.md) for the current execution state. A [descriptive correction](docs/REPORTING_CORRECTION_20261018_EN.md) clarifies that final M5 with `rho=1` uses an L1/lasso gene penalty; the published short report incorrectly called it ridge-only, while its parameter values and results were correct.
 
+The subsequent [sigmoid audit](docs/SIGMOID_AUDIT_20261018_EN.md) replayed 490 inner fits and reproduced all six reported warnings: explicit clipping changed no AUROC or selected hyperparameter. The original scientific pipeline and results remain unchanged.
+
 ## Repository layout
 
 - `pipeline/`: GEO loading, preprocessing, donor-level split execution, M1–M5 training, model scoring, paired bootstrap utilities, synthetic checks, and preparation utility.

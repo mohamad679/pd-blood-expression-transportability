@@ -1,0 +1,47 @@
+{
+  "verified_UTC": "2026-10-18T05:29:44Z",
+  "checks": {
+    "490_complete_initial_attempt_replay_fits": true,
+    "490_validation_calls": true,
+    "six_prediction_warning_contexts": true,
+    "explicit_clipping_never_changed_validation_AUROC": true,
+    "original_candidate_means_exactly_reproduced": true,
+    "all_six_original_choices_reproduced": true,
+    "no_expit_or_linear_selection_change": true,
+    "replay_code_hash_matches": true,
+    "control_code_hash_matches": true,
+    "pre_control_plan_bytes_preserved": true,
+    "core_pipeline_unchanged": true,
+    "source_split_manifest_unchanged": true,
+    "frozen_config_unchanged": true,
+    "no_PPMI_loaded_or_scored_by_these_routines": true,
+    "public_aggregates_contain_no_sample_identifiers": true
+  },
+  "pre_control_implementation_commit": "36db979",
+  "replay_implementation_commit": "c17ba61",
+  "public_new_registration_claimed": false,
+  "result_sha256": {
+    "results/geo_controls_20261018/aggregate_summary.json": "4fe059bf38693e5179dc542357d5e6fad0969a6fe010a918242a326755a606cf",
+    "results/geo_controls_20261018/artifact_preservation.json": "223bc0a8de17c80f0bbdd7048f9d00d451b750982d8a11a18d4b98244ef4cb23",
+    "results/geo_controls_20261018/rounding_diagnostic.json": "672f7ccce5e196ffa0e1f487ff1b5c106f95d73cfd2fec48a39e327be78ddfd6",
+    "results/geo_controls_20261018/sigmoid_audit.json": "600087c011dee31fc8325d2ae2264819fcac6db5bcfa81b3a6544ab05596d7be",
+    "results/geo_controls_20261018/synthetic_verification.json": "acf6c425ace3c3b0106f2ce052fac4f7add598cd5fadba9601072b6947e234a8"
+  },
+  "retained_diagnostic_attempts": [
+    {
+      "directory": "private_data/sigmoid_audit_20261018",
+      "status": "driver_context_error_before_first_fit"
+    },
+    {
+      "directory": "private_data/sigmoid_audit_20261018_replay",
+      "status": "interrupted_when_diagnostic_scope_was_bounded",
+      "completed_fit_records": 111
+    },
+    {
+      "directory": "private_data/sigmoid_audit_20261018_targeted",
+      "status": "completed",
+      "completed_fit_records": 490
+    }
+  ],
+  "PPMI_scoring_performed": false
+}

@@ -16,10 +16,12 @@ as `36db979` before these real control fits. The plan's original bytes and hash
 are preserved. This private Git implementation record is not described as a new
 public preregistration. The controls were specified in the existing public v3.1
 protocol; operational details of this implementation are disclosed in the plan.
+The separate [sigmoid review](SIGMOID_AUDIT_20261018_EN.md) also completed: all
+six warnings were reproduced without affecting AUROC or parameter selection.
 
 ## Participants and separation
 
-| Training source | Training controls | Female / male | External test source | Test controls | Female / male |
+| Training source | Training controls | Female / male | Held-out GEO source | Test controls | Female / male |
 |---|---:|---:|---|---:|---:|
 | GSE57475 / PROBE | 49 | 23 / 26 | GSE99039 / GENEPARK-TRO | 119 | 85 / 34 |
 | GSE99039 / GENEPARK-TRO | 119 | 85 / 34 | GSE57475 / PROBE | 49 | 23 / 26 |
@@ -74,6 +76,9 @@ correctly ranked does **not** establish perfect population performance or
 include training uncertainty. The protocol's development gate uses the two
 point estimates. The separate PPMI criterion, AUROC >= 0.95 and lower CI bound
 >= 0.90 in PPMI controls, has **not** been evaluated.
+Only the two directional auxiliary models were fitted in this step. A final
+auxiliary fit for PPMI was not selected or trained here; its exact implementation
+and artifacts must be covered by the second public lock before external scoring.
 
 ## Age: development capacity not demonstrated
 

@@ -1,0 +1,61 @@
+{
+  "purpose": "Finite-precision linear-versus-probability diagnostic, separate from explicit clipping",
+  "validation_context_count": 3,
+  "contexts": [
+    {
+      "scope": "GSE99039/outer/2",
+      "stage": "inner",
+      "fold": 0,
+      "model": "M3",
+      "lambda": 1.0,
+      "rho": 0.5,
+      "warnings": [],
+      "n": 39,
+      "clipped_low": 0,
+      "clipped_high": 0,
+      "mixed_class_tail_pairs": 0,
+      "AUROC": {
+        "clipped": 0.6381578947368421,
+        "expit": 0.6381578947368421,
+        "linear": 0.6368421052631579
+      }
+    },
+    {
+      "scope": "GSE99039/outer/2",
+      "stage": "inner",
+      "fold": 0,
+      "model": "M3",
+      "lambda": 1.0,
+      "rho": 1.0,
+      "warnings": [],
+      "n": 39,
+      "clipped_low": 0,
+      "clipped_high": 0,
+      "mixed_class_tail_pairs": 0,
+      "AUROC": {
+        "clipped": 0.6381578947368421,
+        "expit": 0.6381578947368421,
+        "linear": 0.6368421052631579
+      }
+    },
+    {
+      "scope": "pooled/final",
+      "stage": "inner",
+      "fold": 4,
+      "model": "M3",
+      "lambda": 0.1,
+      "rho": 1.0,
+      "warnings": [],
+      "n": 76,
+      "clipped_low": 0,
+      "clipped_high": 0,
+      "mixed_class_tail_pairs": 0,
+      "AUROC": {
+        "clipped": 0.51875,
+        "expit": 0.51875,
+        "linear": 0.5196180555555556
+      }
+    }
+  ],
+  "alternative_scoring_adopted": false
+}

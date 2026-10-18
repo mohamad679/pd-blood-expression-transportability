@@ -65,3 +65,6 @@ core pipeline and its completed results unchanged. The bounded run replays all
 candidates of the six model/scope contexts in which warnings were reported;
 it is not a new disease analysis or permission to replace tuning scores. See
 `docs/SIGMOID_REPLAY_SCOPE_20261018_EN.md` for the scope and retained attempts.
+The completed 490-fit diagnostic reproduced all six reported warnings and all
+original candidate means and selections. Explicit clipping changed no AUROC.
+Results and limitations are in `docs/SIGMOID_AUDIT_20261018_EN.md`.
