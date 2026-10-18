@@ -102,6 +102,16 @@ mean validation MAE. The selected alpha was 100 in both sources, with inner
 MAE 8.416929 and 6.575356 years. It is the upper grid endpoint; the age protocol
 did not authorize an adaptive alpha extension, so none was performed.
 
+Both selections at the upper alpha endpoint leave restricted tuning support as
+a possible contributor to failure. Alpha=100 is not intrinsically a weak or
+strong penalty: shrinkage depends on the training design's singular spectrum.
+Without another experiment, these results cannot establish that a larger alpha
+would improve transfer. Failure of the prespecified age predictor cannot separate
+platform shift from limitations of its fixed tuning range, feature selection and
+training sample. The low transferred Spearman correlations describe this age
+predictor; they do not establish poor transfer of all autosomal disease signals.
+The fixed grid remains unchanged.
+
 Training-median ages were 59 years for PROBE and 61 years for GENEPARK-TRO.
 Observed control age ranges were 47–87 and 35–82 years, respectively. The
 registered capacity rule required Spearman >= 0.4 **and** MAE better than the

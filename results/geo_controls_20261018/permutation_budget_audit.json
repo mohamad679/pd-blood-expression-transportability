@@ -1,0 +1,21 @@
+{
+  "source": "Completed original GEO runs; not a permutation runtime benchmark",
+  "outer_scope_count": 10,
+  "original_OpenMP_threads": 8,
+  "outer_wall_seconds": 4255.288704053986,
+  "model_fit_seconds": {
+    "M1": 0.5139000000000001,
+    "M2": 1632.8252,
+    "M3": 1487.5791999999988,
+    "M4": 0.6522999999999998,
+    "M5": 1102.2901000000004
+  },
+  "M4_M5_fit_seconds": 1102.9424000000004,
+  "M5_fraction_of_all_fit_seconds": 0.2609674367338867,
+  "B200_serial_fit_hours_linear_baseline": 61.2745777777778,
+  "B1000_serial_fit_days_linear_baseline": 12.765537037037042,
+  "null_runtime_or_four_worker_speedup_measured": false,
+  "proposed_B": 200,
+  "minimum_plus_one_p": 0.004975124378109453,
+  "approximate_MCSE_at_tail_probability_0_05": 0.015411035007422441
+}
