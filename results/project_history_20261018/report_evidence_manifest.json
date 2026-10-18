@@ -1,0 +1,252 @@
+{
+  "report_date": "2026-10-18",
+  "report_kind": "retrospective_documentation_no_new_model_fits",
+  "PPMI_scores_computed": false,
+  "source_repository_commit_before_report": "d9e8fe9",
+  "report_sha256": "2b5f0e146858a7a8c3b7ba417fa02040f5995566af71b72233d07e9669313d33",
+  "cohort_screening": {
+    "GSE18838": {
+      "all_records": 28,
+      "platforms": {
+        "GPL5175": 28
+      },
+      "complete_age_sex_all_diagnoses": 0,
+      "warning": null
+    },
+    "GSE202665": {
+      "all_records": 59,
+      "platforms": {
+        "GPL20844": 59
+      },
+      "complete_age_sex_all_diagnoses": 59,
+      "warning": "Activated CD4+ T cells, repeated time points; not a whole-blood cohort."
+    },
+    "GSE49126": {
+      "all_records": 50,
+      "platforms": {
+        "GPL4133": 50
+      },
+      "complete_age_sex_all_diagnoses": 0,
+      "warning": null
+    },
+    "GSE57475": {
+      "all_records": 142,
+      "platforms": {
+        "GPL6947": 142
+      },
+      "complete_age_sex_all_diagnoses": 142,
+      "warning": null
+    },
+    "GSE6613": {
+      "all_records": 105,
+      "platforms": {
+        "GPL96": 105
+      },
+      "complete_age_sex_all_diagnoses": 0,
+      "warning": null
+    },
+    "GSE72267": {
+      "all_records": 59,
+      "platforms": {
+        "GPL571": 59
+      },
+      "complete_age_sex_all_diagnoses": 0,
+      "warning": null
+    },
+    "GSE99039": {
+      "all_records": 558,
+      "platforms": {
+        "GPL570": 558
+      },
+      "complete_age_sex_all_diagnoses": 284,
+      "warning": null
+    }
+  },
+  "processed_GEO_input_preparation": {
+    "transformation": "Median of uniquely mapped probes per gene, then per-sample midrank percentile (rank-0.5)/G",
+    "universe": "common_genes_gencode_v29.tsv",
+    "genes": 16364,
+    "no_model_fitting": true,
+    "no_cross_sample_normalization_added": true,
+    "inherited_source_processing": {
+      "GSE57475": "GenomeStudio average normalization",
+      "GSE99039": "RMA/log2/quantile normalization"
+    },
+    "datasets": {
+      "GSE57475": {
+        "source_samples": 142,
+        "source_probes": 48766,
+        "source_nonfinite_values": 0,
+        "selected_samples": 142,
+        "cases": 93,
+        "controls": 49,
+        "female": 54,
+        "male": 88,
+        "genes": 16364,
+        "source_value_min": 22.40097,
+        "source_value_max": 56586.52,
+        "range_of_sample_medians": [
+          47.781365,
+          112.09615
+        ],
+        "prepared_bytes": 16332535,
+        "sha256": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+        "explicit_unique_subject_ids": 0,
+        "batch_suffix_counts": {},
+        "distinct_batches_or_chip_proxies": 16,
+        "batch_kind": "title_derived_chip_proxy"
+      },
+      "GSE99039": {
+        "source_samples": 558,
+        "source_probes": 54675,
+        "source_nonfinite_values": 0,
+        "selected_samples": 239,
+        "cases": 120,
+        "controls": 119,
+        "female": 147,
+        "male": 92,
+        "genes": 16364,
+        "source_value_min": 1.455,
+        "source_value_max": 15.17,
+        "range_of_sample_medians": [
+          4.024,
+          4.504
+        ],
+        "prepared_bytes": 22108719,
+        "sha256": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+        "explicit_unique_subject_ids": 239,
+        "batch_suffix_counts": {
+          "TRO": 239
+        },
+        "distinct_batches_or_chip_proxies": 11,
+        "batch_kind": "provided_batch"
+      }
+    }
+  },
+  "PPMI_complete_remote_audit_aggregate": {
+    "audit_version": "all_once_1.0",
+    "archive_bytes": 42893354202,
+    "archive_end_reached": true,
+    "archive_members_seen": 14615,
+    "count_files_seen": 4871,
+    "quant_sf_files_seen": 9742,
+    "count_tables_verified": 4871,
+    "count_table_gene_rows": {
+      "min": 58780,
+      "max": 58780
+    },
+    "common_genes_per_count_table": {
+      "reference_genes": 16364,
+      "min": 16364,
+      "max": 16364,
+      "tables_missing_any_reference_gene": 0
+    },
+    "length_agreement_fraction_per_table": {
+      "min": 1.0,
+      "max": 1.0
+    },
+    "elapsed_seconds": 2846.5,
+    "private_cache_bytes": 187744109
+  },
+  "PPMI_link_recovery_aggregate": {
+    "audit_version": "cache_documented_ID_recovery_2.0",
+    "scope": "already-created local private cache only; no raw archive access",
+    "privacy": "aggregate counts only; no identifiers, filenames, count values or row data",
+    "cache_entries": 4871,
+    "cache_vectors_missing": 0,
+    "release_rows": 4871,
+    "candidate_rows_before_expression_link": 472,
+    "release_identifier_columns_indexed": {
+      "Sample": 1,
+      "HudAlphaID": 1,
+      "Specimen Bar Code": 2
+    },
+    "matching_rule": "Exact dot-delimited prefixes against release identifiers; fallback to PPMI guide p41 composite PATNO+visit format. Header and filename links must agree whenever both resolve.",
+    "link_results": {
+      "header_only_exact_dot_prefix": 119,
+      "two_sources_agree": 4752,
+      "uniquely_matched_count_files": 4871
+    },
+    "release_rows_with_exactly_one_count_table": 4871,
+    "release_rows_with_multiple_count_tables": 0,
+    "primary_candidate_counts_after_expression_link": {
+      "healthy_control_three_labels_agree": 161,
+      "idiopathic_PD_three_labels_agree": 311
+    },
+    "primary_candidate_distinct_PATNO_after_expression_link": {
+      "healthy_control_three_labels_agree": 161,
+      "idiopathic_PD_three_labels_agree": 311
+    },
+    "notes": [
+      "Release and portal metadata linked by original sample name, PATNO, baseline visit, sex and historical labels inside the local cache.",
+      "A failed prefix match leaves eligibility unverified; never equate a filename pattern with participant identity without this exact metadata link.",
+      "No classifier, AUC or external performance calculation was done."
+    ]
+  },
+  "evidence_files": {
+    "historical_GEO_metadata_audit": {
+      "filename": "audit_summary.json",
+      "sha256": "bd95665dfde91ae6fb07ed5f22b8e46529cd3dbb97ff3525ea3923a6877a17b9"
+    },
+    "historical_GEO_preprocessing_audit": {
+      "filename": "preprocessing_audit_summary.json",
+      "sha256": "855874db28e04a3c3181c64135a6cd82c7ded223518f65f64423076a09be6871"
+    },
+    "remote_full_IR3_audit": {
+      "filename": "IR3_COMPLETE_AUDIT.json",
+      "sha256": "74a8cb997e38de4e352ba3c2746ded5d58d2e9826a61afdb84fccd0a8d53685c"
+    },
+    "remote_IR3_link_recovery": {
+      "filename": "IR3_LINK_RECOVERY_AUDIT_received_20261015_v2.json",
+      "sha256": "f4671949680019b5cc7661cc18a37e7fd1214ee62056bdf1da8f40e9a3e3b3f2"
+    },
+    "registered_protocol_EN": {
+      "filename": "PROTOCOL_v3_1_EN.md",
+      "sha256": "dbee0da54eebae0ba7456bed47d714bc00d09b600c40e7640819e0fa44cb437f"
+    },
+    "registered_config": {
+      "filename": "config_v3_1.json",
+      "sha256": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981"
+    },
+    "GEO_aggregate_results": {
+      "filename": "aggregate_summary.json",
+      "sha256": "6a4d3eb5f2024d61be89ff76f40d758cc89ca7115290a0bdfe1f985b3411f919"
+    },
+    "GEO_pilot_aggregate": {
+      "filename": "aggregate_metrics.json",
+      "sha256": "6518e79e7e8b19788b0e7b7b2406a49545373895d3ae046fd71a7c20921799df"
+    },
+    "pipeline_synthetic_report": {
+      "filename": "synthetic_validation_20261016.json",
+      "sha256": "e957ffa784db61919dea07ffcf5f32bbaa64f86f53da17620cf7f2af7aea1120"
+    },
+    "code": {
+      "filename": "geo_pipeline.py",
+      "sha256": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c"
+    },
+    "solver": {
+      "filename": "numerical_kkt_v3_1.py",
+      "sha256": "00523bd36e4cf1b906bb1b6ed8657a967718bed52503fab694705980c1e6d525"
+    },
+    "splits": {
+      "filename": "splits.json",
+      "sha256": "2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2"
+    },
+    "dependency_lock": {
+      "filename": "requirements_glum_v3.lock.txt",
+      "sha256": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00"
+    },
+    "Zenodo_receipt": {
+      "filename": "ZENODO_PUBLICATION_RECEIPT.json",
+      "sha256": "a362b2da67fdf25c7307e03ec081ef4e6d1b238081ee843bd5f478e5809c10ba"
+    }
+  },
+  "reporting_correction": {
+    "previous_phrase": "ridge-only for final M5",
+    "correct_phrase": "L1/lasso gene penalty for final M5",
+    "lambda": 0.001,
+    "rho": 1.0,
+    "nonzero_gene_coefficients": 210,
+    "code_or_result_changed": false
+  }
+}

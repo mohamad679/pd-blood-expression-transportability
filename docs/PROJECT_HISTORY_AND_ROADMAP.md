@@ -11,7 +11,7 @@ The project began with a methodological question: when a blood-based classifier 
 
 The initial plan was to audit suitable cohorts before modeling, register a fixed protocol, compare metadata-only and gene-expression models, test within-cohort and cohort-held-out performance, and then reserve PPMI RNA-seq for external evaluation. The scientific target is not to create the highest-scoring classifier. It is to estimate transportability and report uncertainty without attributing an AUC difference causally to “disease” or “shortcut.”
 
-The project was therefore **feasibility work first, followed by protocol and software development, and only then analytical execution**. It has now crossed into execution: the primary M1–M5 pipeline has been implemented and one real GEO fold has completed. It has not completed the main study analyses or external validation.
+The project was therefore **feasibility work first, followed by protocol and software development, and only then analytical execution**. All 13 core GEO M1–M5 CV/transfer/final-fit scopes have now completed. Registered diagnostics and external validation remain incomplete. See [COMPLETE_PROJECT_REPORT_20261018_EN.md](COMPLETE_PROJECT_REPORT_20261018_EN.md) for the detailed current account and exact results.
 
 ## 2. Feasibility work and cohort decisions
 
@@ -119,4 +119,4 @@ Zenodo is reserved for the two project milestones described above: (1) complete,
 
 ## 9. Plain-language answer: is the project now “being done”?
 
-Yes, the project has moved beyond feasibility: the analysis protocol is registered, the primary software exists, synthetic and numerical checks passed, and one real GEO fold ran. But the scientific study is still at an early execution stage. Most planned GEO analyses and all PPMI external validation remain outstanding. The next real research work is completing the frozen GEO pipeline—not writing more feasibility documents and not claiming results from the single pilot fold.
+Yes, the project has moved beyond feasibility: the analysis protocol is registered, the primary software exists, synthetic and numerical checks passed, and all 13 core GEO scopes have run. The next work is the bounded warning review, development sex/age controls, remaining diagnostics/sensitivities, final PPMI eligibility and the second public lock. All PPMI scoring remains outstanding. The completed GEO milestone is substantive execution evidence, while the conditional external-validation study is unfinished.

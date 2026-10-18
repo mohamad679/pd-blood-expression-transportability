@@ -2,6 +2,8 @@
 
 **Snapshot date:** 2026-10-18 (Asia/Tehran)
 
+The complete retrospective account is [COMPLETE_PROJECT_REPORT_20261018_EN.md](COMPLETE_PROJECT_REPORT_20261018_EN.md). Its [reporting correction](REPORTING_CORRECTION_20261018_EN.md) records a terminology error in the released short report: final M5 (`rho=1`) has an L1/lasso gene penalty, not ridge. Code, hyperparameters, fitted models and metrics are unchanged. The full report also records two persistent lambda boundaries from the completed runs; no extra tuning has been performed.
+
 | Workstream | Status | Evidence / limitation |
 |---|---|---|
 | Feasibility and cohort choice | Completed for the registered scope | Two GEO development cohorts and an approved PPMI access path were identified. Feasibility did not itself constitute external validation. |
