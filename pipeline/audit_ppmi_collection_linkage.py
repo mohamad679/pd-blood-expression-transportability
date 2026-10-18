@@ -142,9 +142,12 @@ def main() -> None:
             "unmatched_or_unparseable_rows": sample_counts.get("unmatched_or_unparseable_sample_rows", 0),
         },
         "whole_blood_collection_archive": {
-            key: value
-            for key, value in collection.items()
-            if key not in {"rna_visit_overlap_pairs", "collection_month_by_pair"}
+            **{
+                key: value
+                for key, value in collection.items()
+                if key not in {"rna_visit_overlap_pairs", "collection_month_by_pair"}
+            },
+            "rna_visit_overlap_pairs": len(overlap_pairs),
         },
         "cbc_current": read_cbc_month_coverage(args.cbc_current, overlap_pairs, collection_months),
         "cbc_archived": read_cbc_month_coverage(args.cbc_archived, overlap_pairs, collection_months),
