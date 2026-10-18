@@ -1,0 +1,274 @@
+{
+  "created_UTC": "2026-10-18T04:42:23Z",
+  "input_sha256": {
+    "GSE57475_development.npz": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+    "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039_development.npz": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+    "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+  },
+  "core_pipeline_sha256": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+  "auxiliary_code_sha256": "3a4c769b3445172452df41ce1556b46a6a0d87fd8b47fef52d58f23fd661f850",
+  "execution_plan_sha256": "83c2a35923c0ce39299e18a68a115bcc8de917ab36aca989f11fc8904e19a208",
+  "config_sha256": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+  "split_manifest_sha256": "2e97f70f530824069cf36e9c8b4f1bbeef3d3d8513ffb0a6bc13b67f52682e44",
+  "PPMI_loaded": false,
+  "uniform_auxiliary_weights": true,
+  "autosomal_genes": 15720,
+  "directions": {
+    "GSE57475": {
+      "test_source": "GSE99039",
+      "n_train": 49,
+      "n_test": 119,
+      "train_female": 23,
+      "train_male": 26,
+      "test_female": 85,
+      "test_male": 34,
+      "train_age_range": [
+        47.0,
+        87.0
+      ],
+      "test_age_range": [
+        35.0,
+        82.0
+      ],
+      "sex": {
+        "selected": {
+          "lambda": 100.0,
+          "score": 0.9916666666666668
+        },
+        "candidates": [
+          {
+            "lambda": 1.0,
+            "score": 0.9916666666666668
+          },
+          {
+            "lambda": 0.1,
+            "score": 0.9916666666666668
+          },
+          {
+            "lambda": 0.01,
+            "score": 0.9916666666666668
+          },
+          {
+            "lambda": 0.001,
+            "score": 0.9916666666666668
+          },
+          {
+            "lambda": 0.0001,
+            "score": 0.9916666666666668
+          },
+          {
+            "lambda": 10.0,
+            "score": 0.9916666666666668
+          },
+          {
+            "lambda": 100.0,
+            "score": 0.9916666666666668
+          }
+        ],
+        "persistent_boundary": true,
+        "expansion_rounds": 2,
+        "AUROC": 1.0,
+        "linear_score_AUROC_diagnostic": 1.0,
+        "BA_at_0_5_descriptive": 0.5,
+        "prediction_warnings": [],
+        "final_KKT": 2.63653682219811e-13,
+        "development_direction_pass": true,
+        "uncertainty": {
+          "repetitions": 5000,
+          "undefined_Spearman_replicates": 0,
+          "percentile_95_CI": {
+            "AUROC": [
+              0.9999999999999999,
+              1.0
+            ]
+          }
+        }
+      },
+      "age": {
+        "selected": {
+          "alpha": 100.0,
+          "MAE": 8.416928981121568
+        },
+        "candidates": [
+          {
+            "alpha": 0.01,
+            "MAE": 8.446267057003462
+          },
+          {
+            "alpha": 0.1,
+            "MAE": 8.446233704016548
+          },
+          {
+            "alpha": 1.0,
+            "MAE": 8.44590039052362
+          },
+          {
+            "alpha": 10.0,
+            "MAE": 8.442588627372805
+          },
+          {
+            "alpha": 100.0,
+            "MAE": 8.416928981121568
+          }
+        ],
+        "Spearman": -0.05811791498471208,
+        "MAE": 7.0381113915394655,
+        "training_median_age": 59.0,
+        "MAE_train_median_predictor": 7.025210084033613,
+        "MAE_minus_median_baseline": 0.012901307505852166,
+        "selected_genes": 1000,
+        "development_direction_capacity": false,
+        "uncertainty": {
+          "repetitions": 5000,
+          "undefined_Spearman_replicates": 0,
+          "percentile_95_CI": {
+            "Spearman": [
+              -0.2385354297760796,
+              0.1210055997003843
+            ],
+            "MAE": [
+              5.940461922741137,
+              8.189173870371384
+            ],
+            "MAE_minus_median_baseline": [
+              -0.5426042578625436,
+              0.5697207301455678
+            ]
+          }
+        }
+      }
+    },
+    "GSE99039": {
+      "test_source": "GSE57475",
+      "n_train": 119,
+      "n_test": 49,
+      "train_female": 85,
+      "train_male": 34,
+      "test_female": 23,
+      "test_male": 26,
+      "train_age_range": [
+        35.0,
+        82.0
+      ],
+      "test_age_range": [
+        47.0,
+        87.0
+      ],
+      "sex": {
+        "selected": {
+          "lambda": 100.0,
+          "score": 1.0
+        },
+        "candidates": [
+          {
+            "lambda": 1.0,
+            "score": 1.0
+          },
+          {
+            "lambda": 0.1,
+            "score": 1.0
+          },
+          {
+            "lambda": 0.01,
+            "score": 1.0
+          },
+          {
+            "lambda": 0.001,
+            "score": 1.0
+          },
+          {
+            "lambda": 0.0001,
+            "score": 1.0
+          },
+          {
+            "lambda": 10.0,
+            "score": 1.0
+          },
+          {
+            "lambda": 100.0,
+            "score": 1.0
+          }
+        ],
+        "persistent_boundary": true,
+        "expansion_rounds": 2,
+        "AUROC": 0.9933110367892977,
+        "linear_score_AUROC_diagnostic": 0.9933110367892977,
+        "BA_at_0_5_descriptive": 0.5,
+        "prediction_warnings": [],
+        "final_KKT": 2.004575117009466e-10,
+        "development_direction_pass": true,
+        "uncertainty": {
+          "repetitions": 5000,
+          "undefined_Spearman_replicates": 0,
+          "percentile_95_CI": {
+            "AUROC": [
+              0.9748745819397993,
+              1.0
+            ]
+          }
+        }
+      },
+      "age": {
+        "selected": {
+          "alpha": 100.0,
+          "MAE": 6.575356487389077
+        },
+        "candidates": [
+          {
+            "alpha": 0.01,
+            "MAE": 7.008442738667583
+          },
+          {
+            "alpha": 0.1,
+            "MAE": 7.007783514199882
+          },
+          {
+            "alpha": 1.0,
+            "MAE": 7.001225868370154
+          },
+          {
+            "alpha": 10.0,
+            "MAE": 6.938918509264726
+          },
+          {
+            "alpha": 100.0,
+            "MAE": 6.575356487389077
+          }
+        ],
+        "Spearman": 0.25859902878113344,
+        "MAE": 17.48247586711969,
+        "training_median_age": 61.0,
+        "MAE_train_median_predictor": 7.6938775510204085,
+        "MAE_minus_median_baseline": 9.78859831609928,
+        "selected_genes": 1000,
+        "development_direction_capacity": false,
+        "uncertainty": {
+          "repetitions": 5000,
+          "undefined_Spearman_replicates": 0,
+          "percentile_95_CI": {
+            "Spearman": [
+              -0.05108293348632229,
+              0.5221893817852024
+            ],
+            "MAE": [
+              15.23521377487514,
+              19.735341133160517
+            ],
+            "MAE_minus_median_baseline": [
+              6.6805696841552376,
+              12.797812527630928
+            ]
+          }
+        }
+      }
+    }
+  },
+  "sex_fit_count": 72,
+  "sex_all_fits_passed": true,
+  "sex_max_KKT": 2.67469255311667e-08,
+  "sex_fit_warning_count": 0,
+  "development_sex_gate_pass": true,
+  "development_age_capacity_demonstrated": false,
+  "seconds": 66.11899304389954
+}

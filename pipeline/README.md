@@ -39,4 +39,29 @@ Every run requires a new output directory. The pipeline rejects appending to an 
 
 ## Current execution status
 
-The original locked pilot `GSE57475/outer/0` completed on 2026-10-16. Its aggregate report is in `results/geo_pilot/`. No full nested CV or external PPMI score has been run.
+All 13 core GEO scopes completed on 2026-10-17/18, including the original
+`GSE57475/outer/0` pilot from 2026-10-16. The pilot is included once in the
+five-fold estimate. Core aggregates are in `results/geo_development_20261018/`.
+No PPMI score has been run.
+
+## Auxiliary controls and numerical diagnostic
+
+`geo_controls.py` implements the registered sex/age transfer controls in healthy
+GEO controls. Its implementation details were committed before execution in
+`docs/GEO_CONTROL_EXECUTION_PLAN_20261018_EN.md`. Both sex transfer directions
+passed; the age control did not establish development capacity. See
+`docs/GEO_TRANSFER_CONTROLS_20261018_EN.md` and the aggregate under
+`results/geo_controls_20261018/`. Use fresh, ignored private output directories.
+
+```bash
+python pipeline/verify_geo_controls.py --output /private/tmp/geo_aux_synthetic.json
+python pipeline/geo_controls.py \
+  --output private_data/geo_controls_NEW_RUN \
+  --aggregate /private/tmp/geo_controls_NEW_RUN.json
+```
+
+`audit_sigmoid.py` is a retrospective replay diagnostic that leaves the locked
+core pipeline and its completed results unchanged. The bounded run replays all
+candidates of the six model/scope contexts in which warnings were reported;
+it is not a new disease analysis or permission to replace tuning scores. See
+`docs/SIGMOID_REPLAY_SCOPE_20261018_EN.md` for the scope and retained attempts.

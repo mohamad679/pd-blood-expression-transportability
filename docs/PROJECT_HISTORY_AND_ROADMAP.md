@@ -78,7 +78,7 @@ Across the five outer folds, mean M4/M5 AUROC was 0.562/0.591 in GSE57475 and 0.
 
 All 3,146 fit records from the 12 post-pilot scopes passed the fixed KKT threshold; there were no failed records, retries, or exceptions. The largest recorded KKT residual was 4.1093e-8. Six sigmoid-clipping warnings were visible during prediction/tuning calls but were not attributed to individual candidate/fold entries in the fit log. That limitation is disclosed and must be reviewed before PPMI scoring. No model, split, or metric was changed after these results. Per-sample prediction files and detailed fit artifacts remain local and are not included in Git.
 
-The project is now past feasibility and has completed its core GEO CV/transfer milestone. However, GEO sex/age controls, CBC validation, bounded sensitivities, leakage checks, bootstrap coverage validation, and the permutation plan remain unfinished. No PPMI score has been computed; final crosswalk/population validation and the second public lock are also outstanding.
+The project is now past feasibility and has completed its core GEO CV/transfer milestone. The [GEO sex/age transfer controls](GEO_TRANSFER_CONTROLS_20261018_EN.md) also completed on 2026-10-18: sex passed in both directions (AUROC 1.000 and 0.993), while age capacity was not demonstrated (Spearman -0.058 and 0.259; neither direction improved on the training-median MAE comparator). Age failure limits the interpretation of subsequent age transfer; it does not stop the study or permit retuning. CBC validation, bounded sensitivities, leakage checks, bootstrap coverage validation, and the permutation plan remain unfinished. No PPMI score has been computed; final crosswalk/population validation and the second public lock are also outstanding.
 
 ## 7. What remains: execution roadmap
 
@@ -88,7 +88,7 @@ The project is now past feasibility and has completed its core GEO CV/transfer m
 2. **Completed:** run all five outer folds within each GEO source.
 3. **Completed:** run both directional transfers and pooled final fitting.
 4. Review the sigmoid-clipping warning pathway; any change affecting completed results requires a timestamped public amendment and must not be silently applied.
-5. Execute the remaining sex/age controls, bounded sensitivities and registered leakage audit.
+5. **Sex/age controls completed:** retain the successful sex development gate and limited age capacity as reported; execute the remaining bounded sensitivities and registered leakage audit.
 6. Validate donor-bootstrap CI coverage and finalize the permutation scope/compute plan before execution.
 7. Produce any required aggregate diagnostics and freeze a reproducible GEO milestone package. Do not transfer sample-level predictions or PPMI individual data to GitHub or Zenodo.
 
@@ -105,7 +105,7 @@ The project is now past feasibility and has completed its core GEO CV/transfer m
 
 Before **any** PPMI score, publish the second locked package: code and environment hashes, exact split manifest, finalized M1–M5 models and preprocessing states, control thresholds, and a hash/reference for the finalized private population/crosswalk. The public package must not contain subject-level PPMI information. Update Zenodo only at this specified milestone, and preserve the matching Git commit/tag.
 
-Then run the outcome-free sex, age, and permitted cell-marker transfer gates. If a gate fails without a demonstrable technical bug, report the confirmatory PPMI disease test as unevaluable; do not alter the transformation after seeing the failure and then present the result as confirmatory. If the gates pass, run the fixed inductive M1–M5 PPMI transfer once, calculate the prespecified metrics and paired uncertainty, and preserve the audit trail.
+Then run the outcome-free sex/age controls and permitted cell-marker diagnostics. Failure of the **PPMI sex gate** without a demonstrable technical bug makes the confirmatory PPMI disease test unevaluable; age failure and insufficient CBC support instead limit claims. Do not alter the transformation after observing control results and then present the same holdout as confirmatory. If the stopping gates pass, run the fixed inductive M1–M5 PPMI transfer once, calculate the prespecified metrics and paired uncertainty, and preserve the audit trail.
 
 ### Phase D — interpretation and manuscript
 
@@ -119,4 +119,4 @@ Zenodo is reserved for the two project milestones described above: (1) complete,
 
 ## 9. Plain-language answer: is the project now “being done”?
 
-Yes, the project has moved beyond feasibility: the analysis protocol is registered, the primary software exists, synthetic and numerical checks passed, and all 13 core GEO scopes have run. The next work is the bounded warning review, development sex/age controls, remaining diagnostics/sensitivities, final PPMI eligibility and the second public lock. All PPMI scoring remains outstanding. The completed GEO milestone is substantive execution evidence, while the conditional external-validation study is unfinished.
+Yes, the project has moved beyond feasibility: the analysis protocol is registered, the primary software exists, synthetic and numerical checks passed, all 13 core GEO scopes have run, and sex/age development controls are complete. The next work is the bounded warning review, remaining diagnostics/sensitivities, final PPMI eligibility and the second public lock. All PPMI scoring remains outstanding. The completed GEO milestone is substantive execution evidence, while the conditional external-validation study is unfinished.
