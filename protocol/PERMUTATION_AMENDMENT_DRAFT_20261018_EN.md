@@ -6,6 +6,15 @@ amendments; latest results snapshot: [10.5281/zenodo.23445851](https://doi.org/1
 **No registered real-GEO label-permutation replicate has been executed to date.**
 Earlier synthetic source-null simulations are separate experiments.
 
+This draft also records a proposed CBC temporal matching rule for the planned
+cell-score validation. It is not effective until this combined amendment is
+tested and publicly versioned. The frozen set of 161 baseline healthy controls
+currently has zero CBC records at the exact RNA-seq participant+visit in either
+the current or archived CBC export. Consequently the baseline-control CBC
+association is non-evaluable under the registered minimum `n >= 30`; no CBC
+correlation has been calculated. The rule below does not authorize broadening
+the population after this availability result.
+
 **Change and rationale.** Replace 1,000 repetitions across M1–M5 with **200 fixed
 repetitions of M4/M5**, covering only the ten within-source outer folds: five
 per GEO. Exclude directional transfers and pooled final fitting. Original
@@ -60,6 +69,20 @@ by four. Freeze the tested executor/config hashes in the public amendment before
 any real permutation, including a runtime pilot. Use persistent logs, sleep
 prevention and resumable outputs; neither protects against shutdown or all sleep
 conditions. No scoring-method amendment is needed for the closed sigmoid audit.
+
+**CBC participant/visit and temporal matching rule (proposed).** A CBC row is
+eligible only when normalized participant ID and visit exactly match the RNA-seq
+sample and the CBC `LCOLLDT` month/year equals the whole-blood collection
+`BLDCLLDT` month/year for that same visit. Exclude adjacent months and do not
+choose among records using an inferred nearest day. Two dates known only to fall
+within the same calendar month are at most 30 days apart, but these exports do
+not reveal same-day status or exact day distance. Validate specific cell-score
+proxies against numeric CBC markers only if the prespecified minimum sample
+size is met; otherwise report the association as non-evaluable. Do not calculate
+correlations on the currently available baseline-control set (`n=0` exact-visit
+CBC rows). `BLDCOLL` values remain uninterpreted until verified against the
+applicable official PPMI code list. CBC associations are a marker-proxy check,
+not a general test of autosomal or PD-specific transfer.
 
 References: [permutation null](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.permutation_test_score.html);
 [randomized p-values](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html).
