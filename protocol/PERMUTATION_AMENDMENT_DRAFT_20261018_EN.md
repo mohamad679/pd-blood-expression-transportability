@@ -64,12 +64,23 @@ invalid dependent analyses explicitly.
 
 Before publication, validate membership isolation, identity behavior, synthetic
 null behavior, resume integrity and numerical equivalence across worker/thread
-settings. Benchmark peak memory, swapping and throughput before accepting four
-workers × two threads; existing times used eight threads and cannot be divided
-by four. Freeze the tested executor/config hashes in the public amendment before
+settings. Execution is planned on an x86_64 Linux cloud VM with the exact locked
+package versions and Python 3.11.9. Record machine, CPU, OS and environment in
+outputs; do not transfer any PPMI participant data. Test a ceiling of eight
+workers × two threads using synthetic full-dimensional fixtures before accepting
+that ceiling. Linux reads RAM from `/proc/meminfo` and swapout pages from
+`/proc/vmstat` (`pswpout`); retain diagnostic `pgpgout` separately. Keep the
+75%-RAM conservative budget and zero-swapout-growth gate; missing measurements
+cannot pass. macOS counters retain their original meaning. Existing times used
+eight threads and cannot be divided by eight. Freeze the tested executor/config hashes in the public amendment before
 any real permutation, including a runtime pilot. Use persistent logs, sleep
 prevention and resumable outputs; neither protects against shutdown or all sleep
-conditions. No scoring-method amendment is needed for the closed sigmoid audit.
+conditions. After publication, use fixed registered replicate 0 at one worker
+as a runtime pilot, then reuse it in the full B=200 run. No p-value or seed/B
+selection follows from that pilot. Runtime concurrency may be 1, 2, 4 or 8,
+within the tested ceiling, based only on timing/resources, without changing the
+bound config, labels, fits or statistics. A serial pilot does not establish
+parallel throughput. No scoring-method amendment is needed for the closed sigmoid audit.
 
 **CBC participant and temporal matching rule (proposed).** Keep the frozen
 baseline healthy-control population. Use an available collection month from the

@@ -2,6 +2,19 @@
 
 **Snapshot date:** 2026-10-18 (Asia/Tehran)
 
+**Cloud handoff:** The [GEO-only Hetzner runbook](HETZNER_GEO_RUNBOOK_EN.md)
+and an allowlisted transfer-bundle builder are prepared. Linux uses `/proc`
+RAM/swap counters with missing measurements failing closed. A separate cloud
+configuration proposes an eight-worker/two-thread ceiling; the original Mac
+two-worker configuration is retained. Server setup, eight-worker resource
+stress and observed-label numerical identity remain unverified on Linux.
+The receipt-gated runtime pilot retains registered replicate 0 within B=200.
+No server purchase, server execution, new public amendment or real-GEO
+randomized fit was performed during this handoff preparation.
+Local checks passed: six portability fixtures, 27 synthetic executor checks,
+650 fit attempts (max KKT 2.684e-8), and an isolated 39-file transfer/plan audit.
+See the [handoff report](CLOUD_HANDOFF_20261018_EN.md).
+
 The complete retrospective account is [COMPLETE_PROJECT_REPORT_20261018_EN.md](COMPLETE_PROJECT_REPORT_20261018_EN.md); subsequent work is summarized in the [continuation report](PROJECT_CONTINUATION_REPORT_20261018_EN.md). Its [reporting correction](REPORTING_CORRECTION_20261018_EN.md) records a terminology error in the released short report: final M5 (`rho=1`) has an L1/lasso gene penalty, not ridge. Code, hyperparameters, fitted models and metrics are unchanged. The full report also records two persistent lambda boundaries from the completed runs; no extra tuning has been performed.
 
 | Workstream | Status | Evidence / limitation |

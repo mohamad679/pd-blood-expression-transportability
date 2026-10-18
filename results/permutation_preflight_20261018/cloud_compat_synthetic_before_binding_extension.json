@@ -1,0 +1,111 @@
+{
+  "status": "synthetic_passed_identity_pending",
+  "participant_data_read": false,
+  "real_randomized_fits_performed": false,
+  "PPMI_accessed": false,
+  "code_sha256": {
+    "pipeline/permutation_executor.py": "820f0e30fc14a863a16fbcf8008ee7c0408dadc21565fe4acd5942ce0e409752",
+    "pipeline/geo_pipeline.py": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+    "pipeline/verify_permutation_executor.py": "b5e9dcc909e9a8be18b9b432000080da7a30b8039a5bd140537b981246957aca",
+    "pipeline/finalize_permutation_preflight.py": "06092e2c25c11eaf6cac6a3a2af3266e07bc1d65b01ac8326a2702d83f959a2b",
+    "protocol/numerical_kkt_v3_1.py": "00523bd36e4cf1b906bb1b6ed8657a967718bed52503fab694705980c1e6d525",
+    "protocol/block_logistic_v3_1.py": "469981ac72d345c37e1d0f3bd6cc0420bfd04e3c33e18e7e63ac537403315ec2",
+    "protocol/config_v3_1.json": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+    "protocol/v3_marker_manifest.json": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+    "requirements_glum_v3.lock.txt": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00"
+  },
+  "config_sha256": "740a1355c8c94df47a508ca336a09479a5d324524e374fdb1a8043425cfe985e",
+  "verifier_sha256": "b5e9dcc909e9a8be18b9b432000080da7a30b8039a5bd140537b981246957aca",
+  "machine": {
+    "system": "Darwin",
+    "release": "24.6.0",
+    "architecture": "x86_64",
+    "logical_CPUs": 8,
+    "processor": "i386",
+    "python_version": "3.11.15"
+  },
+  "package_versions": {
+    "cloudpickle": "3.1.2",
+    "formulaic": "1.2.2",
+    "glum": "3.4.1",
+    "interface_meta": "2.0.1",
+    "joblib": "1.6.0",
+    "narwhals": "2.27.1",
+    "numexpr": "2.14.2",
+    "numpy": "2.4.6",
+    "packaging": "26.3",
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.0",
+    "python-dateutil": "2.9.0.post0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "six": "1.17.0",
+    "tabmat": "4.2.1",
+    "threadpoolctl": "3.7.0",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "wrapt": "2.5.1"
+  },
+  "checks": [
+    "ten_disjoint_outer_tests_cover_all_samples",
+    "permutation_changes_at_least_one_label",
+    "each_outer_block_preserves_class_totals",
+    "seed_and_labels_independent_of_layout_scheduling",
+    "donor_sorting_makes_label_map_row_order_invariant",
+    "different_rep_ids_derive_different_maps",
+    "identity_map_keeps_original_labels",
+    "inner_folds_rebuilt_from_current_labels",
+    "shuffled_inner_validation_memberships_differ_from_observed_strata",
+    "identity_inner_memberships_equal_frozen_observed_manifest",
+    "repeated_rows_of_donor_receive_identical_labels",
+    "M4_M5_candidates_and_decisions_equal_frozen_engine",
+    "M4_M5_coefficients_equal_frozen_engine",
+    "preprocessing_equal_frozen_engine",
+    "M4_M5_predictions_equal_frozen_engine",
+    "valid_completed_checkpoint_reused",
+    "changed_provenance_rejected",
+    "tampered_artifact_rejected",
+    "partial_attempt_without_COMPLETE_not_reused",
+    "concurrent_controller_rejected",
+    "worker_thread_and_order_changes_preserve_label_maps_and_fold_AUROCs",
+    "resume_reuses_two_complete_reps",
+    "resume_statistics_equal_uninterrupted_statistics",
+    "interruption_preserves_old_attempt_and_recomputes_same_rep",
+    "terminal_failure_not_retried_as_an_interruption",
+    "real_permutation_gate_rejects_unpublished_or_incomplete_preflight",
+    "all_synthetic_numerical_attempts_pass_KKT"
+  ],
+  "synthetic_fit_attempts": 650,
+  "max_KKT": 2.6839175860937647e-08,
+  "synthetic_null_smoke_statistics": [
+    {
+      "A": {
+        "M4": 0.476,
+        "M5": 0.534,
+        "delta": 0.05800000000000005
+      },
+      "B": {
+        "M4": 0.46799999999999997,
+        "M5": 0.46799999999999997,
+        "delta": 0.0
+      }
+    },
+    {
+      "A": {
+        "M4": 0.54,
+        "M5": 0.524,
+        "delta": -0.016000000000000014
+      },
+      "B": {
+        "M4": 0.418,
+        "M5": 0.458,
+        "delta": 0.040000000000000036
+      }
+    }
+  ],
+  "smoke_is_not_a_statistical_null_calibration": true,
+  "check_count": 27,
+  "seconds": 17.7503826309985,
+  "observed_identity_replay": "required_separately_before_release",
+  "memory_benchmark_completed": false
+}

@@ -89,3 +89,13 @@ real label permutations or accesses PPMI. It stops at the first failed gate and
 refuses to overwrite evidence after a public receipt exists. Raw attempt files
 remain private. See `../docs/PERMUTATION_EXECUTOR_PREFLIGHT_20261018_EN.md` for the
 preserved results and current resource limitation.
+# Linux cloud handoff
+
+The GEO-only server package is built with `python3 pipeline/build_geo_server_bundle.py`.
+See [the Hetzner runbook](../docs/HETZNER_GEO_RUNBOOK_EN.md). The Linux adapter
+uses `/proc` counters, a separately hashed eight-worker cloud config, a matching
+one-versus-eight-worker synthetic stress test, and the original observed-label
+identity comparison. Package installation must preserve every locked version.
+The `pilot` command is receipt-gated and retains registered replicate 0 for
+the full B=200 run. Server performance and Linux numerical identity remain
+unverified until server preflight returns. Do not copy any PPMI files.

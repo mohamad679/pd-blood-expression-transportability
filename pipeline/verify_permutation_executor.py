@@ -12,6 +12,7 @@ import json
 import multiprocessing as mp
 import os
 from pathlib import Path
+import platform
 import subprocess
 import tempfile
 import time
@@ -80,7 +81,7 @@ def benchmark_task(job):
                 thread_pools=pools, probability=probability.tolist())
 
 
-def resource_benchmark(workers):
+def resource_benchmark(workers, jobs=4):
     for name in pe.THREAD_ENV:
         os.environ[name] = '2'
     context = mp.get_context('spawn')
@@ -88,7 +89,7 @@ def resource_benchmark(workers):
     started = time.monotonic()
     with ProcessPoolExecutor(max_workers=workers, mp_context=context,
             initializer=benchmark_init, initargs=(2, barrier)) as pool:
-        rows = list(pool.map(benchmark_task, range(4)))
+        rows = list(pool.map(benchmark_task, range(max(jobs, workers))))
     peaks = {}
     for row in rows:
         peaks[row['pid']] = max(peaks.get(row['pid'], 0), row['peak_RSS_bytes'])
@@ -100,17 +101,23 @@ def resource_benchmark(workers):
 
 def physical_memory():
     try:
+        if platform.system() == 'Linux':
+            values = dict(line.split(':', 1) for line in Path('/proc/meminfo').read_text().splitlines())
+            return int(values['MemTotal'].split()[0]) * 1024
         return int(subprocess.check_output(['sysctl', '-n', 'hw.memsize'], text=True).strip())
-    except (OSError, subprocess.CalledProcessError, ValueError):
+    except (OSError, subprocess.CalledProcessError, ValueError, KeyError):
         return None
 
 
 def swap_counters():
     try:
+        if platform.system() == 'Linux':
+            values = dict(line.split() for line in Path('/proc/vmstat').read_text().splitlines())
+            return {key: int(values[key]) for key in ('pswpout', 'pgpgout')}
         text = subprocess.check_output(['vm_stat'], text=True)
         return {line.split(':')[0]: int(line.split(':')[1].strip().rstrip('.'))
                 for line in text.splitlines() if line.startswith(('Swapouts:', 'Pageouts:'))}
-    except (OSError, subprocess.CalledProcessError, ValueError):
+    except (OSError, subprocess.CalledProcessError, ValueError, KeyError):
         return {}
 
 
@@ -119,8 +126,9 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--work', type=Path, required=True)
     ap.add_argument('--benchmark', action='store_true')
+    ap.add_argument('--config', type=Path, default=pe.CONFIG)
     args = ap.parse_args()
-    settings = json.loads(pe.CONFIG.read_text())
+    settings = json.loads(args.config.read_text())
     versions = pe.locked_environment()
     geo = pe.engine()
     checks = []
@@ -141,9 +149,9 @@ def main():
     run.mkdir()
     report = dict(status='in_progress', participant_data_read=False,
                   real_randomized_fits_performed=False, PPMI_accessed=False,
-                  code_sha256=pe.code_hashes(), config_sha256=pe.sha_file(pe.CONFIG),
+                  code_sha256=pe.code_hashes(), config_sha256=pe.sha_file(args.config),
                   verifier_sha256=pe.sha_file(__file__),
-                  package_versions=versions, checks=checks)
+                  machine=pe.machine_info(), package_versions=versions, checks=checks)
     pe.atomic_json(args.output, report)
     data = synthetic()
     manifest = geo.split_manifest(data, {})
@@ -272,7 +280,7 @@ def main():
 
     if args.benchmark:
         before = swap_counters()
-        one = resource_benchmark(1)
+        one = resource_benchmark(1, jobs=max(4, settings['workers']))
         four = resource_benchmark(settings['workers'])
         after = swap_counters()
         errors = [float(np.max(np.abs(np.array(a['probability'])-np.array(b['probability']))))
@@ -296,10 +304,13 @@ def main():
         check('benchmark_backend_threads_bounded_at_two', all(
             pool['num_threads'] <= 2 for row in four['rows'] for pool in row['thread_pools']))
         check('measured_memory_plus_guard_under_75_percent_physical_RAM', memory_pass)
-        # macOS exposes pageouts and compressor swapouts as distinct counters.
-        # Pageouts are retained diagnostically; they do not establish swap growth.
-        check('no_system_compressor_swapout_increase_during_benchmark',
-              'Swapouts' in swap_delta and swap_delta['Swapouts'] == 0)
+        # Counters are system-wide: diagnostic page writeouts are not swapouts.
+        swap_key = 'pswpout' if platform.system() == 'Linux' else 'Swapouts'
+        report['resource_benchmark'].update(swap_gate_counter=swap_key,
+            page_size_bytes=os.sysconf('SC_PAGE_SIZE'),
+            counter_semantics='Linux pswpout: pages; pgpgout: KiB diagnostic only. macOS: pages.')
+        check('no_system_swapout_increase_during_benchmark',
+              swap_key in swap_delta and swap_delta[swap_key] == 0)
     report.update(status='synthetic_passed_identity_pending', checks=checks,
                   check_count=len(checks), seconds=time.monotonic()-started,
                   observed_identity_replay='required_separately_before_release',

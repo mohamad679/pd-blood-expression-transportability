@@ -68,9 +68,28 @@ def code_hashes():
     return {name: sha_file(ROOT / name) for name in (
         'pipeline/permutation_executor.py', 'pipeline/geo_pipeline.py',
         'pipeline/verify_permutation_executor.py', 'pipeline/finalize_permutation_preflight.py',
+        'pipeline/server_setup.sh', 'pipeline/server_stage.sh',
+        'pipeline/test_server_portability.py',
         'protocol/numerical_kkt_v3_1.py', 'protocol/block_logistic_v3_1.py',
         'protocol/config_v3_1.json', 'protocol/v3_marker_manifest.json',
         'requirements_glum_v3.lock.txt')}
+
+
+def machine_info():
+    """Record computation characteristics without IPs, usernames or credentials."""
+    info = dict(system=platform.system(), release=platform.release(),
+                architecture=platform.machine(), logical_CPUs=os.cpu_count(),
+                processor=platform.processor(), python_version=platform.python_version())
+    if platform.system() == 'Linux':
+        info['os_release'] = platform.freedesktop_os_release()
+        info['cpu_models'] = sorted(set(line.split(':', 1)[1].strip()
+            for line in Path('/proc/cpuinfo').read_text().splitlines()
+            if line.startswith('model name')))
+        info['memory'] = {line.split(':', 1)[0]: line.split(':', 1)[1].strip()
+            for line in Path('/proc/meminfo').read_text().splitlines()
+            if line.startswith(('MemTotal:', 'SwapTotal:'))}
+        info['CPU_affinity_count'] = len(os.sched_getaffinity(0))
+    return info
 
 
 def locked_environment():
@@ -400,14 +419,19 @@ def verify_receipt(receipt, binding, preflight):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('command', choices=('plan', 'identity', 'run'))
+    ap.add_argument('command', choices=('plan', 'identity', 'pilot', 'run'))
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--config', type=Path, default=CONFIG)
     ap.add_argument('--receipt', type=Path)
     ap.add_argument('--preflight', type=Path)
+    ap.add_argument('--workers', type=int, choices=(1, 2, 4, 8),
+                    help='Runtime concurrency only; cannot exceed the tested config ceiling')
     ap.add_argument('--original-runs', type=Path, default=ROOT / 'private_data/geo_runs_20261018')
     args = ap.parse_args()
     settings = json.loads(args.config.read_text())
+    workers = args.workers if args.workers is not None else settings['workers']
+    if workers > settings['workers']:
+        raise ValueError('Worker count exceeds tested configuration ceiling')
     environment = locked_environment()
     geo = engine()
     data, inputs = geo.load_geo()
@@ -418,14 +442,15 @@ def main():
     binding = dict(code_sha256=code_hashes(), config_sha256=sha_file(args.config),
                    input_sha256=inputs, split_manifest_sha256=hashlib.sha256(json.dumps(
                        manifest, indent=2, ensure_ascii=False, allow_nan=False).encode()).hexdigest(),
-                   package_versions=environment, python_version=platform.python_version())
+                   package_versions=environment, python_version=platform.python_version(),
+                   machine=machine_info())
     args.output.mkdir(parents=True, exist_ok=True)
     if args.command == 'plan':
         atomic_json(args.output / 'PLAN.json', dict(binding=binding, settings=settings,
                     n=len(data.y), genes=len(data.genes), outer_scopes=len(layout),
                     real_randomized_fits_performed=False, PPMI_accessed=False))
         return
-    if args.command == 'run':
+    if args.command in ('pilot', 'run'):
         if args.receipt is None or args.preflight is None:
             raise ValueError('Public amendment receipt and passing preflight report required')
         verify_receipt(json.loads(args.receipt.read_text()), binding, args.preflight)
@@ -466,8 +491,16 @@ def main():
         identity = json.loads((args.output / 'IDENTITY_VERIFIED.json').read_text())
         if identity['status'] != 'passed' or identity['binding_sha256'] != object_hash(binding):
             raise ValueError('Observed identity replay not verified for this binding')
+        if args.command == 'pilot':
+            result = execute(data, manifest, settings, args.output, binding, [0], 1)[0]
+            atomic_json(args.output / 'RUNTIME_PILOT.json', dict(rep_id=0,
+                included_in_fixed_B=True, workers=1, result=result,
+                worker_ceiling=settings['workers'], scheduling_changes_only=True,
+                no_test_p_value_computed=True))
+            print('Registered replicate 0 complete; reused in the full fixed-B run.', flush=True)
+            return
         results = execute(data, manifest, settings, args.output, binding,
-                          list(range(settings['B'])), settings['workers'])
+                          list(range(settings['B'])), workers)
         summary = {}
         for source, observed in identity['statistics'].items():
             summary[source] = {}
@@ -478,7 +511,8 @@ def main():
                     null_SD=float(null.std(ddof=1)), p_value=p,
                     Monte_Carlo_SE_approx=float(np.sqrt(p * (1-p) / settings['B'])))
         atomic_json(args.output / 'SUMMARY.json', dict(status='complete', B=settings['B'],
-                    results=summary, PPMI_accessed=False, exploratory_only=True))
+                    results=summary, runtime_workers=workers, machine=machine_info(),
+                    PPMI_accessed=False, exploratory_only=True))
 
 
 if __name__ == '__main__':
