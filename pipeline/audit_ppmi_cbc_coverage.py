@@ -81,10 +81,14 @@ def read_cbc(path: Path) -> dict:
     pairs: set[tuple[str, str]] = set()
     numeric_pairs: set[tuple[str, str]] = set()
     marker_pairs: dict[str, set[tuple[str, str]]] = defaultdict(set)
+    marker_records: dict[tuple[str, ...], Counter] = defaultdict(Counter)
+    marker_units: dict[str, set[tuple[str, str]]] = defaultdict(set)
     row_counts = Counter()
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
-        required = {"PATNO", "EVENT_ID", "LTSTCODE", "LSIRES", "LUSRES"}
+        required = {
+            "PATNO", "EVENT_ID", "LTSTCODE", "LSIRES", "LUSRES", "LCOLLDT", "COLLTM"
+        }
         if not required.issubset(reader.fieldnames or []):
             raise ValueError(f"CBC file missing required columns: {sorted(required)}")
         row_counts["data_rows"] = 0
@@ -102,12 +106,69 @@ def read_cbc(path: Path) -> dict:
                 code = (row.get("LTSTCODE") or "").strip().upper()
                 if code in MARKERS:
                     marker_pairs[code].add(pair)
+                    record_key = (
+                        patno,
+                        event,
+                        code,
+                        (row.get("LCOLLDT") or "").strip(),
+                        (row.get("COLLTM") or "").strip(),
+                    )
+                    signature = (
+                        (row.get("LSIRES") or "").strip(),
+                        (row.get("LSIUNIT") or "").strip(),
+                        (row.get("LUSRES") or "").strip(),
+                        (row.get("LUSUNIT") or "").strip(),
+                    )
+                    marker_records[record_key][signature] += 1
+                    marker_units[code].add((signature[1], signature[3]))
     return {
         "pairs": pairs,
         "numeric_pairs": numeric_pairs,
         "marker_pairs": marker_pairs,
+        "marker_records": marker_records,
+        "marker_units": marker_units,
         "data_rows": row_counts["data_rows"],
         "unmatched_rows": row_counts["unmatched_or_unparseable_cbc_rows"],
+    }
+
+
+def compare_marker_versions(current: dict, archived: dict) -> dict:
+    current_records = current["marker_records"]
+    archived_records = archived["marker_records"]
+    shared_keys = current_records.keys() & archived_records.keys()
+    identical = 0
+    different = 0
+    ambiguous = 0
+    per_code = defaultdict(lambda: Counter())
+    for key in shared_keys:
+        code = key[2]
+        left = current_records[key]
+        right = archived_records[key]
+        if sum(left.values()) != 1 or sum(right.values()) != 1:
+            ambiguous += 1
+            per_code[code]["shared_keys_with_multiple_rows"] += 1
+        if left == right:
+            identical += 1
+            per_code[code]["identical_value_and_unit_keys"] += 1
+        else:
+            different += 1
+            per_code[code]["different_value_or_unit_keys"] += 1
+    return {
+        "scope": "numeric rows for the prespecified hematology marker test codes; matched by exact PATNO, EVENT_ID, LTSTCODE, collection date and time",
+        "current_unique_marker_measurement_keys": len(current_records),
+        "archived_unique_marker_measurement_keys": len(archived_records),
+        "shared_marker_measurement_keys": len(shared_keys),
+        "shared_keys_with_identical_value_and_units": identical,
+        "shared_keys_with_different_value_or_units": different,
+        "shared_keys_ambiguous_due_to_duplicate_rows": ambiguous,
+        "marker_code_details": {
+            code: {
+                "current_si_us_unit_pairs": sorted([list(x) for x in current["marker_units"].get(code, set())]),
+                "archived_si_us_unit_pairs": sorted([list(x) for x in archived["marker_units"].get(code, set())]),
+                **dict(per_code.get(code, {})),
+            }
+            for code in sorted(MARKERS)
+        },
     }
 
 
@@ -176,6 +237,7 @@ def main() -> None:
             "matched_only_in_current_version": len(current_sample_pairs - archived_sample_pairs),
             "matched_only_in_archived_version": len(archived_sample_pairs - current_sample_pairs),
         },
+        "marker_version_concordance": compare_marker_versions(current, archived),
         "union_for_coverage_audit_only": {
             "unique_participant_visit_pairs": len(combined["pairs"]),
             "coverage": sample_coverage(samples, combined),
