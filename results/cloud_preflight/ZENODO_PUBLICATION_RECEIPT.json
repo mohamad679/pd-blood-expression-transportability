@@ -1,0 +1,15 @@
+{
+  "publicly_verified": true,
+  "record_url": "https://zenodo.org/records/23449296",
+  "doi": "10.5281/zenodo.23449296",
+  "published_at_utc": "2026-10-18T13:46:35.803828+00:00",
+  "verified_at_utc": "2026-10-18T13:52:31.166697+00:00",
+  "binding_sha256": "4be7bd1bc5e92da5d094fc6f59dbd45df033b254b3dc31043b4af8ed1ccc0310",
+  "preflight_report_sha256": "2b21d17727adcbe71022a411e4db870b46d616d34d8839da562b0b5b7f80f0ac",
+  "public_files_sha256": {
+    "CLOUD_PREFLIGHT_v3_1_4.json": "2b21d17727adcbe71022a411e4db870b46d616d34d8839da562b0b5b7f80f0ac",
+    "RELEASE_MANIFEST_v3_1_4.json": "ca103a9b84189a00c40a13f51d4e452748053533d7d6ee818762b9e2a79fa441",
+    "PERMUTATION_CBC_AMENDMENT_v3_1_4_EN.md": "89f278b0fb0a9635f067eefc9eae0a5d20332eb31b94da5c69580d9a7942f3a3",
+    "GEO_PERMUTATION_EXECUTOR_v3_1_4.zip": "547c250a5c59b5577db14b92601dd7fe3bce6106861e556647ddd46cd0e451b0"
+  }
+}

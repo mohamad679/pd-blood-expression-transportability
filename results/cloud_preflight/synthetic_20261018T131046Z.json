@@ -1,0 +1,817 @@
+{
+  "status": "synthetic_passed_identity_pending",
+  "participant_data_read": false,
+  "real_randomized_fits_performed": false,
+  "PPMI_accessed": false,
+  "code_sha256": {
+    "pipeline/permutation_executor.py": "b4c91e089baece178b972c1ca64fcd54e28397d367e5755bbff4e417142c7372",
+    "pipeline/geo_pipeline.py": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+    "pipeline/verify_permutation_executor.py": "b5e9dcc909e9a8be18b9b432000080da7a30b8039a5bd140537b981246957aca",
+    "pipeline/finalize_permutation_preflight.py": "9aa7c77e1097df1d8823710bcd3220ad6d497e698e93100ac0315ea5851754b2",
+    "pipeline/server_setup.sh": "dc1c44e0e1a31d313b4608ed926e9a389ab13aabd37b3e227365905bfdd76061",
+    "pipeline/server_stage.sh": "7ea0424653ede68fb09e3a593a1d2616d1bf32ec254dd6c6af1a77d9680b83f8",
+    "pipeline/test_server_portability.py": "06e01f46ff13b1de64b60663a55e1cd83d5adc43926c07c6acef49ebed340b14",
+    "protocol/numerical_kkt_v3_1.py": "00523bd36e4cf1b906bb1b6ed8657a967718bed52503fab694705980c1e6d525",
+    "protocol/block_logistic_v3_1.py": "469981ac72d345c37e1d0f3bd6cc0420bfd04e3c33e18e7e63ac537403315ec2",
+    "protocol/config_v3_1.json": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+    "protocol/v3_marker_manifest.json": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+    "requirements_glum_v3.lock.txt": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00"
+  },
+  "config_sha256": "740a1355c8c94df47a508ca336a09479a5d324524e374fdb1a8043425cfe985e",
+  "verifier_sha256": "b5e9dcc909e9a8be18b9b432000080da7a30b8039a5bd140537b981246957aca",
+  "machine": {
+    "system": "Linux",
+    "release": "7.0.0-30-generic",
+    "architecture": "x86_64",
+    "logical_CPUs": 16,
+    "processor": "",
+    "python_version": "3.11.9",
+    "os_release": {
+      "NAME": "Ubuntu",
+      "ID": "ubuntu",
+      "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+      "VERSION_ID": "26.04",
+      "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+      "VERSION_CODENAME": "resolute",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "resolute",
+      "LOGO": "ubuntu-logo"
+    },
+    "cpu_models": [
+      "AMD EPYC-Genoa Processor"
+    ],
+    "memory": {
+      "MemTotal": "32078284 kB",
+      "SwapTotal": "0 kB"
+    },
+    "CPU_affinity_count": 16
+  },
+  "package_versions": {
+    "cloudpickle": "3.1.2",
+    "formulaic": "1.2.2",
+    "glum": "3.4.1",
+    "interface_meta": "2.0.1",
+    "joblib": "1.6.0",
+    "narwhals": "2.27.1",
+    "numexpr": "2.14.2",
+    "numpy": "2.4.6",
+    "packaging": "26.3",
+    "pandas": "3.0.6",
+    "pyarrow": "26.0.0",
+    "python-dateutil": "2.9.0.post0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.17.1",
+    "six": "1.17.0",
+    "tabmat": "4.2.1",
+    "threadpoolctl": "3.7.0",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "wrapt": "2.5.1"
+  },
+  "checks": [
+    "ten_disjoint_outer_tests_cover_all_samples",
+    "permutation_changes_at_least_one_label",
+    "each_outer_block_preserves_class_totals",
+    "seed_and_labels_independent_of_layout_scheduling",
+    "donor_sorting_makes_label_map_row_order_invariant",
+    "different_rep_ids_derive_different_maps",
+    "identity_map_keeps_original_labels",
+    "inner_folds_rebuilt_from_current_labels",
+    "shuffled_inner_validation_memberships_differ_from_observed_strata",
+    "identity_inner_memberships_equal_frozen_observed_manifest",
+    "repeated_rows_of_donor_receive_identical_labels",
+    "M4_M5_candidates_and_decisions_equal_frozen_engine",
+    "M4_M5_coefficients_equal_frozen_engine",
+    "preprocessing_equal_frozen_engine",
+    "M4_M5_predictions_equal_frozen_engine",
+    "valid_completed_checkpoint_reused",
+    "changed_provenance_rejected",
+    "tampered_artifact_rejected",
+    "partial_attempt_without_COMPLETE_not_reused",
+    "concurrent_controller_rejected",
+    "worker_thread_and_order_changes_preserve_label_maps_and_fold_AUROCs",
+    "resume_reuses_two_complete_reps",
+    "resume_statistics_equal_uninterrupted_statistics",
+    "interruption_preserves_old_attempt_and_recomputes_same_rep",
+    "terminal_failure_not_retried_as_an_interruption",
+    "real_permutation_gate_rejects_unpublished_or_incomplete_preflight",
+    "all_synthetic_numerical_attempts_pass_KKT",
+    "1000_gene_stress_all_KKT_pass",
+    "1000_gene_worker_equivalence_max_probability_error_1e_minus_6",
+    "benchmark_uses_requested_worker_count",
+    "benchmark_backend_threads_bounded_at_two",
+    "measured_memory_plus_guard_under_75_percent_physical_RAM",
+    "no_system_swapout_increase_during_benchmark"
+  ],
+  "synthetic_fit_attempts": 650,
+  "max_KKT": 2.6839175878284882e-08,
+  "synthetic_null_smoke_statistics": [
+    {
+      "A": {
+        "M4": 0.476,
+        "M5": 0.534,
+        "delta": 0.05800000000000005
+      },
+      "B": {
+        "M4": 0.46799999999999997,
+        "M5": 0.46799999999999997,
+        "delta": 0.0
+      }
+    },
+    {
+      "A": {
+        "M4": 0.54,
+        "M5": 0.524,
+        "delta": -0.016000000000000014
+      },
+      "B": {
+        "M4": 0.418,
+        "M5": 0.458,
+        "delta": 0.040000000000000036
+      }
+    }
+  ],
+  "smoke_is_not_a_statistical_null_calibration": true,
+  "resource_benchmark": {
+    "serial": {
+      "workers": 1,
+      "threads_per_worker": 2,
+      "wall_seconds": 10.302005060999363,
+      "observed_worker_processes": 1,
+      "summed_worker_peak_RSS_bytes": 604643328,
+      "memory_measurement": "sum of per-process high-water marks; conservative, not simultaneous RSS",
+      "rows": [
+        {
+          "job": 0,
+          "pid": 3353,
+          "seconds": 1.2197980699993423,
+          "peak_RSS_bytes": 584761344,
+          "KKT": 6.473992403364243e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 1,
+          "pid": 3353,
+          "seconds": 1.1710268779997932,
+          "peak_RSS_bytes": 604450816,
+          "KKT": 1.2944304916134852e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 2,
+          "pid": 3353,
+          "seconds": 1.1673836950003533,
+          "peak_RSS_bytes": 604581888,
+          "KKT": 2.5720881209158125e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 3,
+          "pid": 3353,
+          "seconds": 1.1880942070001765,
+          "peak_RSS_bytes": 604590080,
+          "KKT": 1.576945495605569e-10,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 4,
+          "pid": 3353,
+          "seconds": 1.1476952699995309,
+          "peak_RSS_bytes": 604626944,
+          "KKT": 4.93121507711726e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 5,
+          "pid": 3353,
+          "seconds": 1.1146551760002694,
+          "peak_RSS_bytes": 604626944,
+          "KKT": 1.074902857839066e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 6,
+          "pid": 3353,
+          "seconds": 1.1385033540000222,
+          "peak_RSS_bytes": 604626944,
+          "KKT": 5.5146108823335167e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 7,
+          "pid": 3353,
+          "seconds": 1.13084918200002,
+          "peak_RSS_bytes": 604643328,
+          "KKT": 4.275023652406621e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        }
+      ]
+    },
+    "parallel": {
+      "workers": 8,
+      "threads_per_worker": 2,
+      "wall_seconds": 2.6809035819997007,
+      "observed_worker_processes": 8,
+      "summed_worker_peak_RSS_bytes": 4676206592,
+      "memory_measurement": "sum of per-process high-water marks; conservative, not simultaneous RSS",
+      "rows": [
+        {
+          "job": 0,
+          "pid": 3369,
+          "seconds": 1.4138629720000608,
+          "peak_RSS_bytes": 584552448,
+          "KKT": 6.473992403364243e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 1,
+          "pid": 3362,
+          "seconds": 1.2980737119996775,
+          "peak_RSS_bytes": 584544256,
+          "KKT": 1.2944304916134852e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 2,
+          "pid": 3366,
+          "seconds": 1.3528535180003018,
+          "peak_RSS_bytes": 584519680,
+          "KKT": 2.5720881209158125e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 3,
+          "pid": 3371,
+          "seconds": 1.4221129590005148,
+          "peak_RSS_bytes": 584306688,
+          "KKT": 1.576945495605569e-10,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 4,
+          "pid": 3365,
+          "seconds": 1.4842287170004056,
+          "peak_RSS_bytes": 584699904,
+          "KKT": 4.93121507711726e-12,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 5,
+          "pid": 3368,
+          "seconds": 1.2710344930001156,
+          "peak_RSS_bytes": 584491008,
+          "KKT": 1.074902857839066e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            }
+          ]
+        },
+        {
+          "job": 6,
+          "pid": 3370,
+          "seconds": 1.5242085760000919,
+          "peak_RSS_bytes": 584605696,
+          "KKT": 5.5146108823335167e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        {
+          "job": 7,
+          "pid": 3367,
+          "seconds": 1.3677845029997115,
+          "peak_RSS_bytes": 584486912,
+          "KKT": 4.275023652406621e-11,
+          "n_train": 191,
+          "n_features": 1010,
+          "thread_pools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            },
+            {
+              "user_api": "openmp",
+              "internal_api": "openmp",
+              "num_threads": 2,
+              "prefix": "libgomp",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+              "version": null
+            },
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 2,
+              "prefix": "libscipy_openblas",
+              "filepath": "/root/pdgeo/.venv/lib/python3.11/site-packages/numpy.libs/libscipy_openblas64_-32a4b2a6.so",
+              "version": "0.3.31.188.0",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        }
+      ]
+    },
+    "max_abs_probability_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "physical_RAM_bytes": 32848162816,
+    "conservative_memory_budget_bytes": 5996040192,
+    "system_swap_counter_deltas": {
+      "pgpgout": 3244,
+      "pswpout": 0
+    },
+    "system_swap_counters_before": {
+      "pswpout": 0,
+      "pgpgout": 1277137
+    },
+    "system_swap_counters_after": {
+      "pswpout": 0,
+      "pgpgout": 1280381
+    },
+    "full_permutation_runtime_not_estimated_from_this_fit_microbenchmark": true,
+    "swap_gate_counter": "pswpout",
+    "page_size_bytes": 4096,
+    "counter_semantics": "Linux pswpout: pages; pgpgout: KiB diagnostic only. macOS: pages."
+  },
+  "check_count": 33,
+  "seconds": 17.75492136199955,
+  "observed_identity_replay": "required_separately_before_release",
+  "memory_benchmark_completed": true
+}

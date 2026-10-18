@@ -1,0 +1,116 @@
+{
+  "version": "3.1.4-permutation-cbc",
+  "reserved_DOI": "10.5281/zenodo.23449296",
+  "frozen_at_utc": "2026-10-18T13:39:25.938528+00:00",
+  "binding_sha256": "4be7bd1bc5e92da5d094fc6f59dbd45df033b254b3dc31043b4af8ed1ccc0310",
+  "preflight_report_sha256": "2b21d17727adcbe71022a411e4db870b46d616d34d8839da562b0b5b7f80f0ac",
+  "code_sha256": {
+    "pipeline/permutation_executor.py": "b4c91e089baece178b972c1ca64fcd54e28397d367e5755bbff4e417142c7372",
+    "pipeline/geo_pipeline.py": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+    "pipeline/verify_permutation_executor.py": "b5e9dcc909e9a8be18b9b432000080da7a30b8039a5bd140537b981246957aca",
+    "pipeline/finalize_permutation_preflight.py": "9aa7c77e1097df1d8823710bcd3220ad6d497e698e93100ac0315ea5851754b2",
+    "pipeline/server_setup.sh": "dc1c44e0e1a31d313b4608ed926e9a389ab13aabd37b3e227365905bfdd76061",
+    "pipeline/server_stage.sh": "7ea0424653ede68fb09e3a593a1d2616d1bf32ec254dd6c6af1a77d9680b83f8",
+    "pipeline/test_server_portability.py": "06e01f46ff13b1de64b60663a55e1cd83d5adc43926c07c6acef49ebed340b14",
+    "protocol/numerical_kkt_v3_1.py": "00523bd36e4cf1b906bb1b6ed8657a967718bed52503fab694705980c1e6d525",
+    "protocol/block_logistic_v3_1.py": "469981ac72d345c37e1d0f3bd6cc0420bfd04e3c33e18e7e63ac537403315ec2",
+    "protocol/config_v3_1.json": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+    "protocol/v3_marker_manifest.json": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+    "requirements_glum_v3.lock.txt": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00"
+  },
+  "config_sha256": "740a1355c8c94df47a508ca336a09479a5d324524e374fdb1a8043425cfe985e",
+  "binding": {
+    "code_sha256": {
+      "pipeline/permutation_executor.py": "b4c91e089baece178b972c1ca64fcd54e28397d367e5755bbff4e417142c7372",
+      "pipeline/geo_pipeline.py": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+      "pipeline/verify_permutation_executor.py": "b5e9dcc909e9a8be18b9b432000080da7a30b8039a5bd140537b981246957aca",
+      "pipeline/finalize_permutation_preflight.py": "9aa7c77e1097df1d8823710bcd3220ad6d497e698e93100ac0315ea5851754b2",
+      "pipeline/server_setup.sh": "dc1c44e0e1a31d313b4608ed926e9a389ab13aabd37b3e227365905bfdd76061",
+      "pipeline/server_stage.sh": "7ea0424653ede68fb09e3a593a1d2616d1bf32ec254dd6c6af1a77d9680b83f8",
+      "pipeline/test_server_portability.py": "06e01f46ff13b1de64b60663a55e1cd83d5adc43926c07c6acef49ebed340b14",
+      "protocol/numerical_kkt_v3_1.py": "00523bd36e4cf1b906bb1b6ed8657a967718bed52503fab694705980c1e6d525",
+      "protocol/block_logistic_v3_1.py": "469981ac72d345c37e1d0f3bd6cc0420bfd04e3c33e18e7e63ac537403315ec2",
+      "protocol/config_v3_1.json": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+      "protocol/v3_marker_manifest.json": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+      "requirements_glum_v3.lock.txt": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00"
+    },
+    "config_sha256": "740a1355c8c94df47a508ca336a09479a5d324524e374fdb1a8043425cfe985e",
+    "input_sha256": {
+      "GSE57475_development.npz": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+      "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+      "GSE99039_development.npz": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+      "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+    },
+    "split_manifest_sha256": "2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2",
+    "package_versions": {
+      "cloudpickle": "3.1.2",
+      "formulaic": "1.2.2",
+      "glum": "3.4.1",
+      "interface_meta": "2.0.1",
+      "joblib": "1.6.0",
+      "narwhals": "2.27.1",
+      "numexpr": "2.14.2",
+      "numpy": "2.4.6",
+      "packaging": "26.3",
+      "pandas": "3.0.6",
+      "pyarrow": "26.0.0",
+      "python-dateutil": "2.9.0.post0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1",
+      "six": "1.17.0",
+      "tabmat": "4.2.1",
+      "threadpoolctl": "3.7.0",
+      "tqdm": "4.70.1",
+      "typing_extensions": "4.16.0",
+      "wrapt": "2.5.1"
+    },
+    "python_version": "3.11.9",
+    "machine": {
+      "system": "Linux",
+      "release": "7.0.0-30-generic",
+      "architecture": "x86_64",
+      "logical_CPUs": 16,
+      "processor": "",
+      "python_version": "3.11.9",
+      "os_release": {
+        "NAME": "Ubuntu",
+        "ID": "ubuntu",
+        "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+        "VERSION_ID": "26.04",
+        "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+        "VERSION_CODENAME": "resolute",
+        "ID_LIKE": "debian",
+        "HOME_URL": "https://www.ubuntu.com/",
+        "SUPPORT_URL": "https://help.ubuntu.com/",
+        "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+        "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+        "UBUNTU_CODENAME": "resolute",
+        "LOGO": "ubuntu-logo"
+      },
+      "cpu_models": [
+        "AMD EPYC-Genoa Processor"
+      ],
+      "memory": {
+        "MemTotal": "32078284 kB",
+        "SwapTotal": "0 kB"
+      },
+      "CPU_affinity_count": 16
+    }
+  },
+  "randomized_GEO_replicates_performed": false,
+  "PPMI_scores_computed": false,
+  "files": {
+    "PERMUTATION_CBC_AMENDMENT_v3_1_4_EN.md": {
+      "sha256": "89f278b0fb0a9635f067eefc9eae0a5d20332eb31b94da5c69580d9a7942f3a3",
+      "bytes": 10599
+    },
+    "CLOUD_PREFLIGHT_v3_1_4.json": {
+      "sha256": "2b21d17727adcbe71022a411e4db870b46d616d34d8839da562b0b5b7f80f0ac",
+      "bytes": 33558
+    },
+    "GEO_PERMUTATION_EXECUTOR_v3_1_4.zip": {
+      "sha256": "547c250a5c59b5577db14b92601dd7fe3bce6106861e556647ddd46cd0e451b0",
+      "bytes": 54797
+    }
+  }
+}

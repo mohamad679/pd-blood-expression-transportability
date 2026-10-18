@@ -43,6 +43,30 @@ A byte-for-byte verified backup of the 167 post-pilot run files is retained loca
 
 ## Next gates
 
+### Cloud preflight and amendment publication completed — 18 October 2026
+
+The returned Linux certificate passed all 33 synthetic checks (650 fit attempts,
+maximum KKT 2.6839e-8) and all 20 GEO model/fold identity comparisons (zero AUROC
+error; maximum probability error 7.6494e-14). All eight tested worker processes
+were observed. The conservative memory budget was 5,996,040,192 bytes against
+32,848,162,816 bytes RAM, with zero pswpout growth. An overlapping controller
+was rejected; the original controller subsequently completed without deleting
+its lock or changing code. These are preflight results, not permutations.
+
+The combined amendment was published as version **3.1.4-permutation-cbc**, DOI
+[10.5281/zenodo.23449296](https://doi.org/10.5281/zenodo.23449296), at
+2026-10-18T13:46:35.803828+00:00. All four public file contents were downloaded
+without authentication and verified byte-for-byte against the frozen release.
+The exact code/config/input/machine binding and public-verification receipt are
+recorded in `results/zenodo_permutation_cbc_v3_1_4/` and
+`results/cloud_preflight/ZENODO_PUBLICATION_RECEIPT.json`.
+
+The next authorized execution is registered replicate 0 at one worker, retained
+for the fixed B=200 run. At publication verification, no randomized GEO replicate,
+CBC association or PPMI disease score had been executed. Earlier descriptions
+below of this amendment as an unpublished draft are historical and superseded
+by this publication entry. Full execution remains pending confirmed server start.
+
 Cloud setup update (18 October 2026): the user created the CPX62 VM and confirmed
 interactive SSH login. Direct SCP stalled; the unchanged GEO-only transfer bundle
 was encrypted and uploaded to GitHub prerelease `geo-server-transfer-20261018`
