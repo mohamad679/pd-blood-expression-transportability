@@ -163,7 +163,7 @@ def main():
     manifest_bytes = json.dumps(frozen, sort_keys=True, separators=(",", ":")).encode()
     output = {
         "status": "metadata_count_audit_complete",
-        "decision": "docs/GEO_AGE_SEX_MATCHING_DECISION_20261019_FA.md",
+        "decision": "docs/GEO_AGE_SEX_MATCHING_DECISION_20261019_EN.md",
         "matching": {"caliper_years": CALIPER_YEARS, "minimum_class_n": MIN_CLASS_N,
                      "algorithm": "greedy_global_edges_no_replacement",
                      "tie_break": ["absolute_age_gap", "case_donor_id", "control_donor_id",
