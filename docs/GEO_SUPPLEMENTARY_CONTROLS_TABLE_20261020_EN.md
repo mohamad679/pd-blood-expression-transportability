@@ -9,4 +9,6 @@ These auxiliary controls were defined separately from the M1–M5 disease compar
 
 The sex control uses five registered Y-chromosome markers and was fit only in healthy controls. In both directions it selected lambda=100 at the upper grid edge after two permitted expansions; those two auxiliary choices are not included in Supplementary Table S1's disease-model boundary count. The age predictor is a separate autosomal-gene control and did not meet its registered transfer-capacity criterion.
 
+For later PPMI control scoring, a separate final five-marker model was fitted on all 168 pooled GEO controls. Its five-fold *inner* AUROC was 0.9985; lambda=100 was selected by the prespecified larger-lambda tie rule after two permitted expansions and remained at the upper boundary. This pooled inner score is neither a held-out cohort result nor PPMI performance. The artifact SHA-256 is `aa92a1516328477b1c4ba1a61e7bcec43263cc38574f57ec99c5f26465348200`.
+
 Editorial provenance: `docs/GEO_TRANSFER_CONTROLS_20261018_EN.md`. No PPMI scores were generated.

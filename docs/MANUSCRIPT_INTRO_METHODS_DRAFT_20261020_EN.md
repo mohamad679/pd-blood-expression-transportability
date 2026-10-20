@@ -1,6 +1,6 @@
 # Manuscript draft: Introduction and Methods
 
-**Status (20 October 2026):** The Introduction and GEO Methods describe completed development work. PPMI eligibility, the final GEO-trained auxiliary sex artifact, the second public lock, and all PPMI expression-derived evaluations remain pending. Bracketed items must be completed from locked records before submission. The published Persian v3.1 registration and amendment govern if this prose differs from them.
+**Status (20 October 2026):** The Introduction and GEO Methods describe completed development work. The final GEO-trained auxiliary sex artifact has been fitted and hash-audited. PPMI eligibility, the second public lock, and all PPMI expression-derived evaluations remain pending. Bracketed items must be completed from locked records before submission. The published Persian v3.1 registration and amendment govern if this prose differs from them.
 
 ## Introduction
 
@@ -44,7 +44,7 @@ The v3.1 protocol and numerical amendment are recorded in the first public regis
 
 ## Editorial checks before submission
 
-- Verify final model artifacts and exact tuning choices against saved run manifests; the final GEO auxiliary sex fit remains pending.
+- Verify final M1–M5 model artifacts and exact tuning choices against saved run manifests. The final GEO auxiliary sex fit is complete; include its audited SHA-256 in the second-lock manifest.
 - Replace provisional PPMI counts with the final locked population and group-specific exclusion flow.
 - Add medication and blood-collection timing methods only after source fields and matching logic are audited.
 - Resolve the applicable PPMI data-use terms and previous iCloud-sync history; do not turn the conditional storage paragraph into an approval claim without evidence.

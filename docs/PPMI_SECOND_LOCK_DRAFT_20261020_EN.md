@@ -20,7 +20,7 @@
 | Mac-only storage and applicable PPMI data-use terms | Local secure path established; terms and earlier sync history still under review |
 | Mac scoring code, environment, exact command and portability checks | Pending |
 | Frozen final GEO M1–M5 and preprocessing artifact hashes | Pending public manifest |
-| Final GEO-trained auxiliary sex model hash | Pending fit/lock |
+| Final GEO-trained auxiliary sex model hash | Fit and independently audited on GEO controls; SHA-256 `aa92a1516328477b1c4ba1a61e7bcec43263cc38574f57ec99c5f26465348200`. Include this exact artifact in the public lock manifest; no PPMI score has been run. |
 | Control gates, bootstrap rule and private output location | Must be verified against protocol v3.1 |
 | Exact Git commit/tag and public Zenodo version/DOI | Not yet published |
 
