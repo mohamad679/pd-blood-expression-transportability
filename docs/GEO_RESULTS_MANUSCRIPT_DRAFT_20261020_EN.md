@@ -1,6 +1,6 @@
 # GEO manuscript draft: Results and Discussion
 
-**Status:** GEO development results only, before the second public lock and PPMI scoring. Table numbering is provisional.
+**Status:** GEO development results plus a pre-lock PPMI metadata diagnostic, before the second public lock and PPMI disease scoring. Table numbering is provisional.
 
 ## Results
 
@@ -20,6 +20,8 @@ The full-population cohort-held-out analyses provided no positive M5−M4 transf
 
 In GENEPARK, recorded batch alone discriminated PD from controls about as well as the gene-augmented model. Yet within-batch discrimination remained above chance in the four evaluable batches, so the model cannot be described simply as a batch classifier. These within-batch estimates combine predictions from five outer-fold models with potentially different score scales and depend on one high-performing batch. The permutation procedure breaks both disease and batch associations and therefore does not identify disease-specific expression signal. Cross-cohort evaluation limits reliance on cohort-specific batch patterns but cannot assign a causal share of signal to batch, cell mixture, or PD biology.
 
+Recorded plate carried little diagnosis information in the provisional PPMI candidates (in-sample prevalence-only AUROC 0.578, versus 0.752 for recorded batch in GENEPARK), narrowing—but not eliminating—concern about a plate–label shortcut in the external test. These full-cohort prevalence scores use each sample's label to construct its plate or batch score and are optimistic; the number of categories and group sizes differ between cohorts. The final PPMI population and disease-model results remain unavailable.
+
 Panel-gene exclusion does not establish independence from cell composition because correlated non-panel genes can substitute. Age/sex residualization may remove genuine disease-correlated variation along with demographic variation. Partial ComBat runs on within-sample ranks rather than normalized intensities and may remove real PD-associated variation when batch and diagnosis are confounded. The only appreciable positive GENEPARK ComBat increment occurred in the disease-preserving arm, matching the risk identified before outcome review that disease-covariate correction can distort group contrasts under batch–diagnosis imbalance; this remains an interpretive caution, not proof that the observed increment is artifactual. M4 also changes under ComBat because its cell-marker scores are rebuilt from corrected expression. The transductive arm uses held-out expression for adjustment and is not prospective external validation.
 
 Several limits remain material: GEO outer test folds are small; the transfer bootstrap intervals condition on fixed fitted models and do not cover training uncertainty; and boundary lambda selections recur after the permitted two grid expansions, especially in PROBE training scopes. For ComBat, the first-run code hash was not preserved across an interrupted start and retry, and a one-scope numerical recheck captured package divide-by-zero convergence warnings although all checked corrected matrices were finite. These ComBat estimates remain exploratory. The reserved PPMI cohort, after population/plate review and a second public lock, is required for the external evaluation.
@@ -34,4 +36,4 @@ Across the complete-cohort GEO transfer evaluations, adding the gene block did n
 - Supplementary Table S2 is prepared in `docs/GEO_SUPPLEMENTARY_SENSITIVITY_TABLE_20261020_EN.md`.
 - Supplementary Table S3 is prepared in `docs/GEO_SUPPLEMENTARY_CONTROLS_TABLE_20261020_EN.md`.
 - The ComBat chronology and warning limits are documented in `docs/GEO_COMBAT_EXECUTION_AUDIT_20261020_EN.md`. The first-run source identity cannot be retroactively proven.
-- PPMI plate × group counts and the second lock remain pending; no PPMI score was used here.
+- PPMI plate × group counts, one-to-one release/portal plate mapping, and the descriptive prevalence-only AUROC are documented in `docs/PPMI_PLATE_METADATA_DIAGNOSTIC_RESULTS_20261020_EN.md`. Final eligibility and the second lock remain pending; no PPMI expression-derived score was used here.
