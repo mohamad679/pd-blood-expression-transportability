@@ -40,12 +40,12 @@ A GEO-control-trained five-Y-marker ridge-logistic model must first show sex-tra
 
 ### Registration and data handling
 
-The v3.1 protocol and numerical amendment are recorded in the first public registration; its exact publication time relative to the earliest GEO execution must be reported from the repository and Zenodo audit trail. The second public lock must precede *any* PPMI expression-derived score. The current execution site for all remaining PPMI checks, scoring, and inference is the researcher's personal Mac. The provisional local feature bundle has a recorded input-preparation and hash-verification history, which must be described accurately in final data-provenance materials. The public reproducibility package will contain code, versions, hashes, and permitted aggregate outputs, not participant-level PPMI records. Mac storage conditions and the applicable PPMI data-use terms require explicit resolution before the second lock. [Insert approved storage language after review of signed terms or written PPMI clarification.]
+The v3.1 protocol and numerical amendment are recorded in the first public registration; its exact publication time relative to the earliest GEO execution must be reported from the repository and Zenodo audit trail. The second public lock must precede *any* PPMI expression-derived score. The current execution site for all remaining PPMI checks, scoring, and inference is the researcher's personal Mac. The provisional local feature bundle has a recorded input-preparation and hash-verification history, which must be described accurately in final data-provenance materials. The public reproducibility package will contain code, versions, hashes, and permitted aggregate outputs, not participant-level PPMI records. The second lock should state verified Mac storage and handling under the applicable signed PPMI terms without implying an unverified upload or disclosure. [Insert final storage description after review of the actual terms and facts.]
 
 ## Editorial checks before submission
 
 - Verify final M1–M5 model artifacts and exact tuning choices against saved run manifests. The final GEO auxiliary sex fit is complete; include its audited SHA-256 in the second-lock manifest.
 - Replace provisional PPMI counts with the final locked population and group-specific exclusion flow.
 - Add medication and blood-collection timing methods only after source fields and matching logic are audited.
-- Resolve the applicable PPMI data-use terms and previous iCloud-sync history; do not turn the conditional storage paragraph into an approval claim without evidence.
+- Check the applicable signed PPMI terms and record verified storage facts; do not infer either compliance or a breach from an iCloud setting alone.
 - Insert journal-formatted references and final table/figure numbers; complete PPMI DPC review and acknowledgement before submission.

@@ -17,7 +17,7 @@
 | Plate × diagnosis metadata count | Completed for provisional 472 candidates; final population still pending |
 | Existing input preparation code, release, output schema and SHA-256 | Recorded; verify binding to final local input |
 | Local private bundle SHA-256 | Checked; `1b191f042885eedf2eea00c69ce79a269cc647ef4d5148b37b678b97c7d0333c` |
-| Mac-only storage and applicable PPMI data-use terms | Local secure path established; terms and earlier sync history still under review |
+| Mac-only storage and applicable PPMI data-use terms | Local secure path established. Desktop & Documents sync is enabled, but file-level PPMI upload or disclosure has not been established; describe actual handling under the signed terms without asserting an unverified violation. |
 | Mac scoring code, environment, exact command and portability checks | Pending |
 | Frozen final GEO M1–M5 and preprocessing artifact hashes | Pending public manifest |
 | Final GEO-trained auxiliary sex model hash | Fit and independently audited on GEO controls; SHA-256 `aa92a1516328477b1c4ba1a61e7bcec43263cc38574f57ec99c5f26465348200`. Include this exact artifact in the public lock manifest; no PPMI score has been run. |
@@ -42,6 +42,6 @@ Keep all participant-level inputs, probabilities, and bootstrap indices in local
 
 ## Storage and data-use evidence required in the final lock
 
-The intended execution and private storage location is the researcher's personal Mac, with FileVault enabled and participant-level files under local, nonsynced `~/PPMI_private` (owner-only directory and files). The applicable signed Tier 2 terms, the already completed historical device transfer, and any earlier iCloud synchronization still require review and an accurate compliance statement before a public second lock. The current local storage setup alone is not evidence that all past handling complied with those terms.
+The intended execution and private storage location is the researcher's personal Mac, with FileVault enabled and participant-level files under local, nonsynced `~/PPMI_private` (owner-only directory and files). The Mac's Desktop & Documents synchronization setting was found enabled, but this is not file-level evidence that a particular PPMI file reached iCloud. The record must distinguish verified storage facts from unknown upload history; it must not assert a disclosure or violation without evidence. Describe the actual prior preparation and current Mac-only execution accurately under the applicable signed terms.
 
 No field marked pending may be presented as satisfied. The final lock will reference private participant-level files only by non-identifying hashes and controlled local paths; it will not publish those files.
