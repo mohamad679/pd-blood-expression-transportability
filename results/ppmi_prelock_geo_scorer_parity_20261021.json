@@ -1,0 +1,42 @@
+{
+  "PPMI_opened": false,
+  "PPMI_scored": false,
+  "decisions_sha256": "f4264650558e4afe3cee469bb990f7110aa02d42f257e558597bd271c26b6e88",
+  "geo_input_hashes": {
+    "GSE57475_development.npz": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+    "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039_development.npz": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+    "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+  },
+  "geo_record_count": 381,
+  "marker_manifest_sha256": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+  "maximum_absolute_probability_difference_by_model": {
+    "M1": 0.0,
+    "M2": 0.0,
+    "M3": 0.0,
+    "M4": 0.0,
+    "M5": 0.0
+  },
+  "model_artifact_sha256": {
+    "M1": "0ebb654fe67b3258a3518e464e6163e5d7fccadfc1fd54255f5dfdd78b08f6cf",
+    "M2": "2b0b6c736e47e6e124b759a052b98b82fd715170c5b84974fd3ac697fbd83c44",
+    "M3": "5221afb6e6ed443a4f4d4c7f021583b059d91691b1efaa49ecc791027a4cc178",
+    "M4": "a82ec129076d083c5178851b85f2bf85c3a4ba356e335b68d1e164d6b89c496e",
+    "M5": "a70f8fbb549812de8c6ece441c8f0051cff7bd33897fc74e37104a42f5fde60d"
+  },
+  "models": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "parity_code_sha256": "a1537ca646315b14e52a9c7df2960c328a354cc829ba8ab0550af302a9f37fc2",
+  "preprocessing_sha256": "ecd369d6d35147d4b54060265eebc6912b269d97b0484bcdbb630cb62293b49b",
+  "scorer_code_sha256": "0ff5e73c2eab8a20b9929f1d35bda9ee2a270f63e5a7050fbc2062c3ef445e3c",
+  "sex_artifact_sha256": "aa92a1516328477b1c4ba1a61e7bcec43263cc38574f57ec99c5f26465348200",
+  "sex_control_maximum_absolute_probability_difference": 0.0,
+  "status": "geo_frozen_scorer_parity_passed",
+  "subset_invariance_maximum_absolute_difference": 5.551115123125783e-17,
+  "tolerance": 1e-12
+}

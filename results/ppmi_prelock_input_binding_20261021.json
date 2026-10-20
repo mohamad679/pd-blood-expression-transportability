@@ -1,0 +1,38 @@
+{
+  "bundle_sha256": "1b191f042885eedf2eea00c69ce79a269cc647ef4d5148b37b678b97c7d0333c",
+  "candidate_count": 472,
+  "candidate_metadata_sha256": "d49d2f5a0eea46be0e3f6b2f3e4ed200a3dc9b109b11a528589fa83fbef322a1",
+  "finite_and_rank_invariants_pass": true,
+  "gene_order_matches_geo": true,
+  "gene_reference_sha256": "ee90d4bb7e44ec507018b06ad8bf35a832291975f2f3b778288cbfc7940e15eb",
+  "geo_preprocessing_sha256": "ecd369d6d35147d4b54060265eebc6912b269d97b0484bcdbb630cb62293b49b",
+  "group_counts": {
+    "Control": 161,
+    "PD": 311
+  },
+  "limitation": "Computational sample linkage is not independent biological donor-identity proof; group-specific pre-QC rates remain descriptive/unavailable without complete release metadata.",
+  "metadata_integrity_pass": true,
+  "models_fitted": false,
+  "ordered_population_sha256": "9ab52ff4d1c34a77ba3946cd852d757733dff149eca8b1217b4721d40d61c9fe",
+  "population": "final_computational_baseline_population",
+  "population_hash_schema": "canonical compact UTF-8 JSON array of [matrix_row,release_row_index,exact_PATNO,exact_release_Sample,historical_label]",
+  "raw_matrix_bytes": 30895232,
+  "raw_matrix_dtype": "<f4",
+  "raw_matrix_member": "rank_features.f32",
+  "raw_matrix_sha256": "00eda6e7a3df0f5f3486cf8f3ed42c4ee2ad958bd93cfddcacf689e612c7f611",
+  "raw_matrix_shape": [
+    472,
+    16364
+  ],
+  "scored_matrix_dtype": "<f8",
+  "scored_matrix_geo_array_hash_sha256": "3aae01ad91722019e052e043ce563fc2a6b363aeb4f2a07c39bd852c0ecb5ee3",
+  "scored_matrix_shape": [
+    472,
+    16364
+  ],
+  "scored_matrix_transform": "float32 -> float64 -> round(rank*32728)/32728",
+  "scores_computed": false,
+  "status": "population_and_matrix_binding_passed_no_scores",
+  "unique_participants": 472,
+  "unique_release_samples": 472
+}

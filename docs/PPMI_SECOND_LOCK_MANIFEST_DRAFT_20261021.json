@@ -1,0 +1,82 @@
+{
+  "PPMI_scored_before_lock": false,
+  "candidate_metadata_sha256": "d49d2f5a0eea46be0e3f6b2f3e4ed200a3dc9b109b11a528589fa83fbef322a1",
+  "final_population_counts": {
+    "Control": 161,
+    "PD": 311
+  },
+  "gene_reference_sha256": "ee90d4bb7e44ec507018b06ad8bf35a832291975f2f3b778288cbfc7940e15eb",
+  "geo_sex_transfer_auroc": {
+    "GENEPARK_to_PROBE": 0.993311,
+    "PROBE_to_GENEPARK": 1.0
+  },
+  "git_commit": null,
+  "lock_effective_only_after": "timestamped_public_Zenodo_DOI",
+  "ordered_population_sha256": "9ab52ff4d1c34a77ba3946cd852d757733dff149eca8b1217b4721d40d61c9fe",
+  "population_hash_schema": "canonical compact UTF-8 JSON array of [matrix_row,release_row_index,exact_PATNO,exact_release_Sample,historical_label]",
+  "primary_test": {
+    "bootstrap_repetitions": 5000,
+    "bootstrap_seed": 20261014,
+    "bootstrap_strata": "PD_Control",
+    "comparison": "AUROC_M5_minus_M4",
+    "paired_by": "unique_donor"
+  },
+  "private_output_root": "~/PPMI_private",
+  "raw_matrix_bytes": 30895232,
+  "raw_matrix_dtype": "<f4",
+  "raw_matrix_sha256": "00eda6e7a3df0f5f3486cf8f3ed42c4ee2ad958bd93cfddcacf689e612c7f611",
+  "raw_matrix_shape": [
+    472,
+    16364
+  ],
+  "scored_matrix_dtype": "<f8",
+  "scored_matrix_geo_array_hash_sha256": "3aae01ad91722019e052e043ce563fc2a6b363aeb4f2a07c39bd852c0ecb5ee3",
+  "scored_matrix_shape": [
+    472,
+    16364
+  ],
+  "scored_matrix_transform": "float32 -> float64 -> round(rank*32728)/32728",
+  "sex_gate": {
+    "AUROC_minimum": 0.95,
+    "bootstrap_CI95_lower_minimum": 0.9,
+    "bootstrap_repetitions": 5000,
+    "bootstrap_seed": 3222988182,
+    "bootstrap_strata": "recorded_sex_within_controls",
+    "control_count": 161
+  },
+  "sha256": {
+    "M1_model": "0ebb654fe67b3258a3518e464e6163e5d7fccadfc1fd54255f5dfdd78b08f6cf",
+    "M2_model": "2b0b6c736e47e6e124b759a052b98b82fd715170c5b84974fd3ac697fbd83c44",
+    "M3_model": "5221afb6e6ed443a4f4d4c7f021583b059d91691b1efaa49ecc791027a4cc178",
+    "M4_model": "a82ec129076d083c5178851b85f2bf85c3a4ba356e335b68d1e164d6b89c496e",
+    "M5_model": "a70f8fbb549812de8c6ece441c8f0051cff7bd33897fc74e37104a42f5fde60d",
+    "bundle": "1b191f042885eedf2eea00c69ce79a269cc647ef4d5148b37b678b97c7d0333c",
+    "candidate_audit_code": "03ddd2c2b3b91d1623c3de45e021579e421b3fec058a88bc17279b6d2883c62b",
+    "frozen_geo_scorer_code": "0ff5e73c2eab8a20b9929f1d35bda9ee2a270f63e5a7050fbc2062c3ef445e3c",
+    "geo_decisions": "f4264650558e4afe3cee469bb990f7110aa02d42f257e558597bd271c26b6e88",
+    "geo_preprocessing": "ecd369d6d35147d4b54060265eebc6912b269d97b0484bcdbb630cb62293b49b",
+    "marker_manifest": "729a9c450deadd6c65d0949c1e8f09ee76b455989a91580a60d41a1a758a8bc1",
+    "paired_bootstrap_code": "adbf277903e44c62230c7b4c5dc0f7f72276af3494519772d4b0ebfcbc3a9dff",
+    "population_audit_code": "59217b7a559fb1494a18c96e86737c9c5c92b38f996ce487c1dd7d06a40aa8b1",
+    "ppmi_executor_code": "6f5d3dbfd90dbc8578f72c9899a1e146cc8fc8d1302a926d4256b4705af5df00",
+    "sex_artifact": "aa92a1516328477b1c4ba1a61e7bcec43263cc38574f57ec99c5f26465348200"
+  },
+  "status": "draft_not_published",
+  "supporting_sha256": {
+    "docs/GEO_RESULTS_MANUSCRIPT_DRAFT_20261020_EN.md": "045ff2b3002a5077a3c329e55a85bfc5936fec8dbde000cf491d7552d398f212",
+    "docs/GEO_SUPPLEMENTARY_SENSITIVITY_TABLE_20261020_EN.md": "bbe551b8fc1327b2026bf36ffd00638ded35c7cf935ddc8337e32e74d5b711df",
+    "docs/GEO_TRANSFER_CONTROLS_20261018_EN.md": "5bb1ecf4636cb109608698871f2583e76c8b6fde9a3ca128ce2fb547200d66da",
+    "docs/PPMI_INPUT_BINDING_DECISION_20261021_EN.md": "1df45d70a47f80c65dbe54f761c10a07006dc8fe29f506668c1455ac147fbaaa",
+    "docs/PPMI_SECOND_LOCK_DRAFT_20261020_EN.md": "4b197baf1ae33aa04067c91a2101a0cd7e4132713bbc271e042c334e880d1ec9",
+    "docs/PPMI_SECOND_LOCK_RELEASE_README_20261021_EN.md": "25e55a026fff25884ec45fd5718cc93be6523499ef4b327b9b71655b492b8121",
+    "pipeline/check_frozen_geo_scorer_parity.py": "a1537ca646315b14e52a9c7df2960c328a354cc829ba8ab0550af302a9f37fc2",
+    "pipeline/geo_pipeline.py": "6f7f6cf42608002b185a63044387c9b9f5e624fc0b9ff5ae156030e3655e1a2c",
+    "pipeline/windows_ppmi/prepare_ppmi_windows_bundle.py": "4f71ee86edd4a085457d94501b00d0ce4dc54f4a9e49131c226199f1385d19f6",
+    "protocol/PROTOCOL_v3_1_EN.md": "dbee0da54eebae0ba7456bed47d714bc00d09b600c40e7640819e0fa44cb437f",
+    "protocol/config_v3_1.json": "ee12c6005144d050cf176498026e4de2444a2149c80e6f6f7cb0b571cc9ca981",
+    "requirements_glum_v3.lock.txt": "dd6d9fc3d9b48da6740f63b8218fa1086f25b325fc2d832c3d8f3da218b9da00",
+    "results/ppmi_prelock_geo_scorer_parity_20261021.json": "906ffe97b59705e4b3a7450607c72a945b4a0536a24ee2464fe729ddbc7ba861",
+    "results/ppmi_prelock_input_binding_20261021.json": "2039159da95ae6f17606979b8457925b1ab6d8f3657617e97eb9dd39c021cd36"
+  },
+  "zenodo_doi": null
+}
