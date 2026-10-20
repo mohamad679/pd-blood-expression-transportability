@@ -1,0 +1,23 @@
+# Pre-lock decision: split PPMI preparation on Windows and scoring on Mac
+
+**Decision date:** 2026-10-20. **Status:** corrected execution-site decision for the second public lock. An earlier uncommitted draft incorrectly placed scoring on Windows; the researcher rejected that proposal before any PPMI score. This corrected document is **not** the second lock and authorizes no PPMI score.
+
+## Where each operation runs
+
+The approximately 42 GB Project 133 IR3/B38 source archive remains on the researcher's Windows computer in Italy. A fixed, auditable extraction script will run there against the archive to produce a **compact private transfer bundle** containing only the data needed for the registered PPMI population, transformations, controls, and M1–M5 evaluation. The Windows step is data preparation only: it may perform the registered count/exon-union-length conversion and within-sample ranking, and may report metadata/eligibility counts. It must not calculate any cell-panel, sex-control, age-control, or PD-model score; it must not tune or fit a model using PPMI. Its precise inputs, transformations, row selection, gene ordering, output schema, and hashes must be frozen and tested before use.
+
+Transfer that compact private bundle from the researcher's Windows computer to the researcher's **personal Mac**, where the GEO code, final model artifacts, and analysis environment already reside. Verify SHA-256 of the transferred files against the Windows manifest. The full 42 GB archive does **not** need to move to the Mac. The actual bundle size will be measured after extraction; free space must be checked against that size, not against the source archive. The researcher will provide the bundle's **local Mac path** so the locked scripts can run there without pasting participant-level records into the conversation. Keep participant-level metadata, features, crosswalk, scores, predictions, and bootstrap indices in the authorized local environment and outside public Git, Zenodo, and the former Hetzner server. Share aggregate audit results for review.
+
+All PPMI control scoring, panel-score computation, frozen M1–M5 prediction, bootstrap inference, and registered PPMI sensitivities will run **locally on the Mac** after the second public lock. No PPMI-derived centering, gene selection, coefficient, threshold, or tuning choice may enter the GEO-trained model transformation. The Mac uses the frozen GEO pooled model/preprocessing artifacts and final GEO-trained auxiliary sex model. Missing auxiliary fits must be completed on GEO controls and frozen before the lock.
+
+## Before the second public lock
+
+Finalize the PPMI plate × diagnosis metadata table, one-to-one crosswalk, baseline eligibility, exclusion counts, and QC on the compact prepared data. The provisional 311 PD / 161 control count is not final. Check extraction/transfer hashes, participant uniqueness, gene mapping, exon-union lengths, rank construction, sex coding, missing values, and parity of the Mac scorer on a synthetic or GEO-only fixture. Preparation of the PPMI feature matrix is permitted before the lock; **computing cell-panel scores or any model/control output is not**.
+
+The public second-lock package must identify the exact Git commit/tag, code and dependency versions, Mac environment, extraction script, source-release references, private bundle/population/crosswalk hashes, frozen GEO model/preprocessing and auxiliary-control artifacts, scoring command, control gates, and registered inference rules. It must contain no participant-level PPMI information. Publish this package as a timestamped Zenodo version with a DOI **before the first PPMI score**, including sex, age, or cell-panel scores. A local file, hash, or Git commit alone is not the required public lock.
+
+## After the public lock
+
+Run the registered outcome-free control sequence on the Mac. Unresolved unique-link ambiguity, transformation error, or PPMI sex-gate failure suspends confirmatory PD scoring. Age, CBC, and longitudinal controls retain their registered reporting roles. Only after the stopping gates pass, apply frozen M1–M5 once to the locked PPMI population and calculate the registered M5−M4 AUROC comparison with 5,000 paired donor bootstrap resamples. Keep participant-level outputs local; release only permitted aggregate results after review.
+
+**Remaining dependencies:** the exact Windows extraction script and compact bundle, final eligibility/crosswalk, Mac input and environment verification, final GEO-trained sex artifact, and publication of the second lock are incomplete. This document fixes the Windows-preparation/Mac-scoring division; it is not a claim that any prerequisite has passed.
