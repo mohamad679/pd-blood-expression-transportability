@@ -1,0 +1,292 @@
+{
+  "status": "complete",
+  "purpose": "descriptive inventory of persistent lambda-boundary flags",
+  "PPMI_accessed": false,
+  "summary": [
+    {
+      "analysis": "Original",
+      "scope_count": 13,
+      "decisions_examined": {
+        "M2": 13,
+        "M3": 13,
+        "M5": 13
+      },
+      "persistent_boundary_count": {
+        "M2": 1,
+        "M5": 1
+      }
+    },
+    {
+      "analysis": "X/Y exclusion",
+      "scope_count": 13,
+      "decisions_examined": {
+        "M2": 13,
+        "M3": 13,
+        "M5": 13
+      },
+      "persistent_boundary_count": {
+        "M2": 3
+      }
+    },
+    {
+      "analysis": "Age/sex residualization",
+      "scope_count": 13,
+      "decisions_examined": {
+        "M2": 13,
+        "M3": 13,
+        "M5": 13
+      },
+      "persistent_boundary_count": {
+        "M2": 1,
+        "M3": 1
+      }
+    },
+    {
+      "analysis": "Panel-gene exclusion",
+      "scope_count": 13,
+      "decisions_examined": {
+        "M5": 13
+      },
+      "persistent_boundary_count": {
+        "M5": 2
+      }
+    },
+    {
+      "analysis": "Age/sex matching",
+      "scope_count": 6,
+      "decisions_examined": {
+        "M2": 6,
+        "M3": 6,
+        "M5": 6
+      },
+      "persistent_boundary_count": {
+        "M2": 1,
+        "M5": 1
+      }
+    },
+    {
+      "analysis": "ComBat",
+      "scope_count": 39,
+      "decisions_examined": {
+        "M2": 39,
+        "M3": 39,
+        "M5": 39
+      },
+      "persistent_boundary_count": {
+        "M2": 7,
+        "M3": 5,
+        "M5": 3
+      }
+    }
+  ],
+  "selections": [
+    {
+      "analysis": "Original",
+      "scope": "GSE57475/outer/2",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Original",
+      "scope": "GSE57475/transfer",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 1.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "X/Y exclusion",
+      "scope": "GSE57475/outer/0",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 1.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "X/Y exclusion",
+      "scope": "GSE57475/outer/2",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "X/Y exclusion",
+      "scope": "GSE57475/outer/4",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Age/sex residualization",
+      "scope": "GSE57475/transfer",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Age/sex residualization",
+      "scope": "GSE57475/transfer",
+      "model": "M3",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Panel-gene exclusion",
+      "scope": "GSE57475/outer/0",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Panel-gene exclusion",
+      "scope": "GSE57475/transfer",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Age/sex matching",
+      "scope": "GSE99039/outer/1",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "Age/sex matching",
+      "scope": "GSE99039/outer/1",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_no_disease/GSE57475/outer/0",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_no_disease/GSE57475/outer/2",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_no_disease/GSE57475/transfer",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_preserve_disease/GSE57475/outer/0",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_preserve_disease/GSE57475/outer/1",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_preserve_disease/GSE57475/transfer",
+      "model": "M2",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_preserve_disease/GSE57475/transfer",
+      "model": "M3",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "inductive_preserve_disease/GSE99039/outer/2",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE57475/outer/1",
+      "model": "M3",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE57475/outer/3",
+      "model": "M3",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 1.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE57475/outer/3",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE57475/outer/4",
+      "model": "M3",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE57475/transfer",
+      "model": "M3",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE57475/transfer",
+      "model": "M5",
+      "lambda": 1.0000000000000002e-06,
+      "rho": 0.5,
+      "expansion_rounds": 2
+    },
+    {
+      "analysis": "ComBat",
+      "scope": "transductive_no_disease/GSE99039/outer/1",
+      "model": "M2",
+      "lambda": 100.0,
+      "rho": 0.0,
+      "expansion_rounds": 2
+    }
+  ]
+}

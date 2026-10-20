@@ -1,0 +1,107 @@
+{
+  "status": "complete",
+  "created_UTC": "2026-10-20T06:54:08.745050+00:00",
+  "purpose": "descriptive fixed-model GEO-to-GEO transfer uncertainty only",
+  "method": "5000 paired donor-level, case/control-stratified resamples; percentile 95% CI",
+  "repetitions": 5000,
+  "conditional_on_fixed_fitted_models": true,
+  "confirmatory_PPMI_analysis": false,
+  "PPMI_accessed": false,
+  "git_commit": "0243c663208808ec54e07acee0fd59e75c1d2725",
+  "code_sha256": "2c2a251642dbe509c8b38d3d93076c727b5ab7fb81cafbc2d934949c193d753c",
+  "decision_sha256": "db9208df38b8222bf2584c78d0c050923cbfa3ee7219ddbe0a2c03f02ea74dd5",
+  "original_summary_sha256": "6a4d3eb5f2024d61be89ff76f40d758cc89ca7115290a0bdfe1f985b3411f919",
+  "input_audit_sha256": "a54934bcaeb6814a1357c7559445efcb1af0ff44bc009054f7b1d29a879332ec",
+  "directions": [
+    {
+      "direction": "GSE57475 -> GSE99039",
+      "test_n": 239,
+      "test_PD_n": 120,
+      "test_control_n": 119,
+      "unique_test_donors": 239,
+      "seed": 20261020,
+      "observed_AUROC": {
+        "M1": 0.6218487394957983,
+        "M2": 0.4603641456582633,
+        "M3": 0.5239495798319328,
+        "M4": 0.6665266106442577,
+        "M5": 0.48816526610644256
+      },
+      "percentile_95_CI_AUROC": {
+        "M1": [
+          0.5491220238095239,
+          0.6919485294117647
+        ],
+        "M2": [
+          0.3880234593837535,
+          0.5336186974789915
+        ],
+        "M3": [
+          0.45048844537815125,
+          0.5965073529411763
+        ],
+        "M4": [
+          0.5971953781512604,
+          0.7348056722689076
+        ],
+        "M5": [
+          0.4142139355742297,
+          0.5631022408963584
+        ]
+      },
+      "observed_M5_minus_M4_AUROC": -0.1783613445378151,
+      "percentile_95_CI_M5_minus_M4_AUROC": [
+        -0.23627626050420172,
+        -0.12100840336134455
+      ],
+      "prediction_sha256": "b3986b4d171e7ced3a5bcc68c7258f981ee08e34d589eebe70b74344f10382b7",
+      "original_result_sha256": "2ec27b69bfcb5f8c0bf389bf5aff2447f20e8c1869919cee52de0df91dbc8a1e",
+      "target_metadata_sha256": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+    },
+    {
+      "direction": "GSE99039 -> GSE57475",
+      "test_n": 142,
+      "test_PD_n": 93,
+      "test_control_n": 49,
+      "unique_test_donors": 142,
+      "seed": 20261021,
+      "observed_AUROC": {
+        "M1": 0.5853631775290762,
+        "M2": 0.663375027430327,
+        "M3": 0.6668861092824226,
+        "M4": 0.6350669299978056,
+        "M5": 0.6265086679833224
+      },
+      "percentile_95_CI_AUROC": {
+        "M1": [
+          0.48266129032258065,
+          0.6821401141101601
+        ],
+        "M2": [
+          0.5698924731182796,
+          0.7542297564186965
+        ],
+        "M3": [
+          0.5753675663813912,
+          0.7570770243581304
+        ],
+        "M4": [
+          0.5367456660083388,
+          0.7303050252359008
+        ],
+        "M5": [
+          0.532367785824007,
+          0.717577353522054
+        ]
+      },
+      "observed_M5_minus_M4_AUROC": -0.008558262014483176,
+      "percentile_95_CI_M5_minus_M4_AUROC": [
+        -0.08909918806232169,
+        0.07066052227342545
+      ],
+      "prediction_sha256": "99abd1b72d3ab9a9dbde1854b2e45be5b547738c0a4cef57b75356593aeb5909",
+      "original_result_sha256": "9f5f2257055736ced9545d9d5a9b2020f5cd15b169c56850028d7e35cb6e311d",
+      "target_metadata_sha256": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e"
+    }
+  ]
+}
