@@ -113,6 +113,11 @@ def audit(bundle: Path) -> dict:
         "plate_source": "metaDataIR3_original Plate",
         "plate_count": len(plate_groups),
         "plates_with_both_groups": sum(x["PD"] > 0 and x["Control"] > 0 for x in plate_groups.values()),
+        "plate_by_group_counts": [
+            {"plate": plate, "PD": counts["PD"], "Control": counts["Control"],
+             "total": counts["PD"] + counts["Control"]}
+            for plate, counts in sorted(plate_groups.items())
+        ],
         "portal_plate_literal_comparison": dict(portal_plate_compare),
         "bundle_sha256": hashlib.sha256(bundle.read_bytes()).hexdigest(),
         "internal_file_hashes_match": True,
