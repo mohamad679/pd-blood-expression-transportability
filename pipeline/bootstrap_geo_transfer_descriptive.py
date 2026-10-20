@@ -52,11 +52,11 @@ def check_published_code() -> str:
 
 
 def bootstrap_direction(source: str, target: str, directory: str, seed: int,
-                        original: dict) -> dict:
+                        input_audit: dict) -> dict:
     predictions = ROOT / "private_data/geo_runs_20261018" / directory / "heldout_predictions.npz"
     metrics_file = predictions.with_name("RESULTS.json")
     metadata_file = ROOT / "prepared" / f"{target}_sample_metadata.json"
-    expected_metadata_hash = original["input_sha256"][metadata_file.name]
+    expected_metadata_hash = input_audit["input_sha256"][metadata_file.name]
     if sha256(metadata_file) != expected_metadata_hash:
         raise ValueError(f"Target metadata hash mismatch: {target}")
 
@@ -131,10 +131,11 @@ def main() -> None:
         raise ValueError(f"Refusing to overwrite existing result: {OUTPUT}")
     commit = check_published_code()
     original_file = ROOT / "results/geo_development_20261018/aggregate_summary.json"
-    original = json.loads(original_file.read_text())
+    input_audit_file = ROOT / "data/manifests/input_audit.json"
+    input_audit = json.loads(input_audit_file.read_text())
     rows = []
     for number, (source, target, directory, seed) in enumerate(DIRECTIONS, start=1):
-        row = bootstrap_direction(source, target, directory, seed, original)
+        row = bootstrap_direction(source, target, directory, seed, input_audit)
         rows.append(row)
         print(f"Descriptive GEO transfer bootstrap {number}/2: {row['direction']} complete", flush=True)
     report = {
@@ -150,6 +151,7 @@ def main() -> None:
         "code_sha256": sha256(ROOT / SCRIPT_REL),
         "decision_sha256": sha256(ROOT / DECISION_REL),
         "original_summary_sha256": sha256(original_file),
+        "input_audit_sha256": sha256(input_audit_file),
         "directions": rows,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

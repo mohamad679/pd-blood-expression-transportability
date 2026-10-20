@@ -4,7 +4,7 @@
 
 ## Inputs and checks
 
-Use only the saved original (uncorrected) held-out prediction files for `GSE57475/transfer` (PROBE → GENEPARK) and `GSE99039/transfer` (GENEPARK → PROBE). For each file, read the stored binary outcome and M1–M5 probabilities; map its sample IDs to the prepared target-cohort metadata solely to verify one prediction per unique operational donor and agreement of labels. Require exact target-cohort sample coverage, finite probabilities in [0,1], original metadata hashes, and observed AUROC for every model matching the saved original transfer `RESULTS.json` within 1e-12. Stop rather than repair any mismatch. Do not read or score PPMI.
+Use only the saved original (uncorrected) held-out prediction files for `GSE57475/transfer` (PROBE → GENEPARK) and `GSE99039/transfer` (GENEPARK → PROBE). For each file, read the stored binary outcome and M1–M5 probabilities; map its sample IDs to the prepared target-cohort metadata solely to verify one prediction per unique operational donor and agreement of labels. Require exact target-cohort sample coverage, finite probabilities in [0,1], original metadata hashes from `data/manifests/input_audit.json`, and observed AUROC for every model matching the saved original transfer `RESULTS.json` within 1e-12. Stop rather than repair any mismatch. Do not read or score PPMI.
 
 ## Frozen resampling rule
 
@@ -15,3 +15,7 @@ The intervals condition on the two fitted transfer models and these observed hel
 ## Output and provenance
 
 Write one aggregate-only JSON file under `results/` with direction, sample/class counts, observed AUROCs, intervals, observed M5−M4 and its interval, input file hashes, method, seeds, repetitions, decision-document hash, code hash and Git commit SHA. Do not export participant IDs, per-person scores, or bootstrap draws. Before this calculation, commit and push this decision and the exact executable script. If Git provenance or any data check fails, stop without calculating intervals.
+
+## Pre-calculation implementation correction
+
+The first committed invocation stopped with `KeyError: 'input_sha256'` while looking for metadata hashes in `results/geo_development_20261018/aggregate_summary.json`; that summary has no such field. It stopped before creating resampling draws or an output file. The hashes were already frozen in `data/manifests/input_audit.json`; only this lookup path was corrected, and this correction is committed and pushed before calculation. The resampling rule, seeds, metrics, and reporting plan above are unchanged.
