@@ -14,6 +14,8 @@ import zipfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
+EXPECTED_BUNDLE_SHA256 = "1b191f042885eedf2eea00c69ce79a269cc647ef4d5148b37b678b97c7d0333c"
+
 
 def clean(value: object) -> str:
     return " ".join(str(value or "").strip().lower().replace("_", " ").split())
@@ -251,10 +253,13 @@ def main() -> int:
         print("Stage 1/4: reading complete metadata tables", flush=True)
         release, portal, age = (read_table(path) for path in (args.release, args.portal, args.age))
         print("Stage 2/4: reading candidate metadata only", flush=True)
+        if sha256(args.bundle) != EXPECTED_BUNDLE_SHA256:
+            raise ValueError("Candidate bundle hash differs from the frozen provisional bundle")
         candidates = candidate_keys(args.bundle)
         print("Stage 3/4: counting pre-QC and post-QC groups", flush=True)
         result = audit(release, portal, age, candidates)
-        result["input_sha256"] = {key: sha256(getattr(args, key)) for key in ("release", "portal", "age", "bundle")}
+        result["input_sha256"] = {key: sha256(getattr(args, key)) for key in ("release", "portal", "age")}
+        result["input_sha256"]["bundle"] = EXPECTED_BUNDLE_SHA256
         result["input_row_counts"] = {"release": len(release), "portal": len(portal), "age": len(age)}
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
