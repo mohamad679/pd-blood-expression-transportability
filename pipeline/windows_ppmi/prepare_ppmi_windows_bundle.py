@@ -154,13 +154,14 @@ def candidate_metadata(release_i: int, label: str, pid: str, release: list[dict]
         raise ValueError("Candidate historical label changed")
     rplate = (r.get("Plate") or "").strip()
     pplate = (p.get("Plate") or "").strip()
-    if rplate and pplate and rplate != pplate:
-        raise ValueError("Release and portal plate values disagree")
+    if not rplate:
+        raise ValueError("Release RNA sequencing plate is missing")
     return {"release_row_index": release_i, "PATNO": pid, "EVENT_ID": "BL",
             "historical_label": "PD" if label.startswith("idiopathic") else "Control",
             "age_at_BL_visit": next(iter(age_values)),
             "sex": (r.get("GENDER") or "").strip(),
-            "plate": rplate or pplate,
+            "plate": rplate, "plate_source": "metaDataIR3_original",
+            "portal_plate": pplate,
             "release_metadata": r, "portal_metadata": p}
 
 
@@ -206,6 +207,7 @@ def run(cache_path: Path, output_dir: Path) -> tuple[Path, Path]:
         selected = sorted(candidates)
         plate_groups = defaultdict(Counter)
         missing_plates = Counter()
+        portal_plate_comparison = Counter()
         zero_counts = []
         rank_path = work / "rank_features.f32"
         metadata_path = work / "candidate_metadata.jsonl"
@@ -223,6 +225,12 @@ def run(cache_path: Path, output_dir: Path) -> tuple[Path, Path]:
                     plate_groups[item["plate"]][item["historical_label"]] += 1
                 else:
                     missing_plates[item["historical_label"]] += 1
+                if not item["portal_plate"]:
+                    portal_plate_comparison["portal_plate_missing"] += 1
+                elif item["portal_plate"] == item["plate"]:
+                    portal_plate_comparison["same_literal_value"] += 1
+                else:
+                    portal_plate_comparison["different_literal_value"] += 1
                 now = time.monotonic()
                 if done == 1 or done == len(selected) or now - last_update >= 10:
                     progress(done, len(selected), started, "Prepare")
@@ -262,6 +270,8 @@ def run(cache_path: Path, output_dir: Path) -> tuple[Path, Path]:
             "Control": sum(x.startswith("healthy") for x, _ in candidates.values()),
             "plate_by_group": [{"plate": plate, "PD": group["PD"], "Control": group["Control"]}
                                for plate, group in sorted(plate_groups.items())],
+            "plate_source": "Release RNA sequencing metadata (metaDataIR3_original); portal Plate is retained separately and is not assumed to be the same field",
+            "release_vs_portal_plate_literal_comparison": dict(portal_plate_comparison),
             "missing_plate_by_group": dict(missing_plates),
             "link_methods_all_count_files": link_methods,
             "zero_count_genes_per_candidate": {"min": min(zero_counts), "max": max(zero_counts)},
