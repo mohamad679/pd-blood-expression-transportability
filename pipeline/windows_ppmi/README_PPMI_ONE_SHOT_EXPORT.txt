@@ -1,5 +1,10 @@
-PPMI one-time export from the existing IR3_PRIVATE_CACHE.zip
+SUPERSEDED — DO NOT RUN. PPMI one-time export from the existing IR3_PRIVATE_CACHE.zip
 ===========================================================
+
+The researcher canceled this newly proposed Windows run before execution and
+restored Mac-only prospective processing. This README remains
+only as a record of the previously prepared but unused package. The proposed
+commands below are inactive and must not be executed.
 
 Purpose
 -------
