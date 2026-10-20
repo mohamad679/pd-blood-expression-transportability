@@ -130,8 +130,9 @@ def read_collection_months(path: Path, donors: np.ndarray) -> dict[str, tuple[in
 
 
 def cbc_control(ranks: np.ndarray, y: np.ndarray, donors: np.ndarray,
-                marker_indices: tuple[np.ndarray, ...], collection: Path, cbc: Path) -> dict:
-    controls = {str(donors[k]): k for k in np.flatnonzero(y == 0)}
+                marker_indices: tuple[np.ndarray, ...], collection: Path, cbc: Path,
+                target_label: int = 0) -> dict:
+    controls = {str(donors[k]): k for k in np.flatnonzero(y == target_label)}
     months = read_collection_months(collection, donors)
     data: dict[tuple[str, str], list[tuple[int, str, str, float | None, str]]] = defaultdict(list)
     with cbc.open(encoding="utf-8-sig", newline="") as stream:
@@ -156,7 +157,9 @@ def cbc_control(ranks: np.ndarray, y: np.ndarray, donors: np.ndarray,
             data[donor, code].append((tier, (row.get("LCOLLDT") or "").strip(),
                                       (row.get("COLLTM") or "").strip(), value,
                                       (row.get("LSIUNIT") or "").strip()))
-    out = {"eligible_controls": len(controls), "controls_with_unique_BL_collection_month": sum(months.get(d) is not None for d in controls),
+    out = {"group": "Control" if target_label == 0 else "PD_exploratory",
+           "eligible_group_count": len(controls),
+           "group_with_unique_BL_collection_month": sum(months.get(d) is not None for d in controls),
            "assays": {}}
     for code, panel in ASSAYS.items():
         usable, excluded_conflict, excluded_non_numeric, missing = [], 0, 0, 0
@@ -201,9 +204,9 @@ def cbc_control(ranks: np.ndarray, y: np.ndarray, donors: np.ndarray,
                 if len(np.unique(values[pick])) > 1 and len(np.unique(scores[pick])) > 1:
                     draws.append(float(spearmanr(scores[pick], values[pick]).statistic))
             ci = np.quantile(draws, [.025, .975]).tolist() if draws else None
-            summary.update({"status": "evaluated" if len(values) >= 30 else "descriptive_below_n_30",
+            summary.update({"status": ("evaluated" if len(values) >= 30 else "descriptive_below_n_30") if target_label == 0 else "PD_exploratory",
                             "Spearman": rho, "CI95": ci, "valid_bootstrap_draws": len(draws),
-                            "supportive": bool(len(values) >= 30 and rho >= .4 and ci is not None and ci[0] > 0)})
+                            "supportive": bool(len(values) >= 30 and rho >= .4 and ci is not None and ci[0] > 0) if target_label == 0 else None})
         out["assays"][code] = summary
     return out
 
@@ -262,7 +265,9 @@ def main() -> None:
     if not np.array_equal(genes, scorer.genes):
         raise ValueError("CBC marker gene order differs from frozen GEO")
     result["CBC_controls"] = cbc_control(ranks, y, donors, scorer.marker_indices, a.collection, a.cbc_current)
-    progress(6, 8, started, "CBC controls complete")
+    result["CBC_PD_exploratory"] = cbc_control(ranks, y, donors, scorer.marker_indices,
+                                                 a.collection, a.cbc_current, target_label=1)
+    progress(6, 8, started, "CBC controls and PD exploratory checks complete")
     result["longitudinal_similarity"] = {"status": "unavailable",
                                          "reason": "locked baseline bundle has no independently verified nonbaseline autosomal ranks"}
     result["interpretation_scope"] = "All CIs descriptive or secondary and conditional on fixed GEO models; primary endpoint unchanged"
