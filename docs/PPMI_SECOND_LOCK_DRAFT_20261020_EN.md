@@ -2,23 +2,22 @@
 
 **Status:** planning document only. No PPMI score is authorized by this draft. A completed, timestamped Zenodo version with a DOI and the matching exact Git commit/tag is required before the first PPMI cell-panel or model/control score.
 
-## Frozen execution topology
+## Current execution site
 
-- Source archive: researcher's Windows computer in Italy; the approximately 42 GB archive remains there.
-- Pre-score preparation: run the frozen extraction script on Windows; produce a compact private PPMI bundle containing only required metadata and count/length-corrected, within-sample-ranked features. No panel, sex, age, or disease model score is computed on Windows.
-- Transfer: copy the compact bundle to the researcher's personal Mac; verify its SHA-256 against the Windows manifest. The researcher supplies its local path for the Mac-side analysis. Do not transfer the full archive unless a separate documented need arises.
-- External scoring and inference: run locally on that Mac using frozen GEO-trained artifacts, after this draft has been completed and publicly locked. No PPMI participant-level data are included in the public lock.
-
-The detailed binding decision is in `docs/PPMI_SECOND_LOCK_EXECUTION_DECISION_20261020_EN.md`. The original Windows-scoring proposal was rejected before scoring and is superseded.
+- The researcher's personal MacBook is the sole site for all **remaining** PPMI acquisition, local storage, eligibility and metadata checks, control/disease scoring, and inference.
+- The existing provisional 472-candidate local bundle may be used for checks supported by its frozen contents. Obtain missing metadata directly into local, nonsynced Mac storage. Do not run further PPMI processing on another computer or server.
+- Keep participant-level PPMI inputs and outputs under `~/PPMI_private` or an equivalently reviewed local path, outside Git, Zenodo, chat, and cloud-synced Documents. External scoring and inference require frozen GEO-trained artifacts and the published second lock.
+- The current site decision is [documented separately](PPMI_MAC_ONLY_EXECUTION_DECISION_20261020_EN.md). Earlier acquisition and preparation records remain historical provenance and must be reported accurately; they are not instructions for future execution.
 
 ## Required fields before publication
 
 | Item | Current status |
 |---|---|
 | Final PPMI eligibility and one-to-one crosswalk | Pending; provisional counts are not final |
-| Plate × diagnosis metadata count | Pending |
-| Windows extraction code, input release, output schema and SHA-256 | Pending |
-| Compact private bundle SHA-256 and Mac transfer verification | Pending |
+| Plate × diagnosis metadata count | Completed for provisional 472 candidates; final population still pending |
+| Existing input preparation code, release, output schema and SHA-256 | Recorded; verify binding to final local input |
+| Local private bundle SHA-256 | Checked; `1b191f042885eedf2eea00c69ce79a269cc647ef4d5148b37b678b97c7d0333c` |
+| Mac-only storage and applicable PPMI data-use terms | Local secure path established; terms and earlier sync history still under review |
 | Mac scoring code, environment, exact command and portability checks | Pending |
 | Frozen final GEO M1–M5 and preprocessing artifact hashes | Pending public manifest |
 | Final GEO-trained auxiliary sex model hash | Pending fit/lock |

@@ -1,4 +1,6 @@
-# Pre-lock decision: split PPMI preparation on Windows and scoring on Mac
+# Historical pre-lock execution decision (superseded)
+
+**Superseded for future work on 2026-10-20 by [the Mac-only execution decision](PPMI_MAC_ONLY_EXECUTION_DECISION_20261020_EN.md).** The text below preserves the actual earlier plan, Windows preparation, and Mac transfer for auditability. Do not use it as the current execution instruction.
 
 **Decision date:** 2026-10-20. **Status:** corrected execution-site decision for the second public lock. An earlier uncommitted draft incorrectly placed scoring on Windows; the researcher rejected that proposal before any PPMI score. This corrected document is **not** the second lock and authorizes no PPMI score.
 
