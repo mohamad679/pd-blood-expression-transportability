@@ -1,5 +1,7 @@
 # PPMI candidate-bundle metadata audit decision
 
+**Historical execution record.** The input provenance below describes the already completed metadata audit. For all remaining PPMI work, the current site is the researcher's personal Mac under [the Mac-only decision](PPMI_MAC_ONLY_EXECUTION_DECISION_20261020_EN.md). This status note does not retrospectively change the audit input.
+
 **Scope:** pre-second-lock, metadata only. Input is the private Windows-prepared 472-candidate bundle whose transfer hash has been checked on the researcher's Mac. No cell-marker, sex, age, PD model, or plate-derived prediction score is calculated. No model is fit, and no individual-level information is written to the aggregate report or public repository.
 
 The audit checks the frozen 16,364-gene manifest and internal file hashes, the 472-row correspondence between metadata and prepared feature matrix, and exact uniqueness of participant and sample identifiers. It rechecks baseline event, pass/high-QC Long RNA flags, valid age and recorded sex, and agreement of historical PD/control labels across the release and portal fields. The release RNA-sequencing `Plate` is the plate used for the descriptive class table; the portal field is treated separately and literal-value disagreement is counted without assuming the two exports encode the same plate. Any critical contradiction causes an audit failure without exposing identifiers in diagnostics.
