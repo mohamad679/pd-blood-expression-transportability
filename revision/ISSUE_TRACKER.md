@@ -35,7 +35,7 @@ Status as of the phase-1 correction, 21 October 2026. `DONE` means the phase-1 e
 | I-30 | FUTURE | Permutation reporting: phase 4. |
 | I-31 | FUTURE | Keywords: phase 4. |
 | I-32 | FUTURE | Panel rationale: phase 4. |
-| I-33 | FUTURE | DUA and DPC assessment: phase 2/5. |
+| I-33 | P2 ACCESS GATE OPEN | DUA v5 permits compliant local model training generally, but the approved application wording for new within-PPMI E3 training is unavailable. Publication policy does not resolve timing of a result-free Zenodo amendment relative to DPC review. See `reports/PHASE_2_ACCESS_GATE.md`; no E-analysis or publication begins while unresolved. |
 | I-34 | FUTURE | Journal and submission package: phase 5. |
 | I-35 | DONE FOR P1 | Existing figure and Online Resource files inventoried; completeness/integration is phase 4/5. |
 
