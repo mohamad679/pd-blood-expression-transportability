@@ -65,6 +65,28 @@ def absolute_smd(a: np.ndarray, b: np.ndarray) -> float | None:
     return float(abs(a.mean() - b.mean()) / pooled) if pooled > 0 else None
 
 
+def validate_scopes(scopes: list, frozen: dict) -> None:
+    expected = {entry["scope"]: entry for entry in frozen["splits"]
+                if entry["scope"] != "pooled/final"}
+    if not isinstance(scopes, list) or len(scopes) != len(expected):
+        raise ValueError("E1 requires every frozen outer and transfer scope exactly once")
+    names = [entry["scope"] for entry in scopes]
+    if len(set(names)) != len(names) or set(names) != set(expected):
+        raise ValueError("E1 scope names differ from the frozen split manifest")
+    for item in scopes:
+        locked = expected[item["scope"]]
+        if (item["train_samples"] != locked["train"]
+                or item["heldout_samples"] != locked["test"]):
+            raise ValueError("E1 samples/order differ from frozen GEO splits")
+
+
+def verify_fit_samples(model_dir: Path, train_samples: np.ndarray) -> None:
+    with np.load(model_dir / "preprocessing.npz", allow_pickle=False) as z:
+        actual = str(z["fit_samples_hash"].item())
+    if actual != geo.array_hash(train_samples):
+        raise ValueError("E1 model preprocessing was fit on different GEO samples")
+
+
 def scope_summary(scorer, geo_data, train_ix, heldout_ix,
                   ppmi_ranks, ppmi_age, ppmi_sex, ppmi_y):
     train = geo_data.take(train_ix)
@@ -103,6 +125,17 @@ def synthetic_self_test() -> None:
     assert np.allclose(g, x[:, 2] * 2.)
     assert absolute_smd(np.array([0., 1., 2.]), np.array([1., 2., 3.])) > 0
     assert summary(b)["n"] == 3
+    locked = {"splits": [{"scope": "A/outer/0", "train": ["a"], "test": ["b"]},
+                         {"scope": "pooled/final", "train": ["a", "b"], "test": []}]}
+    validate_scopes([{"scope": "A/outer/0", "train_samples": ["a"],
+                      "heldout_samples": ["b"], "model_dir": "unused"}], locked)
+    try:
+        validate_scopes([{"scope": "A/outer/0", "train_samples": ["b"],
+                          "heldout_samples": ["a"]}], locked)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Wrong frozen split was accepted")
     print("E1_SYNTHETIC_TEST_PASSED")
 
 
@@ -114,6 +147,8 @@ def main() -> None:
     parser.add_argument("--binding", type=Path)
     parser.add_argument("--scope-manifest", type=Path,
                         help="JSON list: scope, model_dir, train_samples, heldout_samples")
+    parser.add_argument("--locked-splits", type=Path,
+                        default=ROOT / "data/manifests/splits.json")
     parser.add_argument("--final-dir", type=Path)
     parser.add_argument("--marker-manifest", type=Path)
     parser.add_argument("--sex-artifact", type=Path)
@@ -135,8 +170,8 @@ def main() -> None:
     if not np.array_equal(geo_data.genes, pp_genes):
         raise ValueError("GEO/PPMI common gene order differs")
     scopes = json.loads(args.scope_manifest.read_text(encoding="utf-8"))
-    if not isinstance(scopes, list) or not scopes:
-        raise ValueError("Scope manifest must be a nonempty JSON list")
+    frozen = json.loads(args.locked_splits.read_text(encoding="utf-8"))
+    validate_scopes(scopes, frozen)
     sample_lookup = {str(s): i for i, s in enumerate(geo_data.sample)}
     result = {"analysis": "E1", "status": "complete_exploratory", "scopes": {}}
     for item in scopes:
@@ -145,9 +180,11 @@ def main() -> None:
             raise ValueError("Duplicate E1 scope")
         ti = np.array([sample_lookup[str(s)] for s in item["train_samples"]], int)
         hi = np.array([sample_lookup[str(s)] for s in item["heldout_samples"]], int)
+        verify_fit_samples(Path(item["model_dir"]), geo_data.sample[ti])
         scorer = FrozenGEOScorer(Path(item["model_dir"]), args.marker_manifest, args.sex_artifact)
         result["scopes"][name] = scope_summary(scorer, geo_data, ti, hi,
             pp_x, pp_age, pp_sex, pp_y)
+    verify_fit_samples(args.final_dir, geo_data.sample)
     final = FrozenGEOScorer(args.final_dir, args.marker_manifest, args.sex_artifact)
     pb, pg = component_arrays(final, pp_x, pp_age, pp_sex, pp_genes)
     gb, gg = component_arrays(final, geo_data.X, geo_data.age, geo_data.sex, geo_data.genes)

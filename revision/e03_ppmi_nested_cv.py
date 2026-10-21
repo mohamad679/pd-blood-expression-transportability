@@ -17,7 +17,7 @@ import warnings
 from collections import Counter
 
 import numpy as np
-from sklearn.metrics import roc_auc_score
+from sklearn.metrics import log_loss, roc_auc_score
 from sklearn.model_selection import StratifiedKFold
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +64,28 @@ def score_model(prep, fit, data, name: str) -> np.ndarray:
     return p
 
 
+def validation_score(train: geo.Data, validation: geo.Data,
+                     prediction: np.ndarray, objective: str) -> float:
+    if objective == "AUROC":
+        return float(roc_auc_score(validation.y, prediction))
+    if objective != "weighted_deviance":
+        raise ValueError("Unknown tuning objective")
+    sources = np.unique(train.source)
+    weights = np.zeros(len(validation.y), float)
+    for source in sources:
+        for label in (0, 1):
+            train_n = int(((train.source == source) & (train.y == label)).sum())
+            mask = (validation.source == source) & (validation.y == label)
+            if train_n == 0:
+                raise ValueError("Training source lacks a class")
+            weights[mask] = len(train.y) / (2 * len(sources) * train_n)
+    if not np.isfinite(weights).all() or np.any(weights <= 0):
+        raise ValueError("Validation source is absent from training")
+    # `geo.choose` maximizes; negative weighted log-loss implements minimization.
+    return -float(log_loss(validation.y, prediction, labels=[0, 1],
+                           sample_weight=weights))
+
+
 def checked_fit_with_warning_log(prep, data, model, lam, rho, context,
                                  fit_log: Path, warning_log: Path):
     with warnings.catch_warnings(record=True) as captured:
@@ -82,23 +104,26 @@ def checked_fit_with_warning_log(prep, data, model, lam, rho, context,
 
 def fit_pair(train: geo.Data, inner, output: Path, scope: str,
              max_genes: int = 1000, grid=GRID, rhos=RHOS,
-             expansion_rounds: int = 2):
+             expansion_rounds: int = 2, prep_factory=None,
+             objective: str = "AUROC"):
     """Reproduce v3.1 baseline-first tuning for only M4 and M5."""
     output.mkdir(parents=True, exist_ok=False)
     fit_log = output / "fits.jsonl"
     warning_log = output / "warnings.jsonl"
+    if prep_factory is None:
+        prep_factory = lambda data, max_genes: geo.Prep(data, max_genes=max_genes)
     fold_data = []
     baseline_scores = []
     for fold, (ti, vi) in enumerate(inner):
         a, b = train.take(ti), train.take(vi)
         if set(a.donor) & set(b.donor):
             raise AssertionError("Inner donor leakage")
-        prep = geo.Prep(a, max_genes=max_genes)
+        prep = prep_factory(a, max_genes)
         m4, _ = checked_fit_with_warning_log(prep, a, "M4", 0., 0.,
                                 dict(scope=scope, stage="inner", fold=fold), fit_log,
                                 warning_log)
-        auc = float(roc_auc_score(b.y, score_model(prep, m4, b, "M4")))
-        baseline_scores.append(auc)
+        baseline_scores.append(validation_score(
+            a, b, score_model(prep, m4, b, "M4"), objective))
         fold_data.append((prep, a, b))
     candidates = [dict(baseline=True, **{"lambda": 0.}, rho=0.,
                        score=float(np.mean(baseline_scores)), nonzero=False)]
@@ -114,7 +139,8 @@ def fit_pair(train: geo.Data, inner, output: Path, scope: str,
                     fit, records = checked_fit_with_warning_log(prep, a, "M5", lam, rho,
                         dict(scope=scope, stage="inner", fold=fold,
                              expansion_round=round_i), fit_log, warning_log)
-                    scores.append(float(roc_auc_score(b.y, score_model(prep, fit, b, "M5"))))
+                    scores.append(validation_score(
+                        a, b, score_model(prep, fit, b, "M5"), objective))
                     nonzero |= records[-1]["diagnostics"]["nonzero_penalized_coefficients"] > 0
                 candidates.append(dict(baseline=False, **{"lambda": float(lam)},
                                        rho=float(rho), score=float(np.mean(scores)),
@@ -126,7 +152,7 @@ def fit_pair(train: geo.Data, inner, output: Path, scope: str,
             break
         lambdas.append(min(lambdas) / 10 if selected["lambda"] == min(lambdas)
                        else max(lambdas) * 10)
-    prep = geo.Prep(train, max_genes=max_genes)
+    prep = prep_factory(train, max_genes)
     m4, _ = checked_fit_with_warning_log(prep, train, "M4", 0., 0.,
                             dict(scope=scope, stage="outer_refit"), fit_log,
                             warning_log)
@@ -206,6 +232,8 @@ def synthetic_self_test() -> None:
     folds = list(donor_folds(data, 2, 1234))
     assert len(folds) == 2
     assert all(not set(data.donor[a]) & set(data.donor[b]) for a, b in folds)
+    arbitrary = np.where(data.y == 1, .7, .3)
+    assert validation_score(data, data, arbitrary, "weighted_deviance") < 0
     # The optimizer is exercised on a small artificial fold, not PPMI or GEO.
     import tempfile
     with tempfile.TemporaryDirectory() as temporary:
