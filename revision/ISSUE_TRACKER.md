@@ -1,6 +1,6 @@
 # Revision issue tracker
 
-Status as of the phase-1 correction, 21 October 2026. `DONE` means the phase-1 extraction or audit is complete; it does not mean the manuscript change or later diagnostic analysis is complete. PPMI aggregates and full number trace remain in `~/PPMI_private/revision_outputs/`. The earlier allegation that the manuscript lacked a title was withdrawn: both inventoried versions have titles, and the author confirmed `MANUSCRIPT_PRIVATE_REVISED.md` as canonical. The obsolete I-17 entry was removed. No `MJ-11` entry exists in the repository files; any external review checklist carrying that allegation must likewise be corrected before use.
+Status as of phase-2 local drafting, 22 October 2026. `DONE` means the phase-1 extraction or audit is complete; it does not mean the manuscript change or later diagnostic analysis is complete. PPMI aggregates and full number trace remain in `~/PPMI_private/revision_outputs/`. The earlier allegation that the manuscript lacked a title was withdrawn: both inventoried versions have titles, and the author confirmed `MANUSCRIPT_PRIVATE_REVISED.md` as canonical. The obsolete I-17 entry was removed. No `MJ-11` entry exists in the repository files; any external review checklist carrying that allegation must likewise be corrected before use.
 
 | ID | Phase-1 status | Evidence / next action |
 |---|---|---|
@@ -35,7 +35,7 @@ Status as of the phase-1 correction, 21 October 2026. `DONE` means the phase-1 e
 | I-30 | FUTURE | Permutation reporting: phase 4. |
 | I-31 | FUTURE | Keywords: phase 4. |
 | I-32 | FUTURE | Panel rationale: phase 4. |
-| I-33 | P2 ACCESS GATE OPEN | DUA v5 permits compliant local model training generally, but the approved application wording for new within-PPMI E3 training is unavailable. Publication policy does not resolve timing of a result-free Zenodo amendment relative to DPC review. See `reports/PHASE_2_ACCESS_GATE.md`; no E-analysis or publication begins while unresolved. |
+| I-33 | P2 ACCESS GATE OPEN | DUA v5 permits compliant local model training generally, but the approved application wording for new within-PPMI E3 training is unavailable. Publication policy does not resolve timing of a result-free Zenodo amendment relative to DPC review. See `reports/PHASE_2_ACCESS_GATE.md`; local drafting and synthetic-only tests may proceed, but no real E-analysis or publication begins while unresolved. |
 | I-34 | FUTURE | Journal and submission package: phase 5. |
 | I-35 | DONE FOR P1 | Existing figure and Online Resource files inventoried; completeness/integration is phase 4/5. |
 
