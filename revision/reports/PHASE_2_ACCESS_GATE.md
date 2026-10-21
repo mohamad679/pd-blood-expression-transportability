@@ -1,6 +1,6 @@
 # Phase 2 access and publication gate — P2-01
 
-Date: 22 October 2026. Status: **UNRESOLVED; stop before E1–E10 scripts, synthetic executions, amendment registration, or PPMI exploratory analysis.** This memo contains no PPMI outcome result and makes no assertion that the investigator's approved application covers the proposed post-lock analyses.
+Date: 22 October 2026. Status: **UNRESOLVED for real-data execution and public registration.** Following the investigator's reply, local drafting of the amendment and E1–E10 code with synthetic-only checks may proceed. No E1–E10 analysis may run on real GEO or PPMI data, and no public amendment may be posted while the relevant permissions remain unresolved. This memo contains no PPMI outcome result and makes no assertion that the investigator's approved application covers the proposed post-lock analyses.
 
 ## Documents checked
 
@@ -20,7 +20,11 @@ The publication policy requires DPC administrative review of an external **manus
 
 1. The approved data-use application or project description is not among the locally located files. Confirm whether it covers **E3: new nested cross-validation and model training within PPMI** (and, if relevant, E4/E5/E6/E8 refits whose scoring uses PPMI). A general DUA permission to train models is not proof that this proposed analysis is within the approved application. If the description is narrow, ask PPMI whether an application amendment is needed before E3.
 2. Obtain written PPMI/DPC guidance on whether a public, result-free methodological amendment may be posted to Zenodo before DPC review, and whether the corresponding code-only record needs prior review. Until clarified, prepare files locally only; do not publish them.
-3. If the application scope is broader and the investigator can provide its non-sensitive analysis wording, record the evidence and resolve this gate before advancing P2-02 through P2-06. A verbal assumption without the approved wording is insufficient for a compliance claim.
+3. If the application scope is broader and the investigator can provide its non-sensitive analysis wording, record the evidence and resolve this gate before real-data execution. A verbal assumption without the approved wording is insufficient for a compliance claim.
+
+## Investigator reply and controlled drafting decision
+
+The investigator reported that the approved application text and written DPC guidance are not currently available. The response explicitly proposed preparing the amendment as **draft, not yet published**, and recognized that a document written after the primary PPMI result is not prospective preregistration. We therefore permit local methods drafting and synthetic-only software tests, while retaining the stop on real E1–E10 execution and on Zenodo publication. This is a change to the earlier broader drafting stop, not a finding that the access or publication questions have been answered.
 
 ## Draft clarification text for investigator review — not sent
 
@@ -30,4 +34,4 @@ This is a draft question, not a representation that DPC has answered it. No comm
 
 ## Gate status
 
-P2-01: **PARTIAL / requires investigator application wording and PPMI/DPC clarification on Zenodo timing.** P2-02–P2-06: **NOT STARTED**. E1–E10: **NOT RUN**. Second-lock files and stored predictions: **unchanged**. No amendment or code was published.
+P2-01: **PARTIAL / requires investigator application wording and PPMI/DPC clarification on Zenodo timing.** P2-02–P2-06: **local drafting and synthetic-only testing permitted**. E1–E10 on real data: **NOT RUN**. Second-lock files and stored predictions: **unchanged**. No amendment or code was published.
