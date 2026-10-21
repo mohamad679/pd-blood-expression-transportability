@@ -1,0 +1,11 @@
+{
+  "panel_memberships": 173,
+  "unique_genes": 172,
+  "shared_gene_ids_and_panels": {
+    "ENSG00000196663": [
+      "Neutrophils",
+      "Platelet"
+    ]
+  },
+  "explanation": "173 panel memberships but 172 unique IDs when one gene belongs to two panels."
+}
