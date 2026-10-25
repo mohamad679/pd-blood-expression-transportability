@@ -18,7 +18,35 @@ sys.path.insert(0, str(ROOT / "pipeline"))
 import geo_pipeline as geo
 from score_ppmi_after_lock import load_locked_input
 from postlock_common import (private_output, require_execution_authorization,
-                             sha256, synthetic_ranks, write_aggregate)
+                             rng_for, sha256, synthetic_ranks, write_aggregate)
+
+
+def paired_auc_interval(y: np.ndarray, donors: np.ndarray, full: np.ndarray,
+                        ablated: np.ndarray, stream: int, draws: int = 5000) -> list[float]:
+    """Resample donors by diagnosis, using identical indices for paired scores."""
+    groups = {}
+    for i, donor in enumerate(map(str, donors)):
+        groups.setdefault(donor, []).append(i)
+    by_class = {label: [] for label in (0, 1)}
+    for ix in groups.values():
+        labels = np.unique(y[ix])
+        if len(labels) != 1:
+            raise ValueError("Donor has inconsistent diagnosis in E8 bootstrap")
+        by_class[int(labels[0])].append(np.asarray(ix, int))
+    if not all(by_class.values()):
+        raise ValueError("Both classes required for E8 bootstrap")
+    rng = rng_for(8, stream)
+    values = np.empty(draws, float)
+    for repetition in range(draws):
+        sampled = []
+        for label in (0, 1):
+            donor_groups = by_class[label]
+            sampled.extend(donor_groups[i] for i in rng.integers(
+                0, len(donor_groups), len(donor_groups)))
+        ix = np.concatenate(sampled)
+        values[repetition] = (roc_auc_score(y[ix], ablated[ix])
+                              - roc_auc_score(y[ix], full[ix]))
+    return np.quantile(values, [.025, .975]).astype(float).tolist()
 
 
 class PanelOmissionPrep(geo.Prep):
@@ -97,18 +125,27 @@ def geo_stage(output: Path) -> dict:
     sources = sorted(set(map(str, data.source)))
     if len(sources) != 2:
         raise ValueError("Exactly two GEO sources expected")
+    reference_predictions = {}
     for label, panel in settings():
         pooled_prep, pooled_fit, pooled_info = fit_ablation(
             data, panel, f"E8/pooled/{label}", output / "pooled" / label)
         result["pooled"][label] = pooled_info
-        for source in sources:
+        for source_ix, source in enumerate(sources):
             train = data.take(np.flatnonzero(data.source == source))
             test = data.take(np.flatnonzero(data.source != source))
             prep, fit, info = fit_ablation(train, panel,
                 f"E8/{source}/transfer/{label}", output / source / label)
             key = f"{source}_to_{str(test.source[0])}"
-            result["transfer"].setdefault(key, {})[label] = {
-                "AUROC": float(roc_auc_score(test.y, score(prep, fit, test))), **info}
+            prediction = score(prep, fit, test)
+            row = {"AUROC": float(roc_auc_score(test.y, prediction)), **info}
+            if label == "full":
+                reference_predictions[key] = prediction
+                row["delta_from_full_M4_CI95_percentile"] = [0., 0.]
+            else:
+                row["delta_from_full_M4_CI95_percentile"] = paired_auc_interval(
+                    test.y, test.donor, reference_predictions[key], prediction,
+                    stream=100 + source_ix * 10 + int(panel))
+            result["transfer"].setdefault(key, {})[label] = row
         print(f"E8 GEO {label} complete ({len(result['pooled'])}/7 settings)", flush=True)
     for direction, rows in result["transfer"].items():
         reference = rows["full"]["AUROC"]
@@ -133,9 +170,17 @@ def ppmi_stage(output: Path, bundle: Path, binding: Path) -> dict:
                     donors.copy(), genes, markers)
     result = {"analysis": "E8", "stage": "PPMI_scored_after_frozen_GEO",
               "exploratory": True, "pooled_fit_only": True, "models": {}}
+    reference_prediction = None
     for label, panel in settings():
         p = loaded_score(output / "pooled" / label, data, panel)
-        result["models"][label] = {"AUROC": float(roc_auc_score(y, p))}
+        row = {"AUROC": float(roc_auc_score(y, p))}
+        if label == "full":
+            reference_prediction = p
+            row["delta_from_full_M4_CI95_percentile"] = [0., 0.]
+        else:
+            row["delta_from_full_M4_CI95_percentile"] = paired_auc_interval(
+                y, donors, reference_prediction, p, stream=200 + int(panel))
+        result["models"][label] = row
     reference = result["models"]["full"]["AUROC"]
     for row in result["models"].values():
         row["delta_from_full_M4"] = row["AUROC"] - reference
@@ -163,6 +208,8 @@ def synthetic_self_test() -> None:
             restored = loaded_score(folder, data, panel)
             assert np.allclose(direct, restored, atol=1e-10, rtol=0)
             assert len(prep.base_mean) == (10 if panel is None else 9)
+        same_ci = paired_auc_interval(y, data.donor, direct, direct, 999, draws=20)
+        assert same_ci == [0., 0.]
     print("E8_SYNTHETIC_TEST_PASSED")
 
 

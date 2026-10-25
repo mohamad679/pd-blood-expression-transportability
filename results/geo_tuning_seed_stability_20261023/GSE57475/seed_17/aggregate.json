@@ -1,0 +1,38 @@
+{
+  "conditions": {
+    "auroc_full": {
+      "M4_AUROC": 0.6665266106442578,
+      "M5_AUROC": 0.6264005602240896,
+      "M5_reuses_M4": false,
+      "delta_AUROC": -0.04012605042016815,
+      "persistent_boundary": false,
+      "selected_lambda": 0.1,
+      "selected_rho": 0.5,
+      "status": "complete"
+    },
+    "auroc_panel_excluded": {
+      "M4_AUROC": 0.6665266106442578,
+      "M5_AUROC": 0.6188375350140055,
+      "M5_reuses_M4": false,
+      "delta_AUROC": -0.047689075630252264,
+      "persistent_boundary": false,
+      "selected_lambda": 0.1,
+      "selected_rho": 0.5,
+      "status": "complete"
+    },
+    "deviance_full": {
+      "M4_AUROC": 0.6665266106442578,
+      "M5_AUROC": 0.6665266106442578,
+      "M5_reuses_M4": true,
+      "delta_AUROC": 0.0,
+      "persistent_boundary": false,
+      "selected_lambda": null,
+      "selected_rho": null,
+      "status": "complete"
+    }
+  },
+  "inner_scope": "E11/GSE57475/seed_17/inner",
+  "seed_index": 17,
+  "source": "GSE57475",
+  "target_source": "GSE99039"
+}

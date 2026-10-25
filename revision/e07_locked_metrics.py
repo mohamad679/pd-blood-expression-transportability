@@ -110,22 +110,28 @@ def matched_pairs(age: np.ndarray, sex: np.ndarray, y: np.ndarray,
     return pairs
 
 
-def matched_auc_difference(y: np.ndarray, p1: np.ndarray, p4: np.ndarray,
-                           pairs: list[tuple[int, int]], draws: int = 5000) -> dict:
+def matched_auc_differences(y: np.ndarray, predictions: dict[str, np.ndarray],
+                            pairs: list[tuple[int, int]], draws: int = 5000) -> dict:
     if len(pairs) < 5:
         return {"status": "not_evaluable_fewer_than_five_pairs", "n_pairs": len(pairs)}
     ix = np.array([i for i, _ in pairs] + [j for _, j in pairs], int)
     rng = np.random.default_rng(20261014)
-    differences = np.empty(draws)
+    contrasts = (("M4_minus_M1", "M4", "M1"),
+                 ("M5_minus_M4", "M5", "M4"))
+    differences = {name: np.empty(draws) for name, _, _ in contrasts}
     for draw in range(draws):
         pick = rng.integers(0, len(pairs), len(pairs))
         sample = np.array([pairs[k][0] for k in pick] + [pairs[k][1] for k in pick], int)
-        differences[draw] = (roc_auc_score(y[sample], p4[sample])
-                             - roc_auc_score(y[sample], p1[sample]))
-    return {"status": "complete_descriptive", "n_pairs": len(pairs),
-            "M4_minus_M1_AUROC": float(roc_auc_score(y[ix], p4[ix])
-                                       - roc_auc_score(y[ix], p1[ix])),
-            "CI95_percentile": np.quantile(differences, [.025, .975]).tolist()}
+        for name, left, right in contrasts:
+            differences[name][draw] = (roc_auc_score(y[sample], predictions[left][sample])
+                                       - roc_auc_score(y[sample], predictions[right][sample]))
+    result = {"status": "complete_descriptive", "n_pairs": len(pairs)}
+    for name, left, right in contrasts:
+        result[name] = {
+            "point": float(roc_auc_score(y[ix], predictions[left][ix])
+                           - roc_auc_score(y[ix], predictions[right][ix])),
+            "CI95_percentile": np.quantile(differences[name], [.025, .975]).tolist()}
+    return result
 
 
 def compute(y: np.ndarray, predictions: dict[str, np.ndarray],
@@ -197,8 +203,8 @@ def compute(y: np.ndarray, predictions: dict[str, np.ndarray],
         "point": float(roc_auc_score(y, p4) - roc_auc_score(y, predictions["M1"])),
         "CI95_percentile": np.quantile(full_auc, [.025, .975]).tolist()}
     pairs = matched_pairs(age, sex, y, donors)
-    result["M4_minus_M1_matched"] = matched_auc_difference(
-        y, predictions["M1"], p4, pairs, draws)
+    result["matched_contrasts"] = matched_auc_differences(
+        y, predictions, pairs, draws)
     for name in ("M4", "M5"):
         p = predictions[name]
         point = calibration_fit(y, p)

@@ -1,0 +1,3 @@
+source,n_samples,technical_metadata_present,technical_metadata_missing,coverage_percent,distinct_batch_or_chip_proxy_levels,batch_kind
+GSE57475,142,142,0,100.0,16,title_derived_chip_proxy=142
+GSE99039,239,239,0,100.0,11,provided_batch=239

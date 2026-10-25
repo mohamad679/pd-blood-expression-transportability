@@ -1,5 +1,7 @@
 # Phase 2 access and publication gate — P2-01
 
+**Superseding update, 22 October 2026.** The investigator reports that the PPMI clarification email was sent and a response is pending. A later direct instruction permits E1, E2, E4, E5, E6, E7, E8 and E10 to proceed on the investigator's Mac using a private, independently signed hash-only time stamp and a fresh full comparison of frozen private artefact hashes before execution. E3 and E9 remain closed pending their separate access/eligibility evidence. Public Zenodo posting remains closed pending written DPC guidance. The original gate analysis below records the earlier state and must not be read as the current execution decision. The timestamp and execution record are documented separately; neither is presented as DPC approval or public preregistration.
+
 Date: 22 October 2026. Status: **UNRESOLVED for real-data execution and public registration.** Following the investigator's reply, local drafting of the amendment and E1–E10 code with synthetic-only checks may proceed. No E1–E10 analysis may run on real GEO or PPMI data, and no public amendment may be posted while the relevant permissions remain unresolved. This memo contains no PPMI outcome result and makes no assertion that the investigator's approved application covers the proposed post-lock analyses.
 
 ## Documents checked

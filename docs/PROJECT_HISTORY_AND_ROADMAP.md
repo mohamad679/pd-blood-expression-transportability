@@ -2,7 +2,7 @@
 
 **Project:** Cross-cohort and cross-platform assessment of shortcut risk in blood transcriptomic Parkinson's disease classifiers  
 **Author:** Mohammad Javad Asgari  
-**Status date:** 2026-10-18
+**Status date:** 2026-10-19
 **Purpose of this document:** a complete, candid hand-off from the original idea through feasibility work, protocol design, implementation, the first pilot, and the remaining execution.
 
 ## 1. The original idea
@@ -78,7 +78,7 @@ Across the five outer folds, mean M4/M5 AUROC was 0.562/0.591 in GSE57475 and 0.
 
 All 3,146 fit records from the 12 post-pilot scopes passed the fixed KKT threshold; there were no failed records, retries, or exceptions. The largest recorded KKT residual was 4.1093e-8. Six sigmoid-clipping warnings were visible during prediction/tuning calls but were not attributed to individual candidate/fold entries in the original fit log. The [retrospective warning audit](SIGMOID_AUDIT_20261018_EN.md) subsequently replayed 490 inner fits, reproduced all six warnings and every audited original candidate mean exactly, and confirmed that explicit clipping changed no AUROC or hyperparameter selection. Small, separate finite-precision probability/linear-score tie effects also changed no selection. No original model, split, metric or pipeline code was changed. Per-sample prediction files and detailed fit artifacts remain local and are not included in Git.
 
-The project is now past feasibility and has completed its core GEO CV/transfer milestone. The [GEO sex/age transfer controls](GEO_TRANSFER_CONTROLS_20261018_EN.md) also completed on 2026-10-18: sex passed in both directions (AUROC 1.000 and 0.993), while age capacity was not demonstrated (Spearman -0.058 and 0.259; neither direction improved on the training-median MAE comparator). Age failure limits the interpretation of subsequent age transfer; it does not stop the study or permit retuning. CBC validation, bounded sensitivities, leakage checks, bootstrap coverage validation, and the permutation plan remain unfinished. No PPMI score has been computed; final crosswalk/population validation and the second public lock are also outstanding.
+The project is now past feasibility and has completed its core GEO CV/transfer milestone. The [GEO sex/age transfer controls](GEO_TRANSFER_CONTROLS_20261018_EN.md) also completed on 2026-10-18: sex passed in both directions (AUROC 1.000 and 0.993), while age capacity was not demonstrated (Spearman -0.058 and 0.259; neither direction improved on the training-median MAE comparator). Age failure limits the interpretation of subsequent age transfer; it does not stop the study or permit retuning. The original membership/preprocessing audit passed for all 13 scopes and 3,415 fit attempts. The amended fixed B=200 permutation run has also completed, its returned archive was verified, and the Hetzner VM and Primary IP were deleted; see [results](GEO_PERMUTATION_RESULTS_20261019_EN.md). The synthetic paired-bootstrap coverage screen has now completed in four scenarios; it found no material failure at the screen's resolution, while outer Monte Carlo uncertainty remains broad ([report](BOOTSTRAP_COVERAGE_20261019_EN.md)). Remaining work is bounded GEO sensitivities with checks of their new implementations, PPMI preparation and post-lock controls/scoring. No PPMI score has been computed; final crosswalk/population validation and the second public lock are outstanding.
 
 ## 7. What remains: execution roadmap
 
@@ -88,34 +88,36 @@ The project is now past feasibility and has completed its core GEO CV/transfer m
 2. **Completed:** run all five outer folds within each GEO source.
 3. **Completed:** run both directional transfers and pooled final fitting.
 4. **Completed:** audit the six sigmoid warnings; the bounded replay found no effect on AUROC/selection and no need to change the registered scoring path. Any future material change still requires a timestamped public amendment.
-5. **Sex/age controls completed:** retain the successful sex development gate and limited age capacity as reported; execute the remaining bounded sensitivities and registered leakage audit.
-6. Validate donor-bootstrap CI coverage and finalize the permutation scope/compute plan before execution.
+5. **Sex/age controls and original leakage audit completed:** retain the successful sex development gate and limited age capacity as reported. Execute the registered GEO sensitivities, checking leakage in the new sensitivity implementations. Do not routinely repeat the original 13-scope / 3,415-fit audit.
+6. **Bootstrap coverage and X/Y sensitivity completed:** four fixed synthetic scenarios used 200 outer samples each and 5,000 inner bootstrap resamples; details are in [the bootstrap report](BOOTSTRAP_COVERAGE_20261019_EN.md). The X/Y-removal sensitivity covered all 13 registered GEO scopes and 3,429 fits in 1 h 38 min on the Mac, with frozen split/code hashes and leakage checks passing. AUROC changes differed by cohort and model; see [the X/Y report](GEO_XY_SENSITIVITY_20261019_EN.md). Next run the registered training-only age/sex residualization sensitivity, using the same frozen scopes and leakage safeguards. The registered B=200 permutations are complete and should not be repeated.
 7. Produce any required aggregate diagnostics and freeze a reproducible GEO milestone package. Do not transfer sample-level predictions or PPMI individual data to GitHub or Zenodo.
 
 **Milestone:** core GEO CV/transfer is complete. Its source snapshot and aggregate results were published on 18 October 2026 as version **3.1.3-geo-cv**, DOI [10.5281/zenodo.23445851](https://doi.org/10.5281/zenodo.23445851), with explicit outstanding-diagnostics limitations. The final pre-PPMI lock is still required.
 
-### Phase B — finalize external PPMI eligibility without scoring disease
+### Phase B — finalize external PPMI eligibility and model artifacts before any PPMI score
+
+Run this track alongside Phase A. Fit/freeze the final GEO-trained auxiliary sex model and verify the existing final M1–M5 model/preprocessing artifacts for the second lock.
 
 1. Resolve the archive-to-release crosswalk using the release guide and all relevant sample-name segments, including PATNO and visit; reconcile aliases and ambiguous links.
 2. Validate one-to-one file-to-metadata mapping, subject uniqueness at the selected baseline visit, label concordance, QC, age/sex completeness, gene coverage, and exclusion rates by diagnosis.
-3. Verify the permitted publication and acknowledgement requirements under the current PPMI data-use terms.
-4. Finalize the external population definition and all private PPMI crosswalk inputs locally. Do not upload individual data or identifiers to GitHub or Zenodo.
+3. Plan PPMI DPC administrative manuscript review and the prescribed acknowledgement before journal submission, as required by the saved April 2026 DUA v5.0 sections 9–10. Consult the applicable Publications Policy for the exact wording and submission process; reserve review time without inventing a turnaround estimate.
+4. Finalize the external population definition and all private PPMI crosswalk inputs in the authorized local environment. Preparing the fixed feature matrix (counts divided by reference exon-union lengths, then within-sample ranks) is allowed before the lock. Computing cell-panel scores or any model outputs, including sex/age, is allowed only after the second public lock. PPMI data and derived participant-level material stay out of the GEO cloud workflow and public repositories.
 
 ### Phase C — second public lock, then external validation
 
-Before **any** PPMI score, publish the second locked package: code and environment hashes, exact split manifest, finalized M1–M5 models and preprocessing states, control thresholds, and a hash/reference for the finalized private population/crosswalk. The public package must not contain subject-level PPMI information. Update Zenodo only at this specified milestone, and preserve the matching Git commit/tag.
+Before **any** PPMI score, publish the second locked package: code and environment hashes, exact split manifest, finalized M1–M5 and auxiliary models and preprocessing states, control thresholds, and a hash/reference for the finalized private population/crosswalk. The public package must not contain subject-level PPMI information. Update Zenodo at this specified milestone, and preserve the matching Git commit/tag.
 
-Then run the outcome-free sex/age controls and permitted cell-marker diagnostics. Failure of the **PPMI sex gate** without a demonstrable technical bug makes the confirmatory PPMI disease test unevaluable; age failure and insufficient CBC support instead limit claims. Do not alter the transformation after observing control results and then present the same holdout as confirmatory. If the stopping gates pass, run the fixed inductive M1–M5 PPMI transfer once, calculate the prespecified metrics and paired uncertainty, and preserve the audit trail.
+Then run all registered outcome-free controls: sex (AUROC ≥0.95 and CI lower bound ≥0.90), age (report-only given the failed GEO capacity criterion), CBC marker-score associations in controls, and longitudinal similarity. The published CBC rule currently yields at most 31 candidate controls; each marker with numeric n<30 is non-evaluable, and even passing results near n=30 provide limited supportive evidence. Unresolved unique-link ambiguity, transformation error or failure of the PPMI sex gate stops confirmatory PD execution/interpretation. The protocol permits a fixed-control repetition only after an independently demonstrated technical bug and a transparent timestamped amendment; otherwise report non-evaluability. Age/CBC/longitudinal findings alone limit claims and do not permit target tuning or automatic sample reassignment. If gates pass, run the fixed inductive M1–M5 PPMI transfer once, calculate the prespecified metrics and paired uncertainty, and perform the registered local PPMI matched sensitivity with the same models and no refitting.
 
 ### Phase D — interpretation and manuscript
 
-Only after quality control and analysis should the paper be written. The primary claim must be bounded to this input, population, and model family. Report uncertainty and inconclusive results transparently. Avoid saying that a measured AUC gap is a causal percentage of shortcut signal or that successful cross-platform prediction proves clinical utility. Discuss single-pilot scope, sample-size precision, donor provenance, treatment context, missingness, gene mapping, cell mixture, and platform shift as limitations.
+Draft Methods, completed GEO results, permutation results and GEO controls now, in parallel with Phases A and B, clearly marking pending analyses. Integrate PPMI and remaining sensitivity results and their discussion after the applicable gates and quality checks. Before journal submission, complete the required PPMI DPC administrative review and include the acknowledgement specified by the Publications Policy. The primary claim must be bounded to this input, population, and model family. Report uncertainty and inconclusive results transparently. Avoid saying that a measured AUC gap is a causal percentage of shortcut signal or that successful cross-platform prediction proves clinical utility. Discuss the two-source development scope, sample-size precision, donor provenance, treatment context, missingness, gene mapping, cell mixture, and platform shift as limitations.
 
 ## 8. Git and Zenodo practice from this point
 
 GitHub is the living project record. Each meaningful code, protocol, or results milestone should be committed, with English documentation and aggregate outputs only. Do not commit raw expression matrices, individual PPMI data, personal credentials, or local result files containing predictions or fitted subject-level artifacts. Keep the full internal audit locally under access controls.
 
-Zenodo is reserved for the two project milestones described above: (1) complete, quality-controlled GEO CV package; (2) final pre-PPMI-scoring lock. The existing Zenodo records document preregistration/provenance history; they are not evidence that the full analyses or paper are complete.
+The core GEO milestone and the joint permutation/CBC amendment have been published. Remaining planned Zenodo milestones are the second pre-PPMI-scoring lock and the final aggregate reproducibility release; a material method error still requires a timely amendment. Existing records document preregistration/provenance and completed development work, not completion of external validation or the paper.
 
 ## 9. Plain-language answer: is the project now “being done”?
 

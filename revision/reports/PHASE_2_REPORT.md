@@ -1,5 +1,7 @@
 # PHASE 2 REPORT — local draft, registration pending
 
+**Superseded interim report, 22 October 2026.** The author requested substantive changes to E1, E3, E5, E6, E7 and E8 after this report was written. Its file hashes, code-baseline commit, and double-check refer to the earlier draft and must **not** be used to timestamp or register the revised amendment. A new final report will replace this interim status after author review. The revised text and scripts remain local and unregistered; no E1–E10 real-data analysis has run.
+
 Date: 22 October 2026. This report and the amendment are private working documents. No E1–E10 analysis has run on actual GEO or PPMI data, and no PPMI outcome result is stated here.
 
 ## 1. Outcome

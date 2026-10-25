@@ -391,31 +391,56 @@ CBC and age are non-stopping diagnostics; neither changes fixed M4/M5 panels.
    the VM and Primary IP.
 2. Complete remaining bounded diagnostics/sensitivities from the governing
    protocol. The original 13-scope membership/preprocessing audit is already
-   complete: do not repeat it without a new reason. Remaining work includes
-   bounded leakage/provenance checks, bootstrap coverage simulation, registered
+   complete for 3,415 fit attempts: do not routinely repeat it. The four-scenario
+   synthetic bootstrap coverage screen is complete; three distinct-model
+   coverages were 95.5%, 95.5%, and 96.0%, with Monte Carlo intervals including
+   95%. Its outer precision is limited; see
+   `docs/BOOTSTRAP_COVERAGE_20261019_EN.md`. Check leakage in the new sensitivity
+   implementations. Remaining work includes registered
    X/Y removal, train-only age/sex residualization, age/sex matching within
    three years without replacement, exclusion of panel genes from the M5-added
    gene block, technical metadata diagnostics and the development ComBat audit
-   as specified. Inspect exact protocol before implementing; do not invent
-   replacement controls or infer completion from this list.
+   as specified. Benchmark one GEO sensitivity before estimating total runtime
+   or renting another VM; the proposed 10-hour Mac / 3–4-hour cloud estimates
+   are unmeasured for these jobs. PPMI matching follows the lock and remains
+   local, using fixed models. Inspect exact protocol before implementing; do
+   not invent replacement controls or infer completion from this list.
 3. Finalize PPMI identity/crosswalk, eligibility, gene coverage, QC exclusions
    by diagnosis, treatment/source metadata and publication conditions. Private
-   person-level material remains local. CBC numeric completeness/selection
-   metadata can be audited under the published rule while waiting; any PPMI
-   expression-derived scoring requires its proper prior lock.
+   person-level material remains in the authorized local environment, outside
+   the GEO cloud workflow. Fixed PPMI feature-matrix preparation (count divided
+   by reference exon-union length, then within-sample ranking) is permitted
+   before the lock. CBC numeric completeness/selection metadata can be audited
+   under the published rule. Cell-panel scores and every model output, including
+   sex/age, require the second public lock.
 4. Fit/freeze the required final GEO auxiliary sex model; verify saved final
    M1–M5 models/preprocessing/splits. Publish the **second pre-PPMI lock** of
    code/environment, trained models/preprocessing and a non-identifying hash/
    reference for the private population/crosswalk **before any PPMI score**.
-5. Perform prespecified external controls. Identity/sex/transformation failures
+5. After the lock, perform all prespecified external controls: sex (AUROC >=.95
+   and CI lower >=.90), age (report-only given limited GEO capacity), CBC
+   marker-score correlations in controls (31 is the current candidate upper
+   bound; per-marker numeric n<30 is non-evaluable), and longitudinal similarity.
+   Unresolved linkage ambiguity, sex-gate failure or transformation error
    stop confirmatory PD scoring unless a proven technical implementation bug
    is transparently corrected/amended before repetition. Otherwise report
    non-evaluability. Age, CBC and longitudinal diagnostics do not authorize
    target tuning. Then execute fixed PPMI disease scoring only when gates pass.
 6. Compute registered external metrics/paired intervals and sensitivities with
    no target refitting. Interpret null/inconclusive findings, limitations and
-   feasibility honestly; write the manuscript and final release. Finishing
-   permutations alone does **not** finish this project.
+   feasibility honestly and prepare the final aggregate reproducibility release.
+   Draft Methods and completed GEO/permutation/control results now, alongside
+   the two scientific tracks; add pending results and discussion when available.
+   Before journal submission, complete PPMI DPC administrative review and the
+   prescribed acknowledgement (saved DUA v5.0, April 2026, sections 9–10;
+   applicable Publications Policy governs process and exact wording). Allow
+   review time without assuming a turnaround. Finishing permutations alone
+   does **not** finish this project.
+
+Immediate parallel tracks: **A**, synthetic bootstrap coverage and timing one
+GEO sensitivity with its leakage checks; **B**, final PPMI population/preparation
+and the final GEO-trained auxiliary sex fit. These are planning updates, not
+evidence that either remaining track or manuscript drafting has executed.
 
 ## 10. Reading map and evidence precedence
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""E6: donor/bootstrap workflow refits on GEO, scored on fixed PPMI."""
+"""E6: GEO workflow bootstrap, with separate PPMI sampling component."""
 
 from __future__ import annotations
 
@@ -36,7 +36,21 @@ def stratified_donor_bootstrap(data: geo.Data, repetition: int) -> geo.Data:
     result = data.take(np.asarray(indices, int))
     if len(result.y) != len(data.y):
         raise AssertionError("Bootstrap failed to preserve stratum sizes")
+    # `Data.take` retains each original donor ID, so repeated copies are one
+    # group in geo.donor_folds during every inner split.
+    for donor in np.unique(result.donor):
+        if len(np.unique(result.y[result.donor == donor])) != 1:
+            raise AssertionError("Bootstrap duplicate diagnosis changed")
     return result
+
+
+def resampled_target_indices(target: geo.Data, repetition: int) -> np.ndarray:
+    if len(np.unique(target.donor)) != len(target.y):
+        raise ValueError("E6 requires one PPMI record per donor")
+    rng = rng_for(6, 100000 + repetition)
+    return np.concatenate([rng.choice(ix, len(ix), replace=True)
+                           for ix in (np.flatnonzero(target.y == 0),
+                                      np.flatnonzero(target.y == 1))])
 
 
 def attempt(data: geo.Data, target: geo.Data, output: Path, repetition: int,
@@ -53,11 +67,16 @@ def attempt(data: geo.Data, target: geo.Data, output: Path, repetition: int,
     save_fit(fit_dir, prep, m4, m5, decision)
     p4 = score_model(prep, m4, target, "M4")
     p5 = p4 if m5 is None else score_model(prep, m5, target, "M5")
+    sampled = resampled_target_indices(target, repetition)
+    train_only_delta = float(roc_auc_score(target.y, p5)
+                             - roc_auc_score(target.y, p4))
+    combined_delta = float(roc_auc_score(target.y[sampled], p5[sampled])
+                           - roc_auc_score(target.y[sampled], p4[sampled]))
     return {"repetition": repetition, "status": "complete",
             "M4_AUROC": float(roc_auc_score(target.y, p4)),
             "M5_AUROC": float(roc_auc_score(target.y, p5)),
-            "M5_minus_M4_AUROC": float(roc_auc_score(target.y, p5)
-                                        - roc_auc_score(target.y, p4)),
+            "M5_minus_M4_AUROC_training_only": train_only_delta,
+            "M5_minus_M4_AUROC_training_plus_PPMI": combined_delta,
             "M5_selection": decision}
 
 
@@ -97,7 +116,7 @@ def run(data: geo.Data, target: geo.Data, output: Path,
             eta = elapsed / (repetition + 1) * (cap - repetition - 1)
             print(f"E6 progress {repetition + 1}/{cap} attempts | "
                   f"elapsed {elapsed/3600:.1f}h | ETA ~{eta/3600:.1f}h", flush=True)
-    successful = [r["M5_minus_M4_AUROC"] for r in results if r["status"] == "complete"]
+    successful = [r for r in results if r["status"] == "complete"]
     report = {"analysis": "E6", "exploratory": True,
               "attempts": len(results), "successful_attempts": len(successful),
               "failed_attempts": len(results) - len(successful),
@@ -105,13 +124,18 @@ def run(data: geo.Data, target: geo.Data, output: Path,
               "first_20_attempt_runtime_seconds": sum(r["elapsed_seconds"] for r in results[:20]),
               "cap_after_runtime_rule": cap,
               "source_class_stratified_donor_bootstrap": True,
-              "fixed_PPMI_population": True,
+              "PPMI_population_fixed_for_training_only_interval": True,
+              "PPMI_class_stratified_resampling_for_combined_interval": True,
+              "bootstrap_duplicates_share_original_donor_group": True,
               "status": ("complete_exploratory" if len(successful) >= .9 * cap
                          else "not_evaluable_excess_fit_failures")}
     if report["status"] == "complete_exploratory":
-        report["M5_minus_M4_AUROC_mean"] = float(np.mean(successful))
-        report["M5_minus_M4_AUROC_CI95_percentile"] = np.quantile(
-            successful, [.025, .975]).tolist()
+        for label, key in (("training_only", "M5_minus_M4_AUROC_training_only"),
+                           ("training_plus_PPMI", "M5_minus_M4_AUROC_training_plus_PPMI")):
+            values = np.array([r[key] for r in successful], float)
+            report[f"M5_minus_M4_AUROC_mean_{label}"] = float(np.mean(values))
+            report[f"M5_minus_M4_AUROC_CI95_percentile_{label}"] = np.quantile(
+                values, [.025, .975]).tolist()
     if synthetic:
         (output / "E6_AGGREGATE.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     else:
@@ -131,6 +155,10 @@ def synthetic_self_test() -> None:
                     [np.arange(i*3, i*3+3) for i in range(6)])
     boot = stratified_donor_bootstrap(data, 0)
     assert len(boot.y) == n and int(boot.y.sum()) == int(data.y.sum())
+    for a, b in geo.donor_folds(boot, 2, "E6/synthetic/group_check"):
+        assert not set(boot.donor[a]) & set(boot.donor[b])
+    sampled = resampled_target_indices(data, 0)
+    assert len(sampled) == n and int(data.y[sampled].sum()) == int(data.y.sum())
     import tempfile
     with tempfile.TemporaryDirectory() as temporary:
         report = run(data, data, Path(temporary) / "run", max_attempts=2,

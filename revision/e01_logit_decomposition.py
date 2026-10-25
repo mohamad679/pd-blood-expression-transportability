@@ -88,7 +88,8 @@ def verify_fit_samples(model_dir: Path, train_samples: np.ndarray) -> None:
 
 
 def scope_summary(scorer, geo_data, train_ix, heldout_ix,
-                  ppmi_ranks, ppmi_age, ppmi_sex, ppmi_y):
+                  ppmi_ranks, ppmi_age, ppmi_sex, ppmi_y,
+                  within_cohort_outer: bool):
     train = geo_data.take(train_ix)
     heldout = geo_data.take(heldout_ix)
     if set(train.donor) & set(heldout.donor):
@@ -101,7 +102,7 @@ def scope_summary(scorer, geo_data, train_ix, heldout_ix,
     gt, gh = train.y == 0, heldout.y == 0
     pc, pd = ppmi_y == 0, ppmi_y == 1
     ratio = None
-    if gt.sum() > 1 and gh.sum() > 1:
+    if within_cohort_outer and gt.sum() > 1 and gh.sum() > 1:
         denom = gt_g[gt].std(ddof=1)
         ratio = float(gh_g[gh].std(ddof=1) / denom) if denom > 0 else None
     return {
@@ -183,7 +184,7 @@ def main() -> None:
         verify_fit_samples(Path(item["model_dir"]), geo_data.sample[ti])
         scorer = FrozenGEOScorer(Path(item["model_dir"]), args.marker_manifest, args.sex_artifact)
         result["scopes"][name] = scope_summary(scorer, geo_data, ti, hi,
-            pp_x, pp_age, pp_sex, pp_y)
+            pp_x, pp_age, pp_sex, pp_y, within_cohort_outer="/outer/" in name)
     verify_fit_samples(args.final_dir, geo_data.sample)
     final = FrozenGEOScorer(args.final_dir, args.marker_manifest, args.sex_artifact)
     pb, pg = component_arrays(final, pp_x, pp_age, pp_sex, pp_genes)
