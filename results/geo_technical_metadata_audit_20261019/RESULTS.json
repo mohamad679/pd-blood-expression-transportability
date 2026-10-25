@@ -1,0 +1,1557 @@
+{
+  "status": "metadata_only_audit_complete",
+  "input_metadata_sha256": {
+    "GSE57475": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+  },
+  "frozen_split_manifest_sha256": "2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2",
+  "frozen_split_matches_published_release": true,
+  "PPMI_loaded": false,
+  "expression_values_loaded": false,
+  "model_fits": false,
+  "scores_or_performance_metrics_computed": false,
+  "technical_metadata_used_in_M1_to_M5": false,
+  "outer_fold_assignment": "Each sample is assigned to the unique frozen outer test fold in which it is held out.",
+  "near_single_class_descriptive_threshold": "PD prevalence <=10% or >=90%; descriptive flag only, not a hypothesis test.",
+  "coverage": [
+    {
+      "source": "GSE57475",
+      "n_samples": 142,
+      "technical_metadata_present": 142,
+      "technical_metadata_missing": 0,
+      "coverage_percent": 100.0,
+      "distinct_batch_or_chip_proxy_levels": 16,
+      "batch_kind": "title_derived_chip_proxy=142"
+    },
+    {
+      "source": "GSE99039",
+      "n_samples": 239,
+      "technical_metadata_present": 239,
+      "technical_metadata_missing": 0,
+      "coverage_percent": 100.0,
+      "distinct_batch_or_chip_proxy_levels": 11,
+      "batch_kind": "provided_batch=239"
+    }
+  ],
+  "batch_level_summary": [
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027001",
+      "n": 6,
+      "PD": 4,
+      "control": 2,
+      "PD_percent": 66.67,
+      "class_purity_percent": 66.67,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027017",
+      "n": 9,
+      "PD": 6,
+      "control": 3,
+      "PD_percent": 66.67,
+      "class_purity_percent": 66.67,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027018",
+      "n": 10,
+      "PD": 6,
+      "control": 4,
+      "PD_percent": 60.0,
+      "class_purity_percent": 60.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027047",
+      "n": 10,
+      "PD": 8,
+      "control": 2,
+      "PD_percent": 80.0,
+      "class_purity_percent": 80.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027059",
+      "n": 9,
+      "PD": 5,
+      "control": 4,
+      "PD_percent": 55.56,
+      "class_purity_percent": 55.56,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679002",
+      "n": 10,
+      "PD": 6,
+      "control": 4,
+      "PD_percent": 60.0,
+      "class_purity_percent": 60.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679003",
+      "n": 8,
+      "PD": 5,
+      "control": 3,
+      "PD_percent": 62.5,
+      "class_purity_percent": 62.5,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590026",
+      "n": 8,
+      "PD": 4,
+      "control": 4,
+      "PD_percent": 50.0,
+      "class_purity_percent": 50.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590054",
+      "n": 10,
+      "PD": 7,
+      "control": 3,
+      "PD_percent": 70.0,
+      "class_purity_percent": 70.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590056",
+      "n": 10,
+      "PD": 6,
+      "control": 4,
+      "PD_percent": 60.0,
+      "class_purity_percent": 60.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590058",
+      "n": 10,
+      "PD": 6,
+      "control": 4,
+      "PD_percent": 60.0,
+      "class_purity_percent": 60.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590059",
+      "n": 7,
+      "PD": 5,
+      "control": 2,
+      "PD_percent": 71.43,
+      "class_purity_percent": 71.43,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590060",
+      "n": 10,
+      "PD": 8,
+      "control": 2,
+      "PD_percent": 80.0,
+      "class_purity_percent": 80.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280013",
+      "n": 9,
+      "PD": 6,
+      "control": 3,
+      "PD_percent": 66.67,
+      "class_purity_percent": 66.67,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280019",
+      "n": 8,
+      "PD": 5,
+      "control": 3,
+      "PD_percent": 62.5,
+      "class_purity_percent": 62.5,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280020",
+      "n": 8,
+      "PD": 6,
+      "control": 2,
+      "PD_percent": 75.0,
+      "class_purity_percent": 75.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/05/10_TRO",
+      "n": 12,
+      "PD": 8,
+      "control": 4,
+      "PD_percent": 66.67,
+      "class_purity_percent": 66.67,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/10/10_TRO",
+      "n": 8,
+      "PD": 2,
+      "control": 6,
+      "PD_percent": 25.0,
+      "class_purity_percent": 75.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/20/09_TRO",
+      "n": 7,
+      "PD": 5,
+      "control": 2,
+      "PD_percent": 71.43,
+      "class_purity_percent": 71.43,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/25/09_TRO",
+      "n": 30,
+      "PD": 21,
+      "control": 9,
+      "PD_percent": 70.0,
+      "class_purity_percent": 70.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/26/09_TRO",
+      "n": 36,
+      "PD": 9,
+      "control": 27,
+      "PD_percent": 25.0,
+      "class_purity_percent": 75.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/27/09_TRO",
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "PD_percent": 0.0,
+      "class_purity_percent": 100.0,
+      "single_class_batch": true,
+      "at_least_90_percent_one_class_descriptive_flag": true
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/01/09_TRO",
+      "n": 33,
+      "PD": 31,
+      "control": 2,
+      "PD_percent": 93.94,
+      "class_purity_percent": 93.94,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": true
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/02/09_TRO",
+      "n": 43,
+      "PD": 16,
+      "control": 27,
+      "PD_percent": 37.21,
+      "class_purity_percent": 62.79,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/03/09_TRO",
+      "n": 60,
+      "PD": 22,
+      "control": 38,
+      "PD_percent": 36.67,
+      "class_purity_percent": 63.33,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/04/09_TRO",
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "PD_percent": 75.0,
+      "class_purity_percent": 75.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/16/09_TRO",
+      "n": 5,
+      "PD": 3,
+      "control": 2,
+      "PD_percent": 60.0,
+      "class_purity_percent": 60.0,
+      "single_class_batch": false,
+      "at_least_90_percent_one_class_descriptive_flag": false
+    }
+  ],
+  "batch_by_outer_test_fold": [
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027001",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 16.67
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027001",
+      "outer_test_fold": 1,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 16.67
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027001",
+      "outer_test_fold": 2,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 50.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027001",
+      "outer_test_fold": 3,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 16.67
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027001",
+      "outer_test_fold": 4,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027017",
+      "outer_test_fold": 0,
+      "n": 4,
+      "PD": 2,
+      "control": 2,
+      "percent_of_batch_in_fold": 44.44
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027017",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027017",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 22.22
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027017",
+      "outer_test_fold": 3,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027017",
+      "outer_test_fold": 4,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 33.33
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027018",
+      "outer_test_fold": 0,
+      "n": 3,
+      "PD": 1,
+      "control": 2,
+      "percent_of_batch_in_fold": 30.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027018",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027018",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027018",
+      "outer_test_fold": 3,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027018",
+      "outer_test_fold": 4,
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "percent_of_batch_in_fold": 40.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027047",
+      "outer_test_fold": 0,
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "percent_of_batch_in_fold": 40.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027047",
+      "outer_test_fold": 1,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027047",
+      "outer_test_fold": 2,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 30.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027047",
+      "outer_test_fold": 3,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027047",
+      "outer_test_fold": 4,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027059",
+      "outer_test_fold": 0,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 22.22
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027059",
+      "outer_test_fold": 1,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 33.33
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027059",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 0,
+      "control": 2,
+      "percent_of_batch_in_fold": 22.22
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027059",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 22.22
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4837027059",
+      "outer_test_fold": 4,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679002",
+      "outer_test_fold": 0,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679002",
+      "outer_test_fold": 1,
+      "n": 3,
+      "PD": 3,
+      "control": 0,
+      "percent_of_batch_in_fold": 30.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679002",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679002",
+      "outer_test_fold": 3,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679002",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679003",
+      "outer_test_fold": 0,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679003",
+      "outer_test_fold": 1,
+      "n": 2,
+      "PD": 0,
+      "control": 2,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679003",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679003",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4950679003",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590026",
+      "outer_test_fold": 0,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590026",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590026",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590026",
+      "outer_test_fold": 3,
+      "n": 4,
+      "PD": 1,
+      "control": 3,
+      "percent_of_batch_in_fold": 50.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590026",
+      "outer_test_fold": 4,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590054",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590054",
+      "outer_test_fold": 1,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590054",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590054",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590054",
+      "outer_test_fold": 4,
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "percent_of_batch_in_fold": 40.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590056",
+      "outer_test_fold": 0,
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "percent_of_batch_in_fold": 40.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590056",
+      "outer_test_fold": 1,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590056",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590056",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590056",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590058",
+      "outer_test_fold": 0,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590058",
+      "outer_test_fold": 1,
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "percent_of_batch_in_fold": 40.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590058",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590058",
+      "outer_test_fold": 3,
+      "n": 3,
+      "PD": 1,
+      "control": 2,
+      "percent_of_batch_in_fold": 30.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590058",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590059",
+      "outer_test_fold": 0,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 28.57
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590059",
+      "outer_test_fold": 1,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 14.29
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590059",
+      "outer_test_fold": 2,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590059",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 28.57
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590059",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 28.57
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590060",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590060",
+      "outer_test_fold": 1,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 30.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590060",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590060",
+      "outer_test_fold": 3,
+      "n": 3,
+      "PD": 3,
+      "control": 0,
+      "percent_of_batch_in_fold": 30.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "4954590060",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280013",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 11.11
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280013",
+      "outer_test_fold": 1,
+      "n": 6,
+      "PD": 5,
+      "control": 1,
+      "percent_of_batch_in_fold": 66.67
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280013",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 11.11
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280013",
+      "outer_test_fold": 3,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280013",
+      "outer_test_fold": 4,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 11.11
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280019",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 12.5
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280019",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280019",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280019",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280019",
+      "outer_test_fold": 4,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 37.5
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280020",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 12.5
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280020",
+      "outer_test_fold": 1,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280020",
+      "outer_test_fold": 2,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 37.5
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280020",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE57475",
+      "batch_or_chip_proxy": "5147280020",
+      "outer_test_fold": 4,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/05/10_TRO",
+      "outer_test_fold": 0,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 16.67
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/05/10_TRO",
+      "outer_test_fold": 1,
+      "n": 3,
+      "PD": 3,
+      "control": 0,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/05/10_TRO",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 16.67
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/05/10_TRO",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 16.67
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/05/10_TRO",
+      "outer_test_fold": 4,
+      "n": 3,
+      "PD": 1,
+      "control": 2,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/10/10_TRO",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 12.5
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/10/10_TRO",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/10/10_TRO",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 12.5
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/10/10_TRO",
+      "outer_test_fold": 3,
+      "n": 4,
+      "PD": 0,
+      "control": 4,
+      "percent_of_batch_in_fold": 50.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "03/10/10_TRO",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 1,
+      "control": 1,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/20/09_TRO",
+      "outer_test_fold": 0,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 14.29
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/20/09_TRO",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/20/09_TRO",
+      "outer_test_fold": 2,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 28.57
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/20/09_TRO",
+      "outer_test_fold": 3,
+      "n": 3,
+      "PD": 1,
+      "control": 2,
+      "percent_of_batch_in_fold": 42.86
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/20/09_TRO",
+      "outer_test_fold": 4,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 14.29
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/25/09_TRO",
+      "outer_test_fold": 0,
+      "n": 11,
+      "PD": 7,
+      "control": 4,
+      "percent_of_batch_in_fold": 36.67
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/25/09_TRO",
+      "outer_test_fold": 1,
+      "n": 3,
+      "PD": 1,
+      "control": 2,
+      "percent_of_batch_in_fold": 10.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/25/09_TRO",
+      "outer_test_fold": 2,
+      "n": 8,
+      "PD": 6,
+      "control": 2,
+      "percent_of_batch_in_fold": 26.67
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/25/09_TRO",
+      "outer_test_fold": 3,
+      "n": 4,
+      "PD": 3,
+      "control": 1,
+      "percent_of_batch_in_fold": 13.33
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/25/09_TRO",
+      "outer_test_fold": 4,
+      "n": 4,
+      "PD": 4,
+      "control": 0,
+      "percent_of_batch_in_fold": 13.33
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/26/09_TRO",
+      "outer_test_fold": 0,
+      "n": 7,
+      "PD": 1,
+      "control": 6,
+      "percent_of_batch_in_fold": 19.44
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/26/09_TRO",
+      "outer_test_fold": 1,
+      "n": 9,
+      "PD": 4,
+      "control": 5,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/26/09_TRO",
+      "outer_test_fold": 2,
+      "n": 8,
+      "PD": 2,
+      "control": 6,
+      "percent_of_batch_in_fold": 22.22
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/26/09_TRO",
+      "outer_test_fold": 3,
+      "n": 4,
+      "PD": 0,
+      "control": 4,
+      "percent_of_batch_in_fold": 11.11
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/26/09_TRO",
+      "outer_test_fold": 4,
+      "n": 8,
+      "PD": 2,
+      "control": 6,
+      "percent_of_batch_in_fold": 22.22
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/27/09_TRO",
+      "outer_test_fold": 0,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/27/09_TRO",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/27/09_TRO",
+      "outer_test_fold": 2,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/27/09_TRO",
+      "outer_test_fold": 3,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "08/27/09_TRO",
+      "outer_test_fold": 4,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 100.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/01/09_TRO",
+      "outer_test_fold": 0,
+      "n": 9,
+      "PD": 8,
+      "control": 1,
+      "percent_of_batch_in_fold": 27.27
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/01/09_TRO",
+      "outer_test_fold": 1,
+      "n": 5,
+      "PD": 5,
+      "control": 0,
+      "percent_of_batch_in_fold": 15.15
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/01/09_TRO",
+      "outer_test_fold": 2,
+      "n": 7,
+      "PD": 6,
+      "control": 1,
+      "percent_of_batch_in_fold": 21.21
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/01/09_TRO",
+      "outer_test_fold": 3,
+      "n": 9,
+      "PD": 9,
+      "control": 0,
+      "percent_of_batch_in_fold": 27.27
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/01/09_TRO",
+      "outer_test_fold": 4,
+      "n": 3,
+      "PD": 3,
+      "control": 0,
+      "percent_of_batch_in_fold": 9.09
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/02/09_TRO",
+      "outer_test_fold": 0,
+      "n": 8,
+      "PD": 2,
+      "control": 6,
+      "percent_of_batch_in_fold": 18.6
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/02/09_TRO",
+      "outer_test_fold": 1,
+      "n": 12,
+      "PD": 5,
+      "control": 7,
+      "percent_of_batch_in_fold": 27.91
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/02/09_TRO",
+      "outer_test_fold": 2,
+      "n": 11,
+      "PD": 2,
+      "control": 9,
+      "percent_of_batch_in_fold": 25.58
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/02/09_TRO",
+      "outer_test_fold": 3,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 4.65
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/02/09_TRO",
+      "outer_test_fold": 4,
+      "n": 10,
+      "PD": 5,
+      "control": 5,
+      "percent_of_batch_in_fold": 23.26
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/03/09_TRO",
+      "outer_test_fold": 0,
+      "n": 9,
+      "PD": 3,
+      "control": 6,
+      "percent_of_batch_in_fold": 15.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/03/09_TRO",
+      "outer_test_fold": 1,
+      "n": 15,
+      "PD": 6,
+      "control": 9,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/03/09_TRO",
+      "outer_test_fold": 2,
+      "n": 8,
+      "PD": 4,
+      "control": 4,
+      "percent_of_batch_in_fold": 13.33
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/03/09_TRO",
+      "outer_test_fold": 3,
+      "n": 16,
+      "PD": 5,
+      "control": 11,
+      "percent_of_batch_in_fold": 26.67
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/03/09_TRO",
+      "outer_test_fold": 4,
+      "n": 12,
+      "PD": 4,
+      "control": 8,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/04/09_TRO",
+      "outer_test_fold": 0,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/04/09_TRO",
+      "outer_test_fold": 1,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/04/09_TRO",
+      "outer_test_fold": 2,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/04/09_TRO",
+      "outer_test_fold": 3,
+      "n": 3,
+      "PD": 2,
+      "control": 1,
+      "percent_of_batch_in_fold": 75.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/04/09_TRO",
+      "outer_test_fold": 4,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 25.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/16/09_TRO",
+      "outer_test_fold": 0,
+      "n": 0,
+      "PD": 0,
+      "control": 0,
+      "percent_of_batch_in_fold": 0.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/16/09_TRO",
+      "outer_test_fold": 1,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/16/09_TRO",
+      "outer_test_fold": 2,
+      "n": 1,
+      "PD": 1,
+      "control": 0,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/16/09_TRO",
+      "outer_test_fold": 3,
+      "n": 1,
+      "PD": 0,
+      "control": 1,
+      "percent_of_batch_in_fold": 20.0
+    },
+    {
+      "source": "GSE99039",
+      "batch_or_chip_proxy": "09/16/09_TRO",
+      "outer_test_fold": 4,
+      "n": 2,
+      "PD": 2,
+      "control": 0,
+      "percent_of_batch_in_fold": 40.0
+    }
+  ],
+  "outputs": [
+    "technical_metadata_coverage.csv",
+    "class_by_batch.csv",
+    "batch_by_outer_test_fold.csv"
+  ]
+}

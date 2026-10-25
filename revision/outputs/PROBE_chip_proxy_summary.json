@@ -1,0 +1,7 @@
+{
+  "mean_fold_AUROC": 0.3439766081871345,
+  "n_folds": 5,
+  "unseen_chip_fallback_total": 0,
+  "label": "post hoc, GEO-only, metadata-only",
+  "definition": "For each frozen outer fold, test samples receive the PD prevalence of their chip in the outer training subset; unseen chips use overall training PD prevalence. No smoothing."
+}

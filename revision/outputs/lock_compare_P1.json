@@ -1,0 +1,7 @@
+{
+  "common_artifacts": 14,
+  "actual_sha256_unchanged": true,
+  "start_failures": 0,
+  "end_failures": 0,
+  "note": "Zenodo-download cache path changed after the start snapshot, but the downloaded manifest bytes and every artifact hash remained identical."
+}

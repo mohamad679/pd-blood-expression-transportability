@@ -1,0 +1,1826 @@
+{
+  "GEO_only": true,
+  "PPMI_scored": false,
+  "analysis": "E11_GEO_inner_seed_stability",
+  "geo_input_sha256": {
+    "GSE57475_development.npz": "77e4900a42c6b1a34857548550b5deb3c401593644d5dc9d9cc280b01594cf14",
+    "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039_development.npz": "d1cfa7f4e8556d57099ce85b754e25e22b2c114335abb4eb16d9259eb26a5d49",
+    "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414"
+  },
+  "per_seed_aggregate": [
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.48893557422969186,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.17759103641456592,
+          "persistent_boundary": false,
+          "selected_lambda": 1e-05,
+          "selected_rho": 1.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.48039215686274506,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.18613445378151272,
+          "persistent_boundary": true,
+          "selected_lambda": 1.0000000000000002e-06,
+          "selected_rho": 1.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_0/inner",
+      "seed_index": 0,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_1/inner",
+      "seed_index": 1,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_2/inner",
+      "seed_index": 2,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5948879551820728,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.07163865546218495,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_3/inner",
+      "seed_index": 3,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_4/inner",
+      "seed_index": 4,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5470588235294118,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.11946778711484596,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5303221288515406,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.13620448179271716,
+          "persistent_boundary": false,
+          "selected_lambda": 0.0001,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6682072829131652,
+          "M5_reuses_M4": false,
+          "delta_AUROC": 0.001680672268907446,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 1.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_5/inner",
+      "seed_index": 5,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.544327731092437,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.12219887955182074,
+          "persistent_boundary": true,
+          "selected_lambda": 1.0000000000000002e-06,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5394257703081232,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.12710084033613456,
+          "persistent_boundary": true,
+          "selected_lambda": 1.0000000000000002e-06,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_6/inner",
+      "seed_index": 6,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5899859943977591,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.07654061624649866,
+          "persistent_boundary": false,
+          "selected_lambda": 0.0001,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6046218487394959,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.06190476190476191,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_7/inner",
+      "seed_index": 7,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_8/inner",
+      "seed_index": 8,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_9/inner",
+      "seed_index": 9,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_10/inner",
+      "seed_index": 10,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6682072829131652,
+          "M5_reuses_M4": false,
+          "delta_AUROC": 0.001680672268907446,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 1.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_11/inner",
+      "seed_index": 11,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_12/inner",
+      "seed_index": 12,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5927871148459384,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.0737394957983194,
+          "persistent_boundary": false,
+          "selected_lambda": 0.001,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5892156862745098,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.07731092436974796,
+          "persistent_boundary": false,
+          "selected_lambda": 0.001,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_13/inner",
+      "seed_index": 13,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.597829131652661,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.06869747899159673,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5948879551820728,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.07163865546218495,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_14/inner",
+      "seed_index": 14,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5351540616246498,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.13137254901960793,
+          "persistent_boundary": false,
+          "selected_lambda": 0.0001,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5845238095238096,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.08200280112044822,
+          "persistent_boundary": false,
+          "selected_lambda": 1e-05,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_15/inner",
+      "seed_index": 15,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_16/inner",
+      "seed_index": 16,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6264005602240896,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.04012605042016815,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6188375350140055,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.047689075630252264,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.5,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_17/inner",
+      "seed_index": 17,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6292016806722689,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.037324929971988885,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5865546218487395,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.07997198879551826,
+          "persistent_boundary": false,
+          "selected_lambda": 0.0001,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_18/inner",
+      "seed_index": 18,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5483193277310924,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.1182072829131654,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 1.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.5477591036414565,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.11876750700280125,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 1.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6665266106442578,
+          "M5_AUROC": 0.6665266106442578,
+          "M5_reuses_M4": true,
+          "delta_AUROC": 0.0,
+          "persistent_boundary": false,
+          "selected_lambda": null,
+          "selected_rho": null,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE57475/seed_19/inner",
+      "seed_index": 19,
+      "source": "GSE57475",
+      "target_source": "GSE99039"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6168531928900592,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.01821373710774643,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_0/inner",
+      "seed_index": 0,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_1/inner",
+      "seed_index": 1,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.619486504279131,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.015580425718674684,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6168531928900592,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.01821373710774643,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_2/inner",
+      "seed_index": 2,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_3/inner",
+      "seed_index": 3,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_4/inner",
+      "seed_index": 4,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.619486504279131,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.015580425718674684,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_5/inner",
+      "seed_index": 5,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_6/inner",
+      "seed_index": 6,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.619486504279131,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.015580425718674684,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6168531928900592,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.01821373710774643,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_7/inner",
+      "seed_index": 7,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_8/inner",
+      "seed_index": 8,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_9/inner",
+      "seed_index": 9,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_10/inner",
+      "seed_index": 10,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_11/inner",
+      "seed_index": 11,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.619486504279131,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.015580425718674684,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_12/inner",
+      "seed_index": 12,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.619486504279131,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.015580425718674684,
+          "persistent_boundary": false,
+          "selected_lambda": 0.01,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6109282422646478,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.02413868773315786,
+          "persistent_boundary": false,
+          "selected_lambda": 1e-05,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_13/inner",
+      "seed_index": 13,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_14/inner",
+      "seed_index": 14,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_15/inner",
+      "seed_index": 15,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_16/inner",
+      "seed_index": 16,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_17/inner",
+      "seed_index": 17,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6146587667324995,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.020408163265306145,
+          "persistent_boundary": false,
+          "selected_lambda": 0.001,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_18/inner",
+      "seed_index": 18,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    },
+    {
+      "conditions": {
+        "auroc_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6265086679833224,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.008558262014483287,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "auroc_panel_excluded": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6234364713627386,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.011630458635067065,
+          "persistent_boundary": false,
+          "selected_lambda": 0.1,
+          "selected_rho": 0.0,
+          "status": "complete"
+        },
+        "deviance_full": {
+          "M4_AUROC": 0.6350669299978057,
+          "M5_AUROC": 0.6126837831906956,
+          "M5_reuses_M4": false,
+          "delta_AUROC": -0.022383146807110066,
+          "persistent_boundary": false,
+          "selected_lambda": 1.0,
+          "selected_rho": 0.0,
+          "status": "complete"
+        }
+      },
+      "inner_scope": "E11/GSE99039/seed_19/inner",
+      "seed_index": 19,
+      "source": "GSE99039",
+      "target_source": "GSE57475"
+    }
+  ],
+  "post_hoc": true,
+  "seeds_per_direction": 20,
+  "shared_inner_folds_across_conditions": true,
+  "summary": {
+    "GSE57475": {
+      "conditions": {
+        "auroc_full": {
+          "attempts": 20,
+          "delta_AUROC": {
+            "IQR": [
+              -0.08695728291316535,
+              0.0
+            ],
+            "median": -0.018662464985994442,
+            "range": [
+              -0.17759103641456592,
+              0.001680672268907446
+            ]
+          },
+          "delta_at_least_plus_0_05_count": 0,
+          "failure_types": {},
+          "failures": 0,
+          "lambda_category_counts": {
+            "0.0001": 2,
+            "0.001": 1,
+            "0.01": 3,
+            "0.1": 2,
+            "1": 1,
+            "1e-05": 1,
+            "1e-06": 1,
+            "no_gene": 9
+          },
+          "lambda_stable_by_predeclared_rule": false,
+          "no_gene_count": 9,
+          "no_gene_fraction_of_attempts": 0.45,
+          "no_gene_stable_by_predeclared_rule": false,
+          "positive_direction_rule_met": false,
+          "rho_counts": {
+            "0": 4,
+            "0.5": 4,
+            "1": 3,
+            "no_gene": 9
+          },
+          "successes": 20
+        },
+        "auroc_panel_excluded": {
+          "attempts": 20,
+          "delta_AUROC": {
+            "IQR": [
+              -0.08047969187675075,
+              0.0
+            ],
+            "median": -0.054796918767507086,
+            "range": [
+              -0.18613445378151272,
+              0.0
+            ]
+          },
+          "delta_at_least_plus_0_05_count": 0,
+          "failure_types": {},
+          "failures": 0,
+          "lambda_category_counts": {
+            "0.0001": 2,
+            "0.001": 1,
+            "0.01": 3,
+            "0.1": 2,
+            "1e-05": 1,
+            "1e-06": 2,
+            "no_gene": 9
+          },
+          "lambda_stable_by_predeclared_rule": false,
+          "no_gene_count": 9,
+          "no_gene_fraction_of_attempts": 0.45,
+          "no_gene_stable_by_predeclared_rule": false,
+          "positive_direction_rule_met": false,
+          "rho_counts": {
+            "0": 6,
+            "0.5": 3,
+            "1": 2,
+            "no_gene": 9
+          },
+          "successes": 20
+        },
+        "deviance_full": {
+          "attempts": 20,
+          "delta_AUROC": {
+            "IQR": [
+              0.0,
+              0.0
+            ],
+            "median": 0.0,
+            "range": [
+              0.0,
+              0.001680672268907446
+            ]
+          },
+          "delta_at_least_plus_0_05_count": 0,
+          "failure_types": {},
+          "failures": 0,
+          "lambda_category_counts": {
+            "0.1": 1,
+            "no_gene": 19
+          },
+          "lambda_stable_by_predeclared_rule": true,
+          "no_gene_count": 19,
+          "no_gene_fraction_of_attempts": 0.95,
+          "no_gene_stable_by_predeclared_rule": true,
+          "positive_direction_rule_met": false,
+          "rho_counts": {
+            "1": 1,
+            "no_gene": 19
+          },
+          "successes": 20
+        }
+      },
+      "paired_differences": {
+        "auroc_panel_excluded_minus_auroc_full": {
+          "IQR": [
+            -0.005567226890756394,
+            0.0
+          ],
+          "median": -0.0002801120448179262,
+          "paired_seeds": 20,
+          "range": [
+            -0.07163865546218495,
+            0.04936974789915971
+          ]
+        },
+        "deviance_full_minus_auroc_full": {
+          "IQR": [
+            0.0,
+            0.08695728291316535
+          ],
+          "median": 0.018662464985994442,
+          "paired_seeds": 20,
+          "range": [
+            -0.001680672268907446,
+            0.17759103641456592
+          ]
+        },
+        "deviance_full_minus_auroc_panel_excluded": {
+          "IQR": [
+            0.0,
+            0.08047969187675075
+          ],
+          "median": 0.054796918767507086,
+          "paired_seeds": 20,
+          "range": [
+            0.0,
+            0.18613445378151272
+          ]
+        }
+      }
+    },
+    "GSE99039": {
+      "conditions": {
+        "auroc_full": {
+          "attempts": 20,
+          "delta_AUROC": {
+            "IQR": [
+              -0.010313802940531136,
+              -0.008558262014483287
+            ],
+            "median": -0.008558262014483287,
+            "range": [
+              -0.015580425718674684,
+              -0.008558262014483287
+            ]
+          },
+          "delta_at_least_plus_0_05_count": 0,
+          "failure_types": {},
+          "failures": 0,
+          "lambda_category_counts": {
+            "0.01": 5,
+            "0.1": 15
+          },
+          "lambda_stable_by_predeclared_rule": false,
+          "no_gene_count": 0,
+          "no_gene_fraction_of_attempts": 0.0,
+          "no_gene_stable_by_predeclared_rule": false,
+          "positive_direction_rule_met": false,
+          "rho_counts": {
+            "0": 20
+          },
+          "successes": 20
+        },
+        "auroc_panel_excluded": {
+          "attempts": 20,
+          "delta_AUROC": {
+            "IQR": [
+              -0.013276278253236906,
+              -0.011630458635067065
+            ],
+            "median": -0.011630458635067065,
+            "range": [
+              -0.02413868773315786,
+              -0.011630458635067065
+            ]
+          },
+          "delta_at_least_plus_0_05_count": 0,
+          "failure_types": {},
+          "failures": 0,
+          "lambda_category_counts": {
+            "0.001": 1,
+            "0.01": 3,
+            "0.1": 15,
+            "1e-05": 1
+          },
+          "lambda_stable_by_predeclared_rule": false,
+          "no_gene_count": 0,
+          "no_gene_fraction_of_attempts": 0.0,
+          "no_gene_stable_by_predeclared_rule": false,
+          "positive_direction_rule_met": false,
+          "rho_counts": {
+            "0": 20
+          },
+          "successes": 20
+        },
+        "deviance_full": {
+          "attempts": 20,
+          "delta_AUROC": {
+            "IQR": [
+              -0.022383146807110066,
+              -0.022383146807110066
+            ],
+            "median": -0.022383146807110066,
+            "range": [
+              -0.022383146807110066,
+              -0.022383146807110066
+            ]
+          },
+          "delta_at_least_plus_0_05_count": 0,
+          "failure_types": {},
+          "failures": 0,
+          "lambda_category_counts": {
+            "1": 20
+          },
+          "lambda_stable_by_predeclared_rule": true,
+          "no_gene_count": 0,
+          "no_gene_fraction_of_attempts": 0.0,
+          "no_gene_stable_by_predeclared_rule": false,
+          "positive_direction_rule_met": false,
+          "rho_counts": {
+            "0": 20
+          },
+          "successes": 20
+        }
+      },
+      "paired_differences": {
+        "auroc_panel_excluded_minus_auroc_full": {
+          "IQR": [
+            -0.003072196620583778,
+            -0.003072196620583778
+          ],
+          "median": -0.003072196620583778,
+          "paired_seeds": 20,
+          "range": [
+            -0.011849901250822859,
+            0.0039499670836076195
+          ]
+        },
+        "deviance_full_minus_auroc_full": {
+          "IQR": [
+            -0.01382488479262678,
+            -0.01206934386657893
+          ],
+          "median": -0.01382488479262678,
+          "paired_seeds": 20,
+          "range": [
+            -0.01382488479262678,
+            -0.006802721088435382
+          ]
+        },
+        "deviance_full_minus_auroc_panel_excluded": {
+          "IQR": [
+            -0.010752688172043001,
+            -0.00910686855387316
+          ],
+          "median": -0.010752688172043001,
+          "paired_seeds": 20,
+          "range": [
+            -0.010752688172043001,
+            0.0017555409260477939
+          ]
+        }
+      }
+    },
+    "both_directions_stable_positive_increment": {
+      "auroc_full": false,
+      "auroc_panel_excluded": false,
+      "deviance_full": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+analysis,scope,model,lambda,rho,grid_expansions,boundary_direction,source_document
+Original,GSE57475/outer/2,M2,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Original,GSE57475/transfer,M5,1e-06,1.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+X/Y exclusion,GSE57475/outer/0,M2,1e-06,1.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+X/Y exclusion,GSE57475/outer/2,M2,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+X/Y exclusion,GSE57475/outer/4,M2,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Age/sex residualization,GSE57475/transfer,M2,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Age/sex residualization,GSE57475/transfer,M3,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Panel-gene exclusion,GSE57475/outer/0,M5,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Panel-gene exclusion,GSE57475/transfer,M5,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Age/sex matching,GSE99039/outer/1,M2,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+Age/sex matching,GSE99039/outer/1,M5,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_no_disease/GSE57475/outer/0,M2,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_no_disease/GSE57475/outer/2,M2,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_no_disease/GSE57475/transfer,M2,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_preserve_disease/GSE57475/outer/0,M2,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_preserve_disease/GSE57475/outer/1,M2,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_preserve_disease/GSE57475/transfer,M2,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_preserve_disease/GSE57475/transfer,M3,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,inductive_preserve_disease/GSE99039/outer/2,M5,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE57475/outer/1,M3,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE57475/outer/3,M3,1e-06,1.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE57475/outer/3,M5,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE57475/outer/4,M3,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE57475/transfer,M3,1e-06,0.0,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE57475/transfer,M5,1e-06,0.5,2,lower,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md
+ComBat,transductive_no_disease/GSE99039/outer/1,M2,100.0,0.0,2,upper,docs/GEO_SUPPLEMENTARY_BOUNDARY_TABLE_20261020_EN.md

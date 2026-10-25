@@ -1,0 +1,12 @@
+batch,n_control_oof,n_pd_oof,evaluable,exclusion_reason,M4_within_batch_AUROC,M5_within_batch_AUROC
+03/05/10_TRO,4,8,False,requires >= 5 per class,,
+03/10/10_TRO,6,2,False,requires >= 5 per class,,
+08/20/09_TRO,2,5,False,requires >= 5 per class,,
+08/25/09_TRO,9,21,True,,0.6084656084656085,0.6402116402116402
+08/26/09_TRO,27,9,True,,0.6008230452674898,0.5308641975308641
+08/27/09_TRO,1,0,False,requires >= 5 per class,,
+09/01/09_TRO,2,31,False,requires >= 5 per class,,
+09/02/09_TRO,27,16,True,,0.7986111111111112,0.849537037037037
+09/03/09_TRO,38,22,True,,0.6124401913875599,0.6232057416267942
+09/04/09_TRO,1,3,False,requires >= 5 per class,,
+09/16/09_TRO,2,3,False,requires >= 5 per class,,

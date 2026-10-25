@@ -1,0 +1,5 @@
+source,diagnosis,n,age_n,age_mean,age_sd,female_n,male_n,disease_duration,Hoehn_Yahr,MDS_UPDRS_III,dopaminergic_treatment,LEDD
+PROBE,Control,49,49,61.46938775510204,9.611412575718528,23,26,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata
+PROBE,PD,93,93,62.806451612903224,9.425056872756707,31,62,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata
+GENEPARK-TRO,Control,119,119,61.18487394957983,9.20479461150051,85,34,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata
+GENEPARK-TRO,PD,120,120,62.166666666666664,9.518962351942731,62,58,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata,not available in prepared metadata

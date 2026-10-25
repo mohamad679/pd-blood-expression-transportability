@@ -1,0 +1,124 @@
+{
+  "status": "complete",
+  "analysis": "within-batch AUROC on frozen GENEPARK outer out-of-fold predictions",
+  "source": "GSE99039",
+  "outer_fold_count": 5,
+  "sample_count": 239,
+  "batch_count": 11,
+  "eligible_batch_count": 4,
+  "minimum_per_class_per_batch": 5,
+  "macro_mean_within_batch_AUROC": {
+    "M4": 0.6550849890579423,
+    "M5": 0.6609546541015838
+  },
+  "batch_results": [
+    {
+      "batch": "03/05/10_TRO",
+      "n_control_oof": 4,
+      "n_pd_oof": 8,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    },
+    {
+      "batch": "03/10/10_TRO",
+      "n_control_oof": 6,
+      "n_pd_oof": 2,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    },
+    {
+      "batch": "08/20/09_TRO",
+      "n_control_oof": 2,
+      "n_pd_oof": 5,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    },
+    {
+      "batch": "08/25/09_TRO",
+      "n_control_oof": 9,
+      "n_pd_oof": 21,
+      "evaluable": true,
+      "exclusion_reason": "",
+      "M4_within_batch_AUROC": 0.6084656084656085,
+      "M5_within_batch_AUROC": 0.6402116402116402
+    },
+    {
+      "batch": "08/26/09_TRO",
+      "n_control_oof": 27,
+      "n_pd_oof": 9,
+      "evaluable": true,
+      "exclusion_reason": "",
+      "M4_within_batch_AUROC": 0.6008230452674898,
+      "M5_within_batch_AUROC": 0.5308641975308641
+    },
+    {
+      "batch": "08/27/09_TRO",
+      "n_control_oof": 1,
+      "n_pd_oof": 0,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    },
+    {
+      "batch": "09/01/09_TRO",
+      "n_control_oof": 2,
+      "n_pd_oof": 31,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    },
+    {
+      "batch": "09/02/09_TRO",
+      "n_control_oof": 27,
+      "n_pd_oof": 16,
+      "evaluable": true,
+      "exclusion_reason": "",
+      "M4_within_batch_AUROC": 0.7986111111111112,
+      "M5_within_batch_AUROC": 0.849537037037037
+    },
+    {
+      "batch": "09/03/09_TRO",
+      "n_control_oof": 38,
+      "n_pd_oof": 22,
+      "evaluable": true,
+      "exclusion_reason": "",
+      "M4_within_batch_AUROC": 0.6124401913875599,
+      "M5_within_batch_AUROC": 0.6232057416267942
+    },
+    {
+      "batch": "09/04/09_TRO",
+      "n_control_oof": 1,
+      "n_pd_oof": 3,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    },
+    {
+      "batch": "09/16/09_TRO",
+      "n_control_oof": 2,
+      "n_pd_oof": 3,
+      "evaluable": false,
+      "exclusion_reason": "requires >= 5 per class",
+      "M4_within_batch_AUROC": "",
+      "M5_within_batch_AUROC": ""
+    }
+  ],
+  "split_manifest_sha256": "2f72dfc7105aa19bdce3fc8fd40f8b6bfccf52cd2ba500347eb7698f912077c2",
+  "input_sha256": {
+    "GSE57475_sample_metadata.json": "ae42df5e7066a8f66ebb57256886f1355e6f9419c2966c84681baf22c434a18e",
+    "GSE99039_sample_metadata.json": "bebcf13f321214081b5195527a9d1a1f3100ce8c1e81138a54a1fab94d4e8414",
+    "heldout_predictions.npz": "c8c65b1ef0d610179c456320342d4a25bb9204d278cda08e7b6f064491fc684e"
+  },
+  "new_fits_performed": false,
+  "PPMI_accessed": false,
+  "interpretation": "Descriptive within-batch ranking diagnostic; not causal attribution and not proof of biological signal."
+}

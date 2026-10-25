@@ -1,0 +1,21 @@
+{
+  "definition": "Descriptive within-batch\u00d7outer-fold AUROC; eligible cells have >=3 per class. Weighted mean weights each cell by n_PD*n_control.",
+  "eligible_cells": 9,
+  "total_cells": 45,
+  "M4": {
+    "unweighted": 0.5803435813158035,
+    "pair_weighted": 0.6360424028268551
+  },
+  "M5": {
+    "unweighted": 0.6326822457378013,
+    "pair_weighted": 0.6607773851590106
+  },
+  "pooled_oof_all_eligible": {
+    "M4": 0.6550849890579423,
+    "M5": 0.6609546541015838
+  },
+  "pooled_oof_without_09_02_09": {
+    "M4": 0.6072429483735527,
+    "M5": 0.5980938597897661
+  }
+}
